@@ -1,0 +1,315 @@
+# Copyright (C) 2026 WPPoland
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Estimate - Request a Quote for WooCommerce 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/estimate\n"
+"Last-Translator: WPPoland <kontakt@wppoland.com>\n"
+"Language-Team: Polish <pl@li.org>\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-06-14T21:57:10+00:00\n"
+"PO-Revision-Date: 2026-06-15 00:00+0000\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: estimate\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#. Plugin Name of the plugin
+#: estimate.php
+msgid "Estimate - Request a Quote for WooCommerce"
+msgstr "Estimate - Zapytanie ofertowe dla WooCommerce"
+
+#. Plugin URI of the plugin
+#: estimate.php
+msgid "https://plogins.com/estimate/"
+msgstr "https://plogins.com/estimate/"
+
+#. Description of the plugin
+#: estimate.php
+msgid "Let customers request a quote instead of buying directly — ideal for B2B and made-to-order."
+msgstr "Pozwól klientom wysłać zapytanie ofertowe zamiast kupować bezpośrednio — idealne dla B2B i produktów na zamówienie."
+
+#. Author of the plugin
+#: estimate.php
+msgid "WPPoland"
+msgstr "WPPoland"
+
+#. Author URI of the plugin
+#: estimate.php
+msgid "https://plogins.com/"
+msgstr "https://plogins.com/"
+
+#: estimate.php:47
+msgid "Estimate - Request a Quote for WooCommerce requires WooCommerce to be active."
+msgstr "Estimate - Zapytanie ofertowe dla WooCommerce wymaga aktywnego WooCommerce."
+
+#: src/Admin/ProductData.php:39
+#: src/Admin/Settings.php:114
+msgid "Enable quote requests"
+msgstr "Włącz zapytania ofertowe"
+
+#: src/Admin/ProductData.php:41
+msgid "Quote mode is set to \"all products\", so every product already shows an Add to quote button."
+msgstr "Tryb zapytań ofertowych jest ustawiony na „wszystkie produkty”, więc każdy produkt wyświetla już przycisk Dodaj do zapytania."
+
+#: src/Admin/ProductData.php:42
+msgid "Hide the price and add-to-cart button and show an \"Add to quote\" button instead."
+msgstr "Ukryj cenę i przycisk dodawania do koszyka, a zamiast nich pokaż przycisk „Dodaj do zapytania”."
+
+#: src/Admin/Settings.php:52
+msgid "Estimate — Request a Quote"
+msgstr "Estimate — Zapytanie ofertowe"
+
+#: src/Admin/Settings.php:53
+msgid "Estimate"
+msgstr "Estimate"
+
+#: src/Admin/Settings.php:90
+msgid "Let customers request a quote"
+msgstr "Pozwól klientom wysyłać zapytania ofertowe"
+
+#: src/Admin/Settings.php:92
+msgid "Turn products into quote requests instead of direct purchases — ideal for B2B, bulk or made-to-order items. Customers build a quote list and send you their details; each request is emailed to you and saved for review."
+msgstr "Zamień produkty na zapytania ofertowe zamiast bezpośrednich zakupów — idealne dla produktów B2B, hurtowych lub na zamówienie. Klienci tworzą listę zapytania i przesyłają swoje dane; każde zapytanie jest wysyłane do Ciebie e-mailem i zapisywane do przeglądu."
+
+#. translators: %s: shortcode wrapped in <code>.
+#: src/Admin/Settings.php:98
+#, php-format
+msgid "Add the %s shortcode to a page to show the quote list and request form."
+msgstr "Dodaj shortcode %s do strony, aby wyświetlić listę zapytania i formularz."
+
+#: src/Admin/Settings.php:109
+msgid "General"
+msgstr "Ogólne"
+
+#: src/Admin/Settings.php:121
+msgid "Show quote requests on the storefront."
+msgstr "Wyświetlaj zapytania ofertowe w sklepie."
+
+#: src/Admin/Settings.php:127
+msgid "Quote mode"
+msgstr "Tryb zapytań ofertowych"
+
+#: src/Admin/Settings.php:132
+msgid "Selected products only"
+msgstr "Tylko wybrane produkty"
+
+#: src/Admin/Settings.php:135
+msgid "All products"
+msgstr "Wszystkie produkty"
+
+#: src/Admin/Settings.php:139
+msgid "In \"selected\" mode, enable individual products via the \"Enable quote requests\" checkbox in the product data box."
+msgstr "W trybie „wybrane” włącz poszczególne produkty za pomocą pola wyboru „Włącz zapytania ofertowe” w sekcji danych produktu."
+
+#: src/Admin/Settings.php:145
+msgid "Hide price"
+msgstr "Ukryj cenę"
+
+#: src/Admin/Settings.php:152
+msgid "Hide the price on quote-enabled products."
+msgstr "Ukryj cenę na produktach z włączonym zapytaniem ofertowym."
+
+#: src/Admin/Settings.php:158
+msgid "Button text"
+msgstr "Tekst przycisku"
+
+#: src/Admin/Settings.php:164
+#: src/Service/QuoteProducts.php:191
+msgid "Add to quote"
+msgstr "Dodaj do zapytania"
+
+#: src/Admin/Settings.php:172
+msgid "Notifications"
+msgstr "Powiadomienia"
+
+#: src/Admin/Settings.php:177
+msgid "Recipient email"
+msgstr "Adres e-mail odbiorcy"
+
+#: src/Admin/Settings.php:185
+msgid "Where new quote requests are emailed. Leave blank to use the site admin email."
+msgstr "Adres, na który wysyłane są nowe zapytania ofertowe. Pozostaw puste, aby użyć adresu e-mail administratora witryny."
+
+#: src/PostType/QuoteRequest.php:53
+#: src/PostType/QuoteRequest.php:55
+#: src/PostType/QuoteRequest.php:56
+msgid "Quote Requests"
+msgstr "Zapytania ofertowe"
+
+#: src/PostType/QuoteRequest.php:54
+msgid "Quote Request"
+msgstr "Zapytanie ofertowe"
+
+#: src/PostType/QuoteRequest.php:57
+#: src/PostType/QuoteRequest.php:58
+msgid "View Quote Request"
+msgstr "Zobacz zapytanie ofertowe"
+
+#: src/PostType/QuoteRequest.php:59
+msgid "Search quote requests"
+msgstr "Szukaj zapytań ofertowych"
+
+#: src/PostType/QuoteRequest.php:60
+msgid "No quote requests found."
+msgstr "Nie znaleziono zapytań ofertowych."
+
+#: src/PostType/QuoteRequest.php:61
+msgid "No quote requests in Trash."
+msgstr "Brak zapytań ofertowych w koszu."
+
+#. translators: 1: customer name, 2: human-readable date
+#: src/PostType/QuoteRequest.php:94
+#, php-format
+msgid "Quote from %1$s — %2$s"
+msgstr "Zapytanie od %1$s — %2$s"
+
+#: src/PostType/QuoteRequest.php:131
+#: src/PostType/QuoteRequest.php:192
+#: src/Service/QuotePage.php:286
+msgid "Email"
+msgstr "E-mail"
+
+#: src/PostType/QuoteRequest.php:132
+#: src/PostType/QuoteRequest.php:202
+#: src/Service/QuotePage.php:296
+msgid "Company"
+msgstr "Firma"
+
+#: src/PostType/QuoteRequest.php:133
+msgid "Items"
+msgstr "Pozycje"
+
+#: src/PostType/QuoteRequest.php:169
+msgid "Quote details"
+msgstr "Szczegóły zapytania"
+
+#: src/PostType/QuoteRequest.php:188
+#: src/Service/QuotePage.php:276
+msgid "Name"
+msgstr "Imię i nazwisko"
+
+#: src/PostType/QuoteRequest.php:208
+msgid "Requested items"
+msgstr "Zapytane pozycje"
+
+#: src/PostType/QuoteRequest.php:210
+msgid "No items recorded."
+msgstr "Brak zapisanych pozycji."
+
+#: src/PostType/QuoteRequest.php:215
+#: src/Service/QuotePage.php:215
+#: src/Service/QuotePage.php:223
+msgid "Product"
+msgstr "Produkt"
+
+#: src/PostType/QuoteRequest.php:216
+#: src/Service/QuotePage.php:216
+#: src/Service/QuotePage.php:224
+#: src/Service/QuotePage.php:226
+msgid "Quantity"
+msgstr "Ilość"
+
+#: src/Service/QuotePage.php:103
+msgid "Your session expired. Please try again."
+msgstr "Twoja sesja wygasła. Spróbuj ponownie."
+
+#: src/Service/QuotePage.php:115
+msgid "Please tell us your name."
+msgstr "Podaj swoje imię i nazwisko."
+
+#: src/Service/QuotePage.php:119
+msgid "Please enter a valid email address."
+msgstr "Podaj prawidłowy adres e-mail."
+
+#: src/Service/QuotePage.php:125
+msgid "Your quote list is empty."
+msgstr "Twoja lista zapytania jest pusta."
+
+#: src/Service/QuotePage.php:184
+msgid "Thank you — your request is on its way"
+msgstr "Dziękujemy — Twoje zapytanie jest w drodze"
+
+#: src/Service/QuotePage.php:185
+msgid "We have received your quote request and will get back to you shortly."
+msgstr "Otrzymaliśmy Twoje zapytanie ofertowe i wkrótce się z Tobą skontaktujemy."
+
+#: src/Service/QuotePage.php:196
+msgid "Your quote list is empty"
+msgstr "Twoja lista zapytania jest pusta"
+
+#: src/Service/QuotePage.php:197
+msgid "Browse the shop and add products to build your quote request."
+msgstr "Przeglądaj sklep i dodawaj produkty, aby zbudować swoje zapytanie ofertowe."
+
+#: src/Service/QuotePage.php:198
+msgid "Browse products"
+msgstr "Przeglądaj produkty"
+
+#: src/Service/QuotePage.php:217
+msgid "Remove"
+msgstr "Usuń"
+
+#. translators: %s: product name
+#: src/Service/QuotePage.php:246
+#, php-format
+msgid "Remove %s"
+msgstr "Usuń %s"
+
+#: src/Service/QuotePage.php:256
+msgid "Update quantities"
+msgstr "Zaktualizuj ilości"
+
+#: src/Service/QuotePage.php:272
+msgid "Request your quote"
+msgstr "Wyślij zapytanie ofertowe"
+
+#: src/Service/QuotePage.php:302
+msgid "Message"
+msgstr "Wiadomość"
+
+#: src/Service/QuotePage.php:307
+msgid "Send quote request"
+msgstr "Wyślij zapytanie ofertowe"
+
+#. translators: %s: site name
+#: src/Service/QuotePage.php:356
+#, php-format
+msgid "A new quote request was submitted on %s."
+msgstr "Nowe zapytanie ofertowe zostało przesłane w %s."
+
+#: src/Service/QuotePage.php:360
+msgid "Name:"
+msgstr "Imię i nazwisko:"
+
+#: src/Service/QuotePage.php:361
+msgid "Email:"
+msgstr "E-mail:"
+
+#: src/Service/QuotePage.php:364
+msgid "Company:"
+msgstr "Firma:"
+
+#: src/Service/QuotePage.php:368
+msgid "Requested items:"
+msgstr "Zapytane pozycje:"
+
+#: src/Service/QuotePage.php:376
+msgid "Message:"
+msgstr "Wiadomość:"
+
+#: src/Service/QuotePage.php:384
+msgid "View in admin:"
+msgstr "Zobacz w panelu administracyjnym:"
+
+#. translators: %s: customer name or email
+#: src/Service/QuotePage.php:389
+#, php-format
+msgid "New quote request from %s"
+msgstr "Nowe zapytanie ofertowe od %s"
+
+#: src/Service/QuoteProducts.php:146
+msgid "In your quote"
+msgstr "W Twoim zapytaniu"
