@@ -15,12 +15,15 @@
  */
 
 .estimate-quote {
-    /* Ledger ochre — the colour of a pencil-ruled worksheet, not stock blue. */
-    --estimate-accent: #b3791f;
-    --estimate-accent-soft: rgba(179, 121, 31, 0.14);
+    /* Ledger ochre — the colour of a pencil-ruled worksheet, not stock blue.
+       Deepened to clear WCAG AA: as text on the paper surface it reaches
+       5.5:1 (>=4.5), and the header rule alpha is raised so the 2px ledger
+       hairline holds >=3:1. */
+    --estimate-accent: #8a5a12;
+    --estimate-accent-soft: rgba(138, 90, 18, 0.14);
     --estimate-ink: var(--wp--preset--color--contrast, #2b2722);
-    --estimate-rule: rgba(179, 121, 31, 0.55);
-    --estimate-paper: rgba(179, 121, 31, 0.05);
+    --estimate-rule: rgba(138, 90, 18, 0.7);
+    --estimate-paper: rgba(138, 90, 18, 0.05);
     --estimate-radius: 8px;
     --estimate-gap: 1.5rem;
     --estimate-border: rgba(0, 0, 0, 0.12);
