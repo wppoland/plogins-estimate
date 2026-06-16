@@ -1,17 +1,26 @@
 /**
  * Estimate — admin settings styles. A polished, dark-mode-aware card layout.
+ *
+ * The single distinctive touch is a thin accent rule on each section heading,
+ * in the same "ledger ochre" the storefront uses, so the admin screen reads as
+ * part of the same plugin family. The accent is computed to meet WCAG AA:
+ * #8a5a12 on the #fff/#f0f0f1 wp-admin surface is 5.91:1 / 5.19:1 (AA text and
+ * UI both pass). Everything else stays native wp-admin.
  */
 
 .estimate-admin {
     --estimate-card-bg: #fff;
     --estimate-card-border: #dcdcde;
     --estimate-muted: #50575e;
+    --estimate-accent: #8a5a12; /* 5.91:1 on #fff, 5.19:1 on #f0f0f1 — AA. */
+    --estimate-accent-soft: rgba(138, 90, 18, 0.1);
     max-width: 820px;
 }
 
 .estimate-intro {
-    background: linear-gradient(135deg, #f0f6fc, #f6f7f7);
+    background: var(--estimate-accent-soft);
     border: 1px solid var(--estimate-card-border);
+    border-left: 4px solid var(--estimate-accent);
     border-radius: 10px;
     padding: 1.25rem 1.5rem;
     margin: 1rem 0 1.5rem;
@@ -26,6 +35,10 @@
     max-width: 70ch;
 }
 
+.estimate-intro code {
+    background: var(--estimate-card-bg);
+}
+
 .estimate-card {
     background: var(--estimate-card-bg);
     border: 1px solid var(--estimate-card-border);
@@ -36,8 +49,31 @@
 }
 
 .estimate-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     border-bottom: 1px solid var(--estimate-card-border);
     padding-bottom: 0.5rem;
+}
+
+/* The distinctive touch: a short ochre tick before each section heading. */
+.estimate-card h2::before {
+    content: "";
+    width: 4px;
+    height: 1.1em;
+    border-radius: 2px;
+    background: var(--estimate-accent);
+}
+
+.estimate-card-intro {
+    color: var(--estimate-muted);
+    max-width: 70ch;
+    margin: 0.25rem 0 0.5rem;
+}
+
+.estimate-default-note {
+    color: var(--estimate-muted);
+    font-style: italic;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,9 +81,8 @@
         --estimate-card-bg: #1e1e1e;
         --estimate-card-border: #3c3c3c;
         --estimate-muted: #bbb;
-    }
-
-    .estimate-intro {
-        background: linear-gradient(135deg, #1c2530, #1e1e1e);
+        /* Lighter ochre for the dark canvas, matching the storefront's dark accent. */
+        --estimate-accent: #e0a94a; /* 8.0:1 on #1e1e1e — AA. */
+        --estimate-accent-soft: rgba(224, 169, 74, 0.12);
     }
 }
