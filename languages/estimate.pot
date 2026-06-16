@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-14T21:57:10+00:00\n"
+"POT-Creation-Date: 2026-06-16T20:23:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: estimate\n"
@@ -44,7 +44,7 @@ msgid "Estimate - Request a Quote for WooCommerce requires WooCommerce to be act
 msgstr ""
 
 #: src/Admin/ProductData.php:39
-#: src/Admin/Settings.php:114
+#: src/Admin/Settings.php:117
 msgid "Enable quote requests"
 msgstr ""
 
@@ -82,53 +82,79 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: src/Admin/Settings.php:121
+#: src/Admin/Settings.php:111
+msgid "Control whether quote requests appear on your store and which products use them."
+msgstr ""
+
+#: src/Admin/Settings.php:124
 msgid "Show quote requests on the storefront."
 msgstr ""
 
 #: src/Admin/Settings.php:127
+msgid "The master switch. When off, every product keeps its normal Add to cart button and the quote list is hidden — your store behaves as a standard shop."
+msgstr ""
+
+#: src/Admin/Settings.php:133
 msgid "Quote mode"
 msgstr ""
 
-#: src/Admin/Settings.php:132
+#: src/Admin/Settings.php:138
 msgid "Selected products only"
 msgstr ""
 
-#: src/Admin/Settings.php:135
+#: src/Admin/Settings.php:141
 msgid "All products"
 msgstr ""
 
-#: src/Admin/Settings.php:139
-msgid "In \"selected\" mode, enable individual products via the \"Enable quote requests\" checkbox in the product data box."
+#: src/Admin/Settings.php:145
+msgid "Selected products only: each product stays a normal sale until you tick \"Enable quote requests\" on it (Product data → General). All products: every product in the store becomes quote-only and cannot be bought directly."
 msgstr ""
 
-#: src/Admin/Settings.php:145
+#: src/Admin/Settings.php:148
+msgid "Default: Selected products only — so nothing changes on your storefront until you choose the products."
+msgstr ""
+
+#: src/Admin/Settings.php:154
 msgid "Hide price"
 msgstr ""
 
-#: src/Admin/Settings.php:152
+#: src/Admin/Settings.php:161
 msgid "Hide the price on quote-enabled products."
 msgstr ""
 
-#: src/Admin/Settings.php:158
+#: src/Admin/Settings.php:164
+msgid "Leave on when pricing depends on quantity or specification, so customers ask rather than assume. Turn off to keep the list price visible next to the quote button."
+msgstr ""
+
+#: src/Admin/Settings.php:170
 msgid "Button text"
 msgstr ""
 
-#: src/Admin/Settings.php:164
-#: src/Service/QuoteProducts.php:191
+#: src/Admin/Settings.php:176
+#: src/Service/QuoteProducts.php:199
 msgid "Add to quote"
 msgstr ""
 
-#: src/Admin/Settings.php:172
+#: src/Admin/Settings.php:178
+msgid "Replaces \"Add to cart\" on quote-enabled products. Leave blank to use the default, \"Add to quote\"."
+msgstr ""
+
+#: src/Admin/Settings.php:187
 msgid "Notifications"
 msgstr ""
 
-#: src/Admin/Settings.php:177
+#: src/Admin/Settings.php:189
+msgid "Decide where new quote requests land in your inbox."
+msgstr ""
+
+#: src/Admin/Settings.php:195
 msgid "Recipient email"
 msgstr ""
 
-#: src/Admin/Settings.php:185
-msgid "Where new quote requests are emailed. Leave blank to use the site admin email."
+#. translators: %s: the site admin email address.
+#: src/Admin/Settings.php:206
+#, php-format
+msgid "Each new request is emailed here and also saved under WooCommerce → Quote Requests. Leave blank to use the site admin email (%s)."
 msgstr ""
 
 #: src/PostType/QuoteRequest.php:53
@@ -166,13 +192,13 @@ msgstr ""
 
 #: src/PostType/QuoteRequest.php:131
 #: src/PostType/QuoteRequest.php:192
-#: src/Service/QuotePage.php:286
+#: src/Service/QuotePage.php:301
 msgid "Email"
 msgstr ""
 
 #: src/PostType/QuoteRequest.php:132
 #: src/PostType/QuoteRequest.php:202
-#: src/Service/QuotePage.php:296
+#: src/Service/QuotePage.php:311
 msgid "Company"
 msgstr ""
 
@@ -185,7 +211,7 @@ msgid "Quote details"
 msgstr ""
 
 #: src/PostType/QuoteRequest.php:188
-#: src/Service/QuotePage.php:276
+#: src/Service/QuotePage.php:291
 msgid "Name"
 msgstr ""
 
@@ -198,15 +224,15 @@ msgid "No items recorded."
 msgstr ""
 
 #: src/PostType/QuoteRequest.php:215
-#: src/Service/QuotePage.php:215
-#: src/Service/QuotePage.php:223
+#: src/Service/QuotePage.php:230
+#: src/Service/QuotePage.php:238
 msgid "Product"
 msgstr ""
 
 #: src/PostType/QuoteRequest.php:216
-#: src/Service/QuotePage.php:216
-#: src/Service/QuotePage.php:224
-#: src/Service/QuotePage.php:226
+#: src/Service/QuotePage.php:231
+#: src/Service/QuotePage.php:239
+#: src/Service/QuotePage.php:241
 msgid "Quantity"
 msgstr ""
 
@@ -246,64 +272,76 @@ msgstr ""
 msgid "Browse products"
 msgstr ""
 
-#: src/Service/QuotePage.php:217
+#: src/Service/QuotePage.php:214
+msgid "Estimate worksheet"
+msgstr ""
+
+#. translators: %d: number of line items on the quote worksheet
+#: src/Service/QuotePage.php:220
+#, php-format
+msgid "%d line"
+msgid_plural "%d lines"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Service/QuotePage.php:232
 msgid "Remove"
 msgstr ""
 
 #. translators: %s: product name
-#: src/Service/QuotePage.php:246
+#: src/Service/QuotePage.php:261
 #, php-format
 msgid "Remove %s"
 msgstr ""
 
-#: src/Service/QuotePage.php:256
+#: src/Service/QuotePage.php:271
 msgid "Update quantities"
 msgstr ""
 
-#: src/Service/QuotePage.php:272
+#: src/Service/QuotePage.php:287
 msgid "Request your quote"
 msgstr ""
 
-#: src/Service/QuotePage.php:302
+#: src/Service/QuotePage.php:317
 msgid "Message"
 msgstr ""
 
-#: src/Service/QuotePage.php:307
+#: src/Service/QuotePage.php:322
 msgid "Send quote request"
 msgstr ""
 
 #. translators: %s: site name
-#: src/Service/QuotePage.php:356
+#: src/Service/QuotePage.php:371
 #, php-format
 msgid "A new quote request was submitted on %s."
 msgstr ""
 
-#: src/Service/QuotePage.php:360
+#: src/Service/QuotePage.php:375
 msgid "Name:"
 msgstr ""
 
-#: src/Service/QuotePage.php:361
+#: src/Service/QuotePage.php:376
 msgid "Email:"
 msgstr ""
 
-#: src/Service/QuotePage.php:364
+#: src/Service/QuotePage.php:379
 msgid "Company:"
 msgstr ""
 
-#: src/Service/QuotePage.php:368
+#: src/Service/QuotePage.php:383
 msgid "Requested items:"
 msgstr ""
 
-#: src/Service/QuotePage.php:376
+#: src/Service/QuotePage.php:391
 msgid "Message:"
 msgstr ""
 
-#: src/Service/QuotePage.php:384
+#: src/Service/QuotePage.php:399
 msgid "View in admin:"
 msgstr ""
 
 #. translators: %s: customer name or email
-#: src/Service/QuotePage.php:389
+#: src/Service/QuotePage.php:404
 #, php-format
 msgid "New quote request from %s"
 msgstr ""
