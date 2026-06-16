@@ -27,6 +27,14 @@ final class Plugin
         return self::$instance ??= new self();
     }
 
+    /**
+     * Returns the DI container so add-ons can register their own services.
+     */
+    public function container(): Container
+    {
+        return $this->container;
+    }
+
     public function boot(): void
     {
         if ($this->booted) {
@@ -44,5 +52,15 @@ final class Plugin
                 $service->registerHooks();
             }
         }
+
+        /**
+         * Fires after the plugin has fully booted and all services are registered.
+         *
+         * Add-ons (e.g. Estimate Pro) hook this to extend the DI container and
+         * register their own services once the FREE plugin is ready.
+         *
+         * @param Plugin $plugin The booted plugin instance.
+         */
+        do_action('estimate/booted', $this);
     }
 }
