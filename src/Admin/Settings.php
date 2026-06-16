@@ -107,6 +107,9 @@ final class Settings implements HasHooks
 
                 <div class="estimate-card">
                     <h2><?php esc_html_e('General', 'estimate'); ?></h2>
+                    <p class="estimate-card-intro">
+                        <?php esc_html_e('Control whether quote requests appear on your store and which products use them.', 'estimate'); ?>
+                    </p>
                     <table class="form-table" role="presentation">
                         <tbody>
                             <tr>
@@ -120,6 +123,9 @@ final class Settings implements HasHooks
                                             <?php checked((bool) ($settings['enabled'] ?? false), true); ?> />
                                         <?php esc_html_e('Show quote requests on the storefront.', 'estimate'); ?>
                                     </label>
+                                    <p class="description">
+                                        <?php esc_html_e('The master switch. When off, every product keeps its normal Add to cart button and the quote list is hidden — your store behaves as a standard shop.', 'estimate'); ?>
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
@@ -136,7 +142,10 @@ final class Settings implements HasHooks
                                         </option>
                                     </select>
                                     <p class="description">
-                                        <?php esc_html_e('In "selected" mode, enable individual products via the "Enable quote requests" checkbox in the product data box.', 'estimate'); ?>
+                                        <?php esc_html_e('Selected products only: each product stays a normal sale until you tick "Enable quote requests" on it (Product data → General). All products: every product in the store becomes quote-only and cannot be bought directly.', 'estimate'); ?>
+                                    </p>
+                                    <p class="description estimate-default-note">
+                                        <?php esc_html_e('Default: Selected products only — so nothing changes on your storefront until you choose the products.', 'estimate'); ?>
                                     </p>
                                 </td>
                             </tr>
@@ -151,6 +160,9 @@ final class Settings implements HasHooks
                                             <?php checked((bool) ($settings['hide_price'] ?? false), true); ?> />
                                         <?php esc_html_e('Hide the price on quote-enabled products.', 'estimate'); ?>
                                     </label>
+                                    <p class="description">
+                                        <?php esc_html_e('Leave on when pricing depends on quantity or specification, so customers ask rather than assume. Turn off to keep the list price visible next to the quote button.', 'estimate'); ?>
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
@@ -162,6 +174,9 @@ final class Settings implements HasHooks
                                         name="<?php echo esc_attr(self::OPTION); ?>[button_text]"
                                         value="<?php echo esc_attr((string) ($settings['button_text'] ?? '')); ?>"
                                         placeholder="<?php esc_attr_e('Add to quote', 'estimate'); ?>" />
+                                    <p class="description">
+                                        <?php esc_html_e('Replaces "Add to cart" on quote-enabled products. Leave blank to use the default, "Add to quote".', 'estimate'); ?>
+                                    </p>
                                 </td>
                             </tr>
                         </tbody>
@@ -170,6 +185,9 @@ final class Settings implements HasHooks
 
                 <div class="estimate-card">
                     <h2><?php esc_html_e('Notifications', 'estimate'); ?></h2>
+                    <p class="estimate-card-intro">
+                        <?php esc_html_e('Decide where new quote requests land in your inbox.', 'estimate'); ?>
+                    </p>
                     <table class="form-table" role="presentation">
                         <tbody>
                             <tr>
@@ -182,7 +200,13 @@ final class Settings implements HasHooks
                                         value="<?php echo esc_attr((string) ($settings['recipient'] ?? '')); ?>"
                                         placeholder="<?php echo esc_attr((string) get_option('admin_email')); ?>" />
                                     <p class="description">
-                                        <?php esc_html_e('Where new quote requests are emailed. Leave blank to use the site admin email.', 'estimate'); ?>
+                                        <?php
+                                        printf(
+                                            /* translators: %s: the site admin email address. */
+                                            esc_html__('Each new request is emailed here and also saved under WooCommerce → Quote Requests. Leave blank to use the site admin email (%s).', 'estimate'),
+                                            '<code>' . esc_html((string) get_option('admin_email')) . '</code>',
+                                        );
+                                        ?>
                                     </p>
                                 </td>
                             </tr>
