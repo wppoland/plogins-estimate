@@ -26,6 +26,15 @@ The plugin isn't on WordPress.org yet. The code, releases and issue tracker
 live on GitHub: https://github.com/wppoland/estimate — bug reports and pull
 requests are welcome there.
 
+= Documentation and links =
+
+* **Documentation** - https://plogins.com/estimate/docs/
+* **Plugin page** - https://plogins.com/estimate/
+* **Source code** - https://github.com/wppoland/estimate
+* **Bug reports and feature requests** - https://github.com/wppoland/estimate/issues
+* **Discussions and questions** - https://github.com/wppoland/estimate/discussions
+
+
 = Features =
 
 * Two quote modes: enable quotes for **selected products** or for **all products**.
