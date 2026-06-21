@@ -24,6 +24,7 @@ final class QuoteRequest implements HasHooks
     public const META_EMAIL   = '_estimate_email';
     public const META_COMPANY = '_estimate_company';
     public const META_ITEMS   = '_estimate_items';
+    public const META_USER_ID = '_estimate_user_id';
 
     public function registerHooks(): void
     {
@@ -115,7 +116,87 @@ final class QuoteRequest implements HasHooks
         update_post_meta($postId, self::META_COMPANY, $contact['company']);
         update_post_meta($postId, self::META_ITEMS, $items);
 
+        $userId = get_current_user_id();
+
+        if ($userId > 0) {
+            update_post_meta($postId, self::META_USER_ID, $userId);
+        }
+
+        /**
+         * Fires after a quote request is stored.
+         *
+         * @param int $postId New quote request post ID.
+         * @param int $userId Submitting user ID, or 0 for guests.
+         */
+        do_action('estimate/quote_created', (int) $postId, $userId);
+
         return (int) $postId;
+    }
+
+    /**
+     * Quote request post IDs owned by or associated with a customer account.
+     *
+     * Matches stored user ID and/or the account email so guest submissions
+     * appear after the shopper registers with the same address.
+     *
+     * @return list<int>
+     */
+    public function customerIds(int $userId, string $email): array
+    {
+        if ($userId < 1 && '' === $email) {
+            return [];
+        }
+
+        $metaQuery = ['relation' => 'OR'];
+
+        if ($userId > 0) {
+            $metaQuery[] = [
+                'key'   => self::META_USER_ID,
+                'value' => (string) $userId,
+            ];
+        }
+
+        if ('' !== $email) {
+            $metaQuery[] = [
+                'key'   => self::META_EMAIL,
+                'value' => sanitize_email($email),
+            ];
+        }
+
+        $posts = get_posts([
+            'post_type'      => self::POST_TYPE,
+            'post_status'    => 'private',
+            'numberposts'    => -1,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+            'fields'         => 'ids',
+            'meta_query'     => $metaQuery, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+        ]);
+
+        $ids = array_map('intval', $posts);
+
+        /**
+         * Filter quote request IDs visible to a customer in My Account.
+         *
+         * @param int[]  $ids    Quote request post IDs.
+         * @param int    $userId WordPress user ID.
+         * @param string $email  Account email address.
+         */
+        $filtered = apply_filters('estimate/customer_quotes', $ids, $userId, $email);
+
+        if (! is_array($filtered)) {
+            return $ids;
+        }
+
+        return array_values(array_filter(
+            array_map('intval', $filtered),
+            static fn (int $id): bool => $id > 0,
+        ));
+    }
+
+    public function customerOwns(int $quoteId, int $userId, string $email): bool
+    {
+        return in_array($quoteId, $this->customerIds($userId, $email), true);
     }
 
     /**
