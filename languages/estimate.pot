@@ -26,7 +26,7 @@ msgstr ""
 
 #. Description of the plugin
 #: estimate.php
-msgid "Let customers request a quote instead of buying directly — ideal for B2B and made-to-order."
+msgid "Let customers request a quote instead of buying directly, ideal for B2B and made-to-order."
 msgstr ""
 
 #. Author of the plugin
@@ -57,7 +57,7 @@ msgid "Hide the price and add-to-cart button and show an \"Add to quote\" button
 msgstr ""
 
 #: src/Admin/Settings.php:52
-msgid "Estimate — Request a Quote"
+msgid "Estimate: Request a Quote"
 msgstr ""
 
 #: src/Admin/Settings.php:53
@@ -69,7 +69,7 @@ msgid "Let customers request a quote"
 msgstr ""
 
 #: src/Admin/Settings.php:92
-msgid "Turn products into quote requests instead of direct purchases — ideal for B2B, bulk or made-to-order items. Customers build a quote list and send you their details; each request is emailed to you and saved for review."
+msgid "Turn products into quote requests instead of direct purchases, ideal for B2B, bulk or made-to-order items. Customers build a quote list and send you their details; each request is emailed to you and saved for review."
 msgstr ""
 
 #. translators: %s: shortcode wrapped in <code>.
@@ -91,7 +91,7 @@ msgid "Show quote requests on the storefront."
 msgstr ""
 
 #: src/Admin/Settings.php:127
-msgid "The master switch. When off, every product keeps its normal Add to cart button and the quote list is hidden — your store behaves as a standard shop."
+msgid "The master switch. When off, every product keeps its normal Add to cart button and the quote list is hidden, your store behaves as a standard shop."
 msgstr ""
 
 #: src/Admin/Settings.php:133
@@ -111,7 +111,7 @@ msgid "Selected products only: each product stays a normal sale until you tick \
 msgstr ""
 
 #: src/Admin/Settings.php:148
-msgid "Default: Selected products only — so nothing changes on your storefront until you choose the products."
+msgid "Default: Selected products only, so nothing changes on your storefront until you choose the products."
 msgstr ""
 
 #: src/Admin/Settings.php:154
@@ -187,7 +187,7 @@ msgstr ""
 #. translators: 1: customer name, 2: human-readable date
 #: src/PostType/QuoteRequest.php:94
 #, php-format
-msgid "Quote from %1$s — %2$s"
+msgid "Quote from %1$s: %2$s"
 msgstr ""
 
 #: src/PostType/QuoteRequest.php:131
@@ -253,7 +253,7 @@ msgid "Your quote list is empty."
 msgstr ""
 
 #: src/Service/QuotePage.php:184
-msgid "Thank you — your request is on its way"
+msgid "Thank you: your request is on its way"
 msgstr ""
 
 #: src/Service/QuotePage.php:185
