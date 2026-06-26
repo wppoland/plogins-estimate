@@ -92,7 +92,7 @@ final class QuoteRequest implements HasHooks
     {
         $title = sprintf(
             /* translators: 1: customer name, 2: human-readable date */
-            __('Quote from %1$s — %2$s', 'estimate'),
+            __('Quote from %1$s: %2$s', 'estimate'),
             '' !== $contact['name'] ? $contact['name'] : $contact['email'],
             wp_date(get_option('date_format') . ' ' . get_option('time_format')),
         );
