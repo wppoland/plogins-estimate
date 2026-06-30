@@ -100,7 +100,7 @@ final class QuotePage implements HasHooks
             : '';
 
         if (! wp_verify_nonce($nonce, self::NONCE)) {
-            $this->errors['_form'] = __('Your session expired. Please try again.', 'estimate');
+            $this->errors['_form'] = __('Your session expired. Please try again.', 'plogins-estimate');
             return;
         }
 
@@ -112,17 +112,17 @@ final class QuotePage implements HasHooks
         ];
 
         if ('' === $this->values['name']) {
-            $this->errors['name'] = __('Please tell us your name.', 'estimate');
+            $this->errors['name'] = __('Please tell us your name.', 'plogins-estimate');
         }
 
         if ('' === $this->values['email'] || ! is_email($this->values['email'])) {
-            $this->errors['email'] = __('Please enter a valid email address.', 'estimate');
+            $this->errors['email'] = __('Please enter a valid email address.', 'plogins-estimate');
         }
 
         $items = $this->lineItems();
 
         if ([] === $items) {
-            $this->errors['_form'] = __('Your quote list is empty.', 'estimate');
+            $this->errors['_form'] = __('Your quote list is empty.', 'plogins-estimate');
         }
 
         if ([] !== $this->errors) {
@@ -181,8 +181,8 @@ final class QuotePage implements HasHooks
     {
         ?>
         <div class="estimate-quote__notice estimate-quote__notice--success" role="status">
-            <h2><?php esc_html_e('Thank you: your request is on its way', 'estimate'); ?></h2>
-            <p><?php esc_html_e('We have received your quote request and will get back to you shortly.', 'estimate'); ?></p>
+            <h2><?php esc_html_e('Thank you: your request is on its way', 'plogins-estimate'); ?></h2>
+            <p><?php esc_html_e('We have received your quote request and will get back to you shortly.', 'plogins-estimate'); ?></p>
         </div>
         <?php
     }
@@ -193,9 +193,9 @@ final class QuotePage implements HasHooks
         $url  = $shop > 0 ? (string) get_permalink($shop) : home_url('/');
         ?>
         <div class="estimate-quote__empty">
-            <h2><?php esc_html_e('Your quote list is empty', 'estimate'); ?></h2>
-            <p><?php esc_html_e('Browse the shop and add products to build your quote request.', 'estimate'); ?></p>
-            <p><a class="button" href="<?php echo esc_url($url); ?>"><?php esc_html_e('Browse products', 'estimate'); ?></a></p>
+            <h2><?php esc_html_e('Your quote list is empty', 'plogins-estimate'); ?></h2>
+            <p><?php esc_html_e('Browse the shop and add products to build your quote request.', 'plogins-estimate'); ?></p>
+            <p><a class="button" href="<?php echo esc_url($url); ?>"><?php esc_html_e('Browse products', 'plogins-estimate'); ?></a></p>
         </div>
         <?php
     }
@@ -211,13 +211,13 @@ final class QuotePage implements HasHooks
             <?php wp_nonce_field(self::LIST_NONCE, 'estimate_list_nonce'); ?>
             <input type="hidden" name="estimate_list_action" value="update" />
             <p class="estimate-quote__slip-head">
-                <span><?php esc_html_e('Estimate worksheet', 'estimate'); ?></span>
+                <span><?php esc_html_e('Estimate worksheet', 'plogins-estimate'); ?></span>
                 <span class="estimate-quote__slip-count">
                     <?php
                     echo esc_html(
                         sprintf(
                             /* translators: %d: number of line items on the quote worksheet */
-                            _n('%d line', '%d lines', $count, 'estimate'),
+                            _n('%d line', '%d lines', $count, 'plogins-estimate'),
                             $count,
                         ),
                     );
@@ -227,18 +227,18 @@ final class QuotePage implements HasHooks
             <table class="estimate-quote__table">
                 <thead>
                     <tr>
-                        <th scope="col"><?php esc_html_e('Product', 'estimate'); ?></th>
-                        <th scope="col"><?php esc_html_e('Quantity', 'estimate'); ?></th>
-                        <th scope="col"><span class="screen-reader-text"><?php esc_html_e('Remove', 'estimate'); ?></span></th>
+                        <th scope="col"><?php esc_html_e('Product', 'plogins-estimate'); ?></th>
+                        <th scope="col"><?php esc_html_e('Quantity', 'plogins-estimate'); ?></th>
+                        <th scope="col"><span class="screen-reader-text"><?php esc_html_e('Remove', 'plogins-estimate'); ?></span></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($items as $item) : ?>
                         <tr>
-                            <td data-label="<?php esc_attr_e('Product', 'estimate'); ?>"><?php echo esc_html($item['name']); ?></td>
-                            <td data-label="<?php esc_attr_e('Quantity', 'estimate'); ?>">
+                            <td data-label="<?php esc_attr_e('Product', 'plogins-estimate'); ?>"><?php echo esc_html($item['name']); ?></td>
+                            <td data-label="<?php esc_attr_e('Quantity', 'plogins-estimate'); ?>">
                                 <label class="screen-reader-text" for="estimate-qty-<?php echo esc_attr((string) $item['product_id']); ?>">
-                                    <?php esc_html_e('Quantity', 'estimate'); ?>
+                                    <?php esc_html_e('Quantity', 'plogins-estimate'); ?>
                                 </label>
                                 <input
                                     type="number"
@@ -258,7 +258,7 @@ final class QuotePage implements HasHooks
                                     class="estimate-quote__remove"
                                     aria-label="<?php
                                     /* translators: %s: product name */
-                                    echo esc_attr(sprintf(__('Remove %s', 'estimate'), $item['name']));
+                                    echo esc_attr(sprintf(__('Remove %s', 'plogins-estimate'), $item['name']));
                                     ?>"
                                     formnovalidate
                                 ><span aria-hidden="true">&times;</span></button>
@@ -268,7 +268,7 @@ final class QuotePage implements HasHooks
                 </tbody>
             </table>
             <p class="estimate-quote__list-actions">
-                <button type="submit" class="button"><?php esc_html_e('Update quantities', 'estimate'); ?></button>
+                <button type="submit" class="button"><?php esc_html_e('Update quantities', 'plogins-estimate'); ?></button>
             </p>
         </form>
         <?php
@@ -284,11 +284,11 @@ final class QuotePage implements HasHooks
         }
         ?>
         <form method="post" class="estimate-quote__form" novalidate>
-            <h2><?php esc_html_e('Request your quote', 'estimate'); ?></h2>
+            <h2><?php esc_html_e('Request your quote', 'plogins-estimate'); ?></h2>
             <?php wp_nonce_field(self::NONCE, 'estimate_nonce'); ?>
 
             <p class="estimate-quote__field">
-                <label for="estimate-name"><?php esc_html_e('Name', 'estimate'); ?> <span class="estimate-quote__req" aria-hidden="true">*</span></label>
+                <label for="estimate-name"><?php esc_html_e('Name', 'plogins-estimate'); ?> <span class="estimate-quote__req" aria-hidden="true">*</span></label>
                 <input type="text" id="estimate-name" name="estimate_name" required
                     value="<?php echo esc_attr($this->values['name']); ?>"
                     <?php echo isset($this->errors['name']) ? 'aria-invalid="true" aria-describedby="estimate-name-error"' : ''; ?> />
@@ -298,7 +298,7 @@ final class QuotePage implements HasHooks
             </p>
 
             <p class="estimate-quote__field">
-                <label for="estimate-email"><?php esc_html_e('Email', 'estimate'); ?> <span class="estimate-quote__req" aria-hidden="true">*</span></label>
+                <label for="estimate-email"><?php esc_html_e('Email', 'plogins-estimate'); ?> <span class="estimate-quote__req" aria-hidden="true">*</span></label>
                 <input type="email" id="estimate-email" name="estimate_email" required
                     value="<?php echo esc_attr($this->values['email']); ?>"
                     <?php echo isset($this->errors['email']) ? 'aria-invalid="true" aria-describedby="estimate-email-error"' : ''; ?> />
@@ -308,18 +308,18 @@ final class QuotePage implements HasHooks
             </p>
 
             <p class="estimate-quote__field">
-                <label for="estimate-company"><?php esc_html_e('Company', 'estimate'); ?></label>
+                <label for="estimate-company"><?php esc_html_e('Company', 'plogins-estimate'); ?></label>
                 <input type="text" id="estimate-company" name="estimate_company"
                     value="<?php echo esc_attr($this->values['company']); ?>" />
             </p>
 
             <p class="estimate-quote__field">
-                <label for="estimate-message"><?php esc_html_e('Message', 'estimate'); ?></label>
+                <label for="estimate-message"><?php esc_html_e('Message', 'plogins-estimate'); ?></label>
                 <textarea id="estimate-message" name="estimate_message" rows="5"><?php echo esc_textarea($this->values['message']); ?></textarea>
             </p>
 
             <p class="estimate-quote__submit">
-                <button type="submit" name="estimate_submit" value="1" class="button alt"><?php esc_html_e('Send quote request', 'estimate'); ?></button>
+                <button type="submit" name="estimate_submit" value="1" class="button alt"><?php esc_html_e('Send quote request', 'plogins-estimate'); ?></button>
             </p>
         </form>
         <?php
@@ -368,19 +368,19 @@ final class QuotePage implements HasHooks
         $lines   = [];
         $lines[] = sprintf(
             /* translators: %s: site name */
-            __('A new quote request was submitted on %s.', 'estimate'),
+            __('A new quote request was submitted on %s.', 'plogins-estimate'),
             wp_specialchars_decode((string) get_bloginfo('name'), ENT_QUOTES),
         );
         $lines[] = '';
-        $lines[] = __('Name:', 'estimate') . ' ' . $contact['name'];
-        $lines[] = __('Email:', 'estimate') . ' ' . $contact['email'];
+        $lines[] = __('Name:', 'plogins-estimate') . ' ' . $contact['name'];
+        $lines[] = __('Email:', 'plogins-estimate') . ' ' . $contact['email'];
 
         if ('' !== $contact['company']) {
-            $lines[] = __('Company:', 'estimate') . ' ' . $contact['company'];
+            $lines[] = __('Company:', 'plogins-estimate') . ' ' . $contact['company'];
         }
 
         $lines[] = '';
-        $lines[] = __('Requested items:', 'estimate');
+        $lines[] = __('Requested items:', 'plogins-estimate');
 
         foreach ($items as $item) {
             $lines[] = sprintf('- %1$s x %2$d', $item['name'], $item['qty']);
@@ -388,7 +388,7 @@ final class QuotePage implements HasHooks
 
         if ('' !== $contact['message']) {
             $lines[] = '';
-            $lines[] = __('Message:', 'estimate');
+            $lines[] = __('Message:', 'plogins-estimate');
             $lines[] = $contact['message'];
         }
 
@@ -396,12 +396,12 @@ final class QuotePage implements HasHooks
 
         if (is_string($editLink) && '' !== $editLink) {
             $lines[] = '';
-            $lines[] = __('View in admin:', 'estimate') . ' ' . $editLink;
+            $lines[] = __('View in admin:', 'plogins-estimate') . ' ' . $editLink;
         }
 
         $subject = sprintf(
             /* translators: %s: customer name or email */
-            __('New quote request from %s', 'estimate'),
+            __('New quote request from %s', 'plogins-estimate'),
             '' !== $contact['name'] ? $contact['name'] : $contact['email'],
         );
 

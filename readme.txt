@@ -1,11 +1,11 @@
-=== Estimate - Request a Quote for WooCommerce ===
+=== Plogins Estimate for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, request a quote, quote, b2b, hide price
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 0.1.1
+Stable tag: 0.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,16 +23,15 @@ It suits B2B stores, wholesale, bulk orders and made-to-order products where
 prices are negotiated rather than fixed.
 
 The plugin isn't on WordPress.org yet. The code, releases and issue tracker
-live on GitHub: https://github.com/wppoland/estimate; bug reports and pull
+live on GitHub: https://github.com/wppoland/plogins-estimate; bug reports and pull
 requests are welcome there.
 
 = Documentation and links =
 
-* **Documentation** - https://plogins.com/estimate/docs/
-* **Plugin page** - https://plogins.com/estimate/
-* **Source code** - https://github.com/wppoland/estimate
-* **Bug reports and feature requests** - https://github.com/wppoland/estimate/issues
-* **Discussions and questions** - https://github.com/wppoland/estimate/discussions
+* **Documentation** - https://plogins.com/plogins-estimate/docs/
+* **Plugin page** - https://plogins.com/plogins-estimate/
+* **Source code** - https://github.com/wppoland/plogins-estimate
+* **Bug reports and feature requests** - https://github.com/wppoland/plogins-estimate/issues
 
 
 = Features =
@@ -105,6 +104,9 @@ Yes. Estimate can hide product prices while shoppers build a quote list and subm
 This plugin does not connect to, send data to, or load anything from any external service. Everything runs on your own site. Quote requests are saved locally as private `estimate_quote` posts with the customer's details (name, email, company and chosen items) kept in `_estimate_*` post meta, the per-product opt-in lives in the `_estimate_quote_enabled` meta key, and settings are stored in the `estimate_settings` option. Shoppers' in-progress quote lists are held in a first-party cookie on your domain, not on any third-party server. When a quote is submitted, the notification email is sent through WordPress's own `wp_mail()` to the recipient you configure (the site admin email by default); no other delivery service is involved. The bundled CSS and JavaScript are served from the plugin folder, with no remote CDN, fonts, maps or analytics.
 
 == Changelog ==
+
+= 0.1.2 =
+* Renamed to Plogins Estimate for WooCommerce for a more distinctive plugin name.
 
 = 0.1.1 =
 * Store the submitting user ID on quote requests when the shopper is logged in.

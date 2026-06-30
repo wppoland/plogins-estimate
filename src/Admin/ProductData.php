@@ -36,10 +36,10 @@ final class ProductData implements HasHooks
         woocommerce_wp_checkbox([
             'id'          => QuoteProducts::META_ENABLED,
             'value'       => $this->fieldValue(),
-            'label'       => __('Enable quote requests', 'estimate'),
+            'label'       => __('Enable quote requests', 'plogins-estimate'),
             'description' => 'all' === $mode
-                ? __('Quote mode is set to "all products", so every product already shows an Add to quote button.', 'estimate')
-                : __('Hide the price and add-to-cart button and show an "Add to quote" button instead.', 'estimate'),
+                ? __('Quote mode is set to "all products", so every product already shows an Add to quote button.', 'plogins-estimate')
+                : __('Hide the price and add-to-cart button and show an "Add to quote" button instead.', 'plogins-estimate'),
         ]);
 
         echo '</div>';

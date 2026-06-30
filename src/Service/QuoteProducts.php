@@ -143,7 +143,7 @@ final class QuoteProducts implements HasHooks
             '<a href="%1$s" class="%2$s">%3$s</a>',
             esc_url($href),
             esc_attr($classes),
-            esc_html($added ? __('In your quote', 'estimate') : $label),
+            esc_html($added ? __('In your quote', 'plogins-estimate') : $label),
         );
     }
 
@@ -196,7 +196,7 @@ final class QuoteProducts implements HasHooks
     {
         $custom = trim((string) ($this->settings()['button_text'] ?? ''));
 
-        return '' !== $custom ? $custom : __('Add to quote', 'estimate');
+        return '' !== $custom ? $custom : __('Add to quote', 'plogins-estimate');
     }
 
     /**

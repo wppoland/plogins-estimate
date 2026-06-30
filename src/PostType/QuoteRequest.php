@@ -51,15 +51,15 @@ final class QuoteRequest implements HasHooks
             self::POST_TYPE,
             [
                 'labels'              => [
-                    'name'               => __('Quote Requests', 'estimate'),
-                    'singular_name'      => __('Quote Request', 'estimate'),
-                    'menu_name'          => __('Quote Requests', 'estimate'),
-                    'all_items'          => __('Quote Requests', 'estimate'),
-                    'edit_item'          => __('View Quote Request', 'estimate'),
-                    'view_item'          => __('View Quote Request', 'estimate'),
-                    'search_items'       => __('Search quote requests', 'estimate'),
-                    'not_found'          => __('No quote requests found.', 'estimate'),
-                    'not_found_in_trash' => __('No quote requests in Trash.', 'estimate'),
+                    'name'               => __('Quote Requests', 'plogins-estimate'),
+                    'singular_name'      => __('Quote Request', 'plogins-estimate'),
+                    'menu_name'          => __('Quote Requests', 'plogins-estimate'),
+                    'all_items'          => __('Quote Requests', 'plogins-estimate'),
+                    'edit_item'          => __('View Quote Request', 'plogins-estimate'),
+                    'view_item'          => __('View Quote Request', 'plogins-estimate'),
+                    'search_items'       => __('Search quote requests', 'plogins-estimate'),
+                    'not_found'          => __('No quote requests found.', 'plogins-estimate'),
+                    'not_found_in_trash' => __('No quote requests in Trash.', 'plogins-estimate'),
                 ],
                 'public'              => false,
                 'show_ui'             => true,
@@ -92,7 +92,7 @@ final class QuoteRequest implements HasHooks
     {
         $title = sprintf(
             /* translators: 1: customer name, 2: human-readable date */
-            __('Quote from %1$s: %2$s', 'estimate'),
+            __('Quote from %1$s: %2$s', 'plogins-estimate'),
             '' !== $contact['name'] ? $contact['name'] : $contact['email'],
             wp_date(get_option('date_format') . ' ' . get_option('time_format')),
         );
@@ -209,9 +209,9 @@ final class QuoteRequest implements HasHooks
 
         foreach ($columns as $key => $label) {
             if ('date' === $key) {
-                $reordered['estimate_email']   = __('Email', 'estimate');
-                $reordered['estimate_company'] = __('Company', 'estimate');
-                $reordered['estimate_items']   = __('Items', 'estimate');
+                $reordered['estimate_email']   = __('Email', 'plogins-estimate');
+                $reordered['estimate_company'] = __('Company', 'plogins-estimate');
+                $reordered['estimate_items']   = __('Items', 'plogins-estimate');
             }
 
             $reordered[$key] = $label;
@@ -247,7 +247,7 @@ final class QuoteRequest implements HasHooks
     {
         add_meta_box(
             'estimate_quote_details',
-            __('Quote details', 'estimate'),
+            __('Quote details', 'plogins-estimate'),
             [$this, 'renderMetaBox'],
             self::POST_TYPE,
             'normal',
@@ -266,11 +266,11 @@ final class QuoteRequest implements HasHooks
         <table class="widefat striped" style="margin-bottom:1em">
             <tbody>
                 <tr>
-                    <th style="width:160px"><?php esc_html_e('Name', 'estimate'); ?></th>
+                    <th style="width:160px"><?php esc_html_e('Name', 'plogins-estimate'); ?></th>
                     <td><?php echo esc_html('' !== $name ? $name : '—'); ?></td>
                 </tr>
                 <tr>
-                    <th><?php esc_html_e('Email', 'estimate'); ?></th>
+                    <th><?php esc_html_e('Email', 'plogins-estimate'); ?></th>
                     <td>
                         <?php if ('' !== $email) : ?>
                             <a href="<?php echo esc_url('mailto:' . $email); ?>"><?php echo esc_html($email); ?></a>
@@ -280,21 +280,21 @@ final class QuoteRequest implements HasHooks
                     </td>
                 </tr>
                 <tr>
-                    <th><?php esc_html_e('Company', 'estimate'); ?></th>
+                    <th><?php esc_html_e('Company', 'plogins-estimate'); ?></th>
                     <td><?php echo esc_html('' !== $company ? $company : '—'); ?></td>
                 </tr>
             </tbody>
         </table>
 
-        <h3><?php esc_html_e('Requested items', 'estimate'); ?></h3>
+        <h3><?php esc_html_e('Requested items', 'plogins-estimate'); ?></h3>
         <?php if ([] === $items) : ?>
-            <p><?php esc_html_e('No items recorded.', 'estimate'); ?></p>
+            <p><?php esc_html_e('No items recorded.', 'plogins-estimate'); ?></p>
         <?php else : ?>
             <table class="widefat striped">
                 <thead>
                     <tr>
-                        <th><?php esc_html_e('Product', 'estimate'); ?></th>
-                        <th style="width:120px"><?php esc_html_e('Quantity', 'estimate'); ?></th>
+                        <th><?php esc_html_e('Product', 'plogins-estimate'); ?></th>
+                        <th style="width:120px"><?php esc_html_e('Quantity', 'plogins-estimate'); ?></th>
                     </tr>
                 </thead>
                 <tbody>
