@@ -4,7 +4,7 @@ includes:
 parameters:
     level: 6
     paths:
-        - estimate.php
+        - plogins-estimate.php
         - src
         - config
     excludePaths:

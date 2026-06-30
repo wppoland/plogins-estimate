@@ -49,8 +49,8 @@ final class Settings implements HasHooks
     {
         add_submenu_page(
             'woocommerce',
-            __('Estimate: Request a Quote', 'estimate'),
-            __('Estimate', 'estimate'),
+            __('Estimate: Request a Quote', 'plogins-estimate'),
+            __('Estimate', 'plogins-estimate'),
             'manage_woocommerce',
             self::PAGE,
             [$this, 'renderPage'],
@@ -87,15 +87,15 @@ final class Settings implements HasHooks
             <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
 
             <div class="estimate-intro">
-                <h2><?php esc_html_e('Let customers request a quote', 'estimate'); ?></h2>
+                <h2><?php esc_html_e('Let customers request a quote', 'plogins-estimate'); ?></h2>
                 <p>
-                    <?php esc_html_e('Turn products into quote requests instead of direct purchases, ideal for B2B, bulk or made-to-order items. Customers build a quote list and send you their details; each request is emailed to you and saved for review.', 'estimate'); ?>
+                    <?php esc_html_e('Turn products into quote requests instead of direct purchases, ideal for B2B, bulk or made-to-order items. Customers build a quote list and send you their details; each request is emailed to you and saved for review.', 'plogins-estimate'); ?>
                 </p>
                 <p>
                     <?php
                     printf(
                         /* translators: %s: shortcode wrapped in <code>. */
-                        esc_html__('Add the %s shortcode to a page to show the quote list and request form.', 'estimate'),
+                        esc_html__('Add the %s shortcode to a page to show the quote list and request form.', 'plogins-estimate'),
                         '<code>[estimate_quote]</code>',
                     );
                     ?>
@@ -106,76 +106,76 @@ final class Settings implements HasHooks
                 <?php settings_fields(self::GROUP); ?>
 
                 <div class="estimate-card">
-                    <h2><?php esc_html_e('General', 'estimate'); ?></h2>
+                    <h2><?php esc_html_e('General', 'plogins-estimate'); ?></h2>
                     <p class="estimate-card-intro">
-                        <?php esc_html_e('Control whether quote requests appear on your store and which products use them.', 'estimate'); ?>
+                        <?php esc_html_e('Control whether quote requests appear on your store and which products use them.', 'plogins-estimate'); ?>
                     </p>
                     <table class="form-table" role="presentation">
                         <tbody>
                             <tr>
                                 <th scope="row">
-                                    <?php esc_html_e('Enable quote requests', 'estimate'); ?>
+                                    <?php esc_html_e('Enable quote requests', 'plogins-estimate'); ?>
                                 </th>
                                 <td>
                                     <label for="estimate_enabled">
                                         <input type="checkbox" id="estimate_enabled"
                                             name="<?php echo esc_attr(self::OPTION); ?>[enabled]" value="1"
                                             <?php checked((bool) ($settings['enabled'] ?? false), true); ?> />
-                                        <?php esc_html_e('Show quote requests on the storefront.', 'estimate'); ?>
+                                        <?php esc_html_e('Show quote requests on the storefront.', 'plogins-estimate'); ?>
                                     </label>
                                     <p class="description">
-                                        <?php esc_html_e('The master switch. When off, every product keeps its normal Add to cart button and the quote list is hidden, your store behaves as a standard shop.', 'estimate'); ?>
+                                        <?php esc_html_e('The master switch. When off, every product keeps its normal Add to cart button and the quote list is hidden, your store behaves as a standard shop.', 'plogins-estimate'); ?>
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">
-                                    <label for="estimate_mode"><?php esc_html_e('Quote mode', 'estimate'); ?></label>
+                                    <label for="estimate_mode"><?php esc_html_e('Quote mode', 'plogins-estimate'); ?></label>
                                 </th>
                                 <td>
                                     <select id="estimate_mode" name="<?php echo esc_attr(self::OPTION); ?>[mode]">
                                         <option value="selected" <?php selected($mode, 'selected'); ?>>
-                                            <?php esc_html_e('Selected products only', 'estimate'); ?>
+                                            <?php esc_html_e('Selected products only', 'plogins-estimate'); ?>
                                         </option>
                                         <option value="all" <?php selected($mode, 'all'); ?>>
-                                            <?php esc_html_e('All products', 'estimate'); ?>
+                                            <?php esc_html_e('All products', 'plogins-estimate'); ?>
                                         </option>
                                     </select>
                                     <p class="description">
-                                        <?php esc_html_e('Selected products only: each product stays a normal sale until you tick "Enable quote requests" on it (Product data → General). All products: every product in the store becomes quote-only and cannot be bought directly.', 'estimate'); ?>
+                                        <?php esc_html_e('Selected products only: each product stays a normal sale until you tick "Enable quote requests" on it (Product data → General). All products: every product in the store becomes quote-only and cannot be bought directly.', 'plogins-estimate'); ?>
                                     </p>
                                     <p class="description estimate-default-note">
-                                        <?php esc_html_e('Default: Selected products only, so nothing changes on your storefront until you choose the products.', 'estimate'); ?>
+                                        <?php esc_html_e('Default: Selected products only, so nothing changes on your storefront until you choose the products.', 'plogins-estimate'); ?>
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">
-                                    <?php esc_html_e('Hide price', 'estimate'); ?>
+                                    <?php esc_html_e('Hide price', 'plogins-estimate'); ?>
                                 </th>
                                 <td>
                                     <label for="estimate_hide_price">
                                         <input type="checkbox" id="estimate_hide_price"
                                             name="<?php echo esc_attr(self::OPTION); ?>[hide_price]" value="1"
                                             <?php checked((bool) ($settings['hide_price'] ?? false), true); ?> />
-                                        <?php esc_html_e('Hide the price on quote-enabled products.', 'estimate'); ?>
+                                        <?php esc_html_e('Hide the price on quote-enabled products.', 'plogins-estimate'); ?>
                                     </label>
                                     <p class="description">
-                                        <?php esc_html_e('Leave on when pricing depends on quantity or specification, so customers ask rather than assume. Turn off to keep the list price visible next to the quote button.', 'estimate'); ?>
+                                        <?php esc_html_e('Leave on when pricing depends on quantity or specification, so customers ask rather than assume. Turn off to keep the list price visible next to the quote button.', 'plogins-estimate'); ?>
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">
-                                    <label for="estimate_button_text"><?php esc_html_e('Button text', 'estimate'); ?></label>
+                                    <label for="estimate_button_text"><?php esc_html_e('Button text', 'plogins-estimate'); ?></label>
                                 </th>
                                 <td>
                                     <input type="text" id="estimate_button_text" class="regular-text"
                                         name="<?php echo esc_attr(self::OPTION); ?>[button_text]"
                                         value="<?php echo esc_attr((string) ($settings['button_text'] ?? '')); ?>"
-                                        placeholder="<?php esc_attr_e('Add to quote', 'estimate'); ?>" />
+                                        placeholder="<?php esc_attr_e('Add to quote', 'plogins-estimate'); ?>" />
                                     <p class="description">
-                                        <?php esc_html_e('Replaces "Add to cart" on quote-enabled products. Leave blank to use the default, "Add to quote".', 'estimate'); ?>
+                                        <?php esc_html_e('Replaces "Add to cart" on quote-enabled products. Leave blank to use the default, "Add to quote".', 'plogins-estimate'); ?>
                                     </p>
                                 </td>
                             </tr>
@@ -184,15 +184,15 @@ final class Settings implements HasHooks
                 </div>
 
                 <div class="estimate-card">
-                    <h2><?php esc_html_e('Notifications', 'estimate'); ?></h2>
+                    <h2><?php esc_html_e('Notifications', 'plogins-estimate'); ?></h2>
                     <p class="estimate-card-intro">
-                        <?php esc_html_e('Decide where new quote requests land in your inbox.', 'estimate'); ?>
+                        <?php esc_html_e('Decide where new quote requests land in your inbox.', 'plogins-estimate'); ?>
                     </p>
                     <table class="form-table" role="presentation">
                         <tbody>
                             <tr>
                                 <th scope="row">
-                                    <label for="estimate_recipient"><?php esc_html_e('Recipient email', 'estimate'); ?></label>
+                                    <label for="estimate_recipient"><?php esc_html_e('Recipient email', 'plogins-estimate'); ?></label>
                                 </th>
                                 <td>
                                     <input type="email" id="estimate_recipient" class="regular-text"
@@ -203,7 +203,7 @@ final class Settings implements HasHooks
                                         <?php
                                         printf(
                                             /* translators: %s: the site admin email address. */
-                                            esc_html__('Each new request is emailed here and also saved under WooCommerce → Quote Requests. Leave blank to use the site admin email (%s).', 'estimate'),
+                                            esc_html__('Each new request is emailed here and also saved under WooCommerce → Quote Requests. Leave blank to use the site admin email (%s).', 'plogins-estimate'),
                                             '<code>' . esc_html((string) get_option('admin_email')) . '</code>',
                                         );
                                         ?>
