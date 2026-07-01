@@ -1,4 +1,4 @@
-=== Plogins Estimate for WooCommerce ===
+=== Plogins Estimate - Request a Quote for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, request a quote, quote, b2b, hide price
 Requires at least: 6.5
