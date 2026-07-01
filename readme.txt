@@ -92,6 +92,11 @@ Yes. The list is stored in a cookie per visitor, so no account is required.
 
 Yes. Estimate can hide product prices while shoppers build a quote list and submit a request.
 
+
+= Does this plugin work on WordPress Multisite? =
+
+Yes. This plugin is compatible with WordPress Multisite. Network activate it or activate it on individual sites; each site keeps its own settings and data.
+
 == Screenshots ==
 
 1. The Add to quote button replacing add-to-cart on a product.
