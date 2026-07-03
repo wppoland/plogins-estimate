@@ -24,11 +24,19 @@ final class Settings implements HasHooks
 
     private const MODES = ['selected', 'all'];
 
+    private ?ProUpsell $proUpsell = null;
+
+    private function proUpsell(): ProUpsell
+    {
+        return $this->proUpsell ??= new ProUpsell();
+    }
+
     public function registerHooks(): void
     {
         add_action('admin_menu', [$this, 'addMenuPage']);
         add_action('admin_init', [$this, 'registerSettings']);
         add_action('admin_enqueue_scripts', [$this, 'enqueueAssets']);
+        $this->proUpsell()->registerHooks();
     }
 
     public function enqueueAssets(string $hook): void
@@ -86,6 +94,8 @@ final class Settings implements HasHooks
         <div class="wrap estimate-admin">
             <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
 
+            <?php $this->proUpsell()->banner(); ?>
+
             <div class="estimate-intro">
                 <h2><?php esc_html_e('Let customers request a quote', 'plogins-estimate'); ?></h2>
                 <p>
@@ -102,6 +112,7 @@ final class Settings implements HasHooks
                 </p>
             </div>
 
+            <div class="estimate-cols">
             <form method="post" action="options.php">
                 <?php settings_fields(self::GROUP); ?>
 
@@ -216,6 +227,11 @@ final class Settings implements HasHooks
 
                 <?php submit_button(); ?>
             </form>
+
+                <?php $this->proUpsell()->aside(); ?>
+            </div>
+
+            <?php $this->proUpsell()->cards(); ?>
         </div>
         <?php
     }
