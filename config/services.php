@@ -14,6 +14,7 @@ use Estimate\Admin\Settings;
 use Estimate\Container;
 use Estimate\Migrator;
 use Estimate\PostType\QuoteRequest;
+use Estimate\Service\ElementorWidgets;
 use Estimate\Service\QuoteList;
 use Estimate\Service\QuotePage;
 use Estimate\Service\QuoteProducts;
@@ -39,6 +40,9 @@ return static function (Container $c): void {
         $c->get(QuoteList::class),
         $c->get(QuoteRequest::class),
     ));
+
+    // Elementor integration (self-guards on the elementor/widgets/register hook).
+    $c->singleton(ElementorWidgets::class, static fn (): ElementorWidgets => new ElementorWidgets());
 
     // Admin (only needed in wp-admin context).
     if (is_admin()) {
