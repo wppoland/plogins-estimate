@@ -5,26 +5,26 @@ msgstr ""
 "Project-Id-Version: Estimate - Request a Quote for WooCommerce 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/estimate\n"
 "POT-Creation-Date: 2026-06-16T20:23:35+00:00\n"
-"PO-Revision-Date: 2026-06-15 00:00+0000\n"
-"Last-Translator: WPPoland <kontakt@wppoland.com>\n"
-"Language-Team: Polish <pl@li.org>\n"
-"Language: pl_PL\n"
+"PO-Revision-Date: 2026-06-16T20:23:35+00:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Domain: plogins-estimate\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
 #. Plugin Name of the plugin
 #: estimate.php
 msgid "Estimate - Request a Quote for WooCommerce"
-msgstr "Estimate - Zapytanie ofertowe dla WooCommerce"
+msgstr "Estimación - Solicite una cotización para WooCommerce"
 
 #. Plugin URI of the plugin
 #: estimate.php
 msgid "https://plogins.com/estimate/"
-msgstr "https://plogins.com/estimate/"
+msgstr "https://plogins.com/es/estimate/"
 
 #. Description of the plugin
 #: estimate.php
@@ -32,8 +32,8 @@ msgid ""
 "Let customers request a quote instead of buying directly, ideal for B2B and "
 "made-to-order."
 msgstr ""
-"Pozwól klientom wysłać zapytanie ofertowe zamiast kupować bezpośrednio, "
-"idealne dla B2B i produktów na zamówienie."
+"Permita que los clientes soliciten un presupuesto en lugar de comprar "
+"directamente, ideal para B2B y por encargo."
 
 #. Author of the plugin
 #: estimate.php
@@ -50,39 +50,40 @@ msgid ""
 "Estimate - Request a Quote for WooCommerce requires WooCommerce to be "
 "active."
 msgstr ""
-"Estimate - Zapytanie ofertowe dla WooCommerce wymaga aktywnego WooCommerce."
+"Estimación: Solicitar una cotización para WooCommerce requiere que "
+"WooCommerce esté activo."
 
 #: src/Admin/ProductData.php:39 src/Admin/Settings.php:117
 msgid "Enable quote requests"
-msgstr "Włącz zapytania ofertowe"
+msgstr "Habilitar solicitudes de cotización"
 
 #: src/Admin/ProductData.php:41
 msgid ""
 "Quote mode is set to \"all products\", so every product already shows an Add"
 " to quote button."
 msgstr ""
-"Tryb zapytań ofertowych jest ustawiony na „wszystkie produkty”, więc każdy "
-"produkt wyświetla już przycisk Dodaj do zapytania."
+"El modo de cotización está configurado en \"todos los productos\", por lo "
+"que cada producto ya muestra un botón Añadir a la cotización."
 
 #: src/Admin/ProductData.php:42
 msgid ""
 "Hide the price and add-to-cart button and show an \"Add to quote\" button "
 "instead."
 msgstr ""
-"Ukryj cenę i przycisk dodawania do koszyka, a zamiast nich pokaż przycisk "
-"„Dodaj do zapytania”."
+"Oculte el precio y el botón Añadir al carrito y, en su lugar, muestre el "
+"botón \"Añadir al presupuesto\"."
 
 #: src/Admin/Settings.php:52
 msgid "Estimate: Request a Quote"
-msgstr "Estimate: Zapytanie ofertowe"
+msgstr "Estimación: Solicite una cotización"
 
 #: src/Admin/Settings.php:53
 msgid "Estimate"
-msgstr "Estimate"
+msgstr "Estimar"
 
 #: src/Admin/Settings.php:90
 msgid "Let customers request a quote"
-msgstr "Pozwól klientom wysyłać zapytania ofertowe"
+msgstr "Permitir que los clientes soliciten una cotización"
 
 #: src/Admin/Settings.php:92
 msgid ""
@@ -90,10 +91,10 @@ msgid ""
 "B2B, bulk or made-to-order items. Customers build a quote list and send you "
 "their details; each request is emailed to you and saved for review."
 msgstr ""
-"Zamień produkty na zapytania ofertowe zamiast bezpośrednich zakupów, idealne"
-" dla produktów B2B, hurtowych lub na zamówienie. Klienci tworzą listę "
-"zapytania i przesyłają swoje dane; każde zapytanie jest wysyłane do Ciebie "
-"e-mailem i zapisywane do przeglądu."
+"Convierta productos en solicitudes de cotización en lugar de compras "
+"directas, ideal para artículos B2B, al por mayor o hechos a pedido. Los "
+"clientes crean una lista de cotizaciones y le envían sus detalles; cada "
+"solicitud se le envía por correo electrónico y se guarda para su revisión."
 
 #. translators: %s: shortcode wrapped in <code>.
 #: src/Admin/Settings.php:98
@@ -101,44 +102,45 @@ msgstr ""
 msgid ""
 "Add the %s shortcode to a page to show the quote list and request form."
 msgstr ""
-"Dodaj shortcode %s do strony, aby wyświetlić listę zapytania i formularz."
+"Añade el código corto %s a una página para mostrar la lista de cotizaciones "
+"y el formulario de solicitud."
 
 #: src/Admin/Settings.php:109
 msgid "General"
-msgstr "Ogólne"
+msgstr "General"
 
 #: src/Admin/Settings.php:111
 msgid ""
 "Control whether quote requests appear on your store and which products use "
 "them."
 msgstr ""
-"Kontroluj, czy zapytania ofertowe pojawiają się w Twoim sklepie i które "
-"produkty z nich korzystają."
+"Controla si las solicitudes de cotización aparecen en tu tienda y qué "
+"productos las utilizan."
 
 #: src/Admin/Settings.php:124
 msgid "Show quote requests on the storefront."
-msgstr "Wyświetlaj zapytania ofertowe w sklepie."
+msgstr "Muestre solicitudes de cotización en el escaparate."
 
 #: src/Admin/Settings.php:127
 msgid ""
 "The master switch. When off, every product keeps its normal Add to cart "
 "button and the quote list is hidden, your store behaves as a standard shop."
 msgstr ""
-"Główny wyłącznik. Kiedy opcja jest wyłączona, każdy produkt zachowuje swój "
-"normalny przycisk Dodaj do koszyka, a lista ofert jest ukryta, Twój sklep "
-"zachowuje się jak sklep standardowy."
+"El interruptor maestro. Cuando está desactivado, cada producto mantiene su "
+"botón Añadir al carrito normal y la lista de cotizaciones está oculta, su "
+"tienda se comporta como una tienda estándar."
 
 #: src/Admin/Settings.php:133
 msgid "Quote mode"
-msgstr "Tryb zapytań ofertowych"
+msgstr "Modo cotización"
 
 #: src/Admin/Settings.php:138
 msgid "Selected products only"
-msgstr "Tylko wybrane produkty"
+msgstr "Sólo productos seleccionados"
 
 #: src/Admin/Settings.php:141
 msgid "All products"
-msgstr "Wszystkie produkty"
+msgstr "Todos los productos"
 
 #: src/Admin/Settings.php:145
 msgid ""
@@ -146,26 +148,26 @@ msgid ""
 "\"Enable quote requests\" on it (Product data → General). All products: "
 "every product in the store becomes quote-only and cannot be bought directly."
 msgstr ""
-"Tylko wybrane produkty: każdy produkt pozostaje w normalnej sprzedaży, "
-"dopóki nie zaznaczysz na nim opcji „Włącz zapytania ofertowe” (Dane produktu"
-" → Ogólne). Wszystkie produkty: każdy produkt w sklepie jest przedmiotem "
-"wyłącznie wyceny i nie można go kupić bezpośrednio."
+"Solo productos seleccionados: cada producto sigue siendo una venta normal "
+"hasta que marque \"Habilitar solicitudes de cotización\" (Datos del producto"
+" → General). Todos los productos: todos los productos de la tienda se "
+"cotizan únicamente y no se pueden comprar directamente."
 
 #: src/Admin/Settings.php:148
 msgid ""
 "Default: Selected products only, so nothing changes on your storefront until"
 " you choose the products."
 msgstr ""
-"Domyślnie: tylko wybrane produkty, więc nic się nie zmieni w Twojej witrynie"
-" sklepowej, dopóki nie wybierzesz produktów."
+"Predeterminado: solo productos seleccionados, por lo que nada cambia en su "
+"tienda hasta que elija los productos."
 
 #: src/Admin/Settings.php:154
 msgid "Hide price"
-msgstr "Ukryj cenę"
+msgstr "Ocultar precio"
 
 #: src/Admin/Settings.php:161
 msgid "Hide the price on quote-enabled products."
-msgstr "Ukryj cenę na produktach z włączonym zapytaniem ofertowym."
+msgstr "Oculte el precio de los productos habilitados para cotizar."
 
 #: src/Admin/Settings.php:164
 msgid ""
@@ -173,39 +175,40 @@ msgid ""
 " rather than assume. Turn off to keep the list price visible next to the "
 "quote button."
 msgstr ""
-"Pozostaw włączone, gdy cena zależy od ilości lub specyfikacji, więc klienci "
-"raczej pytają, niż zakładają. Wyłącz, aby cena katalogowa była widoczna obok"
-" przycisku wyceny."
+"Déjelo activado cuando el precio dependa de la cantidad o la especificación,"
+" para que los clientes pregunten en lugar de asumir. Desactívelo para "
+"mantener el precio de lista visible junto al botón de cotización."
 
 #: src/Admin/Settings.php:170
 msgid "Button text"
-msgstr "Tekst przycisku"
+msgstr "Texto del botón"
 
 #: src/Admin/Settings.php:176 src/Service/QuoteProducts.php:199
 msgid "Add to quote"
-msgstr "Dodaj do zapytania"
+msgstr "Añadir a cotización"
 
 #: src/Admin/Settings.php:178
 msgid ""
 "Replaces \"Add to cart\" on quote-enabled products. Leave blank to use the "
 "default, \"Add to quote\"."
 msgstr ""
-"Zastępuje opcję „Dodaj do koszyka” w przypadku produktów objętych wyceną. "
-"Pozostaw puste, aby użyć domyślnej opcji „Dodaj do zapytania”."
+"Reemplaza \"Añadir al carrito\" en productos habilitados para cotización. "
+"Déjelo en blanco para usar el valor predeterminado \"Añadir al "
+"presupuesto\"."
 
 #: src/Admin/Settings.php:187
 msgid "Notifications"
-msgstr "Powiadomienia"
+msgstr "Notificaciones"
 
 #: src/Admin/Settings.php:189
 msgid "Decide where new quote requests land in your inbox."
 msgstr ""
-"Zdecyduj, gdzie w Twojej skrzynce odbiorczej znajdą się nowe prośby o "
-"wycenę."
+"Decida dónde llegan las nuevas solicitudes de cotización a su bandeja de "
+"entrada."
 
 #: src/Admin/Settings.php:195
 msgid "Recipient email"
-msgstr "Adres e-mail odbiorcy"
+msgstr "Correo electrónico del destinatario"
 
 #. translators: %s: the site admin email address.
 #: src/Admin/Settings.php:206
@@ -214,208 +217,194 @@ msgid ""
 "Each new request is emailed here and also saved under WooCommerce → Quote "
 "Requests. Leave blank to use the site admin email (%s)."
 msgstr ""
-"Każde nowe zapytanie jest wysyłane tutaj e-mailem i zapisywane w WooCommerce"
-" → Prośby o wycenę. Pozostaw puste, aby użyć adresu e-mail administratora "
-"witryny (%s)."
+"Cada nueva solicitud se envía por correo electrónico aquí y también se "
+"guarda en WooCommerce → Solicitudes de cotización. Déjelo en blanco para "
+"utilizar el correo electrónico del administrador del sitio (%s)."
 
 #: src/PostType/QuoteRequest.php:53 src/PostType/QuoteRequest.php:55
 #: src/PostType/QuoteRequest.php:56
 msgid "Quote Requests"
-msgstr "Zapytania ofertowe"
+msgstr "Solicitudes de cotización"
 
 #: src/PostType/QuoteRequest.php:54
 msgid "Quote Request"
-msgstr "Zapytanie ofertowe"
+msgstr "Solicitud de Cotización"
 
 #: src/PostType/QuoteRequest.php:57 src/PostType/QuoteRequest.php:58
 msgid "View Quote Request"
-msgstr "Zobacz zapytanie ofertowe"
+msgstr "Ver solicitud de cotización"
 
 #: src/PostType/QuoteRequest.php:59
 msgid "Search quote requests"
-msgstr "Szukaj zapytań ofertowych"
+msgstr "Buscar solicitudes de cotización"
 
 #: src/PostType/QuoteRequest.php:60
 msgid "No quote requests found."
-msgstr "Nie znaleziono zapytań ofertowych."
+msgstr "No se encontraron solicitudes de cotización."
 
 #: src/PostType/QuoteRequest.php:61
 msgid "No quote requests in Trash."
-msgstr "Brak zapytań ofertowych w koszu."
+msgstr "No hay solicitudes de cotización en la Papelera."
 
 #. translators: 1: customer name, 2: human-readable date
 #: src/PostType/QuoteRequest.php:94
 #, php-format
 msgid "Quote from %1$s: %2$s"
-msgstr "Zapytanie od %1$s: %2$s"
+msgstr "Presupuesto de %1$s: %2$s"
 
 #: src/PostType/QuoteRequest.php:131 src/PostType/QuoteRequest.php:192
 #: src/Service/QuotePage.php:301
 msgid "Email"
-msgstr "E-mail"
+msgstr "Correo electrónico"
 
 #: src/PostType/QuoteRequest.php:132 src/PostType/QuoteRequest.php:202
 #: src/Service/QuotePage.php:311
 msgid "Company"
-msgstr "Firma"
+msgstr "Compañía"
 
 #: src/PostType/QuoteRequest.php:133
 msgid "Items"
-msgstr "Pozycje"
+msgstr "Elementos"
 
 #: src/PostType/QuoteRequest.php:169
 msgid "Quote details"
-msgstr "Szczegóły zapytania"
+msgstr "Detalles de la cotización"
 
 #: src/PostType/QuoteRequest.php:188 src/Service/QuotePage.php:291
 msgid "Name"
-msgstr "Imię i nazwisko"
+msgstr "Nombre"
 
 #: src/PostType/QuoteRequest.php:208
 msgid "Requested items"
-msgstr "Zapytane pozycje"
+msgstr "Artículos solicitados"
 
 #: src/PostType/QuoteRequest.php:210
 msgid "No items recorded."
-msgstr "Brak zapisanych pozycji."
+msgstr "No hay artículos registrados."
 
 #: src/PostType/QuoteRequest.php:215 src/Service/QuotePage.php:230
 #: src/Service/QuotePage.php:238
 msgid "Product"
-msgstr "Produkt"
+msgstr "Producto"
 
 #: src/PostType/QuoteRequest.php:216 src/Service/QuotePage.php:231
 #: src/Service/QuotePage.php:239 src/Service/QuotePage.php:241
 msgid "Quantity"
-msgstr "Ilość"
+msgstr "Cantidad"
 
 #: src/Service/QuotePage.php:103
 msgid "Your session expired. Please try again."
-msgstr "Twoja sesja wygasła. Spróbuj ponownie."
+msgstr "Tu sesión expiró. Por favor inténtalo de nuevo."
 
 #: src/Service/QuotePage.php:115
 msgid "Please tell us your name."
-msgstr "Podaj swoje imię i nazwisko."
+msgstr "Por favor dinos tu nombre."
 
 #: src/Service/QuotePage.php:119
 msgid "Please enter a valid email address."
-msgstr "Podaj prawidłowy adres e-mail."
+msgstr "Por favor, introduce una dirección de correo electrónico válida."
 
 #: src/Service/QuotePage.php:125
 msgid "Your quote list is empty."
-msgstr "Twoja lista zapytania jest pusta."
+msgstr "Su lista de cotizaciones está vacía."
 
 #: src/Service/QuotePage.php:184
 msgid "Thank you: your request is on its way"
-msgstr "Dziękujemy, Twoje zapytanie jest w drodze"
+msgstr "Gracias: su solicitud está en camino."
 
 #: src/Service/QuotePage.php:185
 msgid "We have received your quote request and will get back to you shortly."
 msgstr ""
-"Otrzymaliśmy Twoje zapytanie ofertowe i wkrótce się z Tobą skontaktujemy."
+"Hemos recibido su solicitud de cotización y nos comunicaremos contigo en "
+"breve."
 
 #: src/Service/QuotePage.php:196
 msgid "Your quote list is empty"
-msgstr "Twoja lista zapytania jest pusta"
+msgstr "Su lista de cotizaciones está vacía"
 
 #: src/Service/QuotePage.php:197
 msgid "Browse the shop and add products to build your quote request."
 msgstr ""
-"Przeglądaj sklep i dodawaj produkty, aby zbudować swoje zapytanie ofertowe."
+"Explore la tienda y añade productos para crear su solicitud de cotización."
 
 #: src/Service/QuotePage.php:198
 msgid "Browse products"
-msgstr "Przeglądaj produkty"
+msgstr "Explorar productos"
 
 #: src/Service/QuotePage.php:214
 msgid "Estimate worksheet"
-msgstr "Arkusz szacunkowy"
+msgstr "Hoja de cálculo de estimación"
 
 #. translators: %d: number of line items on the quote worksheet
 #: src/Service/QuotePage.php:220
 #, php-format
 msgid "%d line"
 msgid_plural "%d lines"
-msgstr[0] "%d wiersz"
-msgstr[1] "%d wiersze"
-msgstr[2] "%d wierszy"
+msgstr[0] "Línea %d"
+msgstr[1] "%d líneas"
 
 #: src/Service/QuotePage.php:232
 msgid "Remove"
-msgstr "Usuń"
+msgstr "Eliminar"
 
 #. translators: %s: product name
 #: src/Service/QuotePage.php:261
 #, php-format
 msgid "Remove %s"
-msgstr "Usuń %s"
+msgstr "Quitar %s"
 
 #: src/Service/QuotePage.php:271
 msgid "Update quantities"
-msgstr "Zaktualizuj ilości"
+msgstr "Actualizar cantidades"
 
 #: src/Service/QuotePage.php:287
 msgid "Request your quote"
-msgstr "Wyślij zapytanie ofertowe"
+msgstr "Solicita tu cotización"
 
 #: src/Service/QuotePage.php:317
 msgid "Message"
-msgstr "Wiadomość"
+msgstr "Mensaje"
 
 #: src/Service/QuotePage.php:322
 msgid "Send quote request"
-msgstr "Wyślij zapytanie ofertowe"
+msgstr "Enviar solicitud de cotización"
 
 #. translators: %s: site name
 #: src/Service/QuotePage.php:371
 #, php-format
 msgid "A new quote request was submitted on %s."
-msgstr "Nowe zapytanie ofertowe zostało przesłane w %s."
+msgstr "Se envió una nueva solicitud de cotización el %s."
 
 #: src/Service/QuotePage.php:375
 msgid "Name:"
-msgstr "Imię i nazwisko:"
+msgstr "Nombre:"
 
 #: src/Service/QuotePage.php:376
 msgid "Email:"
-msgstr "E-mail:"
+msgstr "Correo electrónico:"
 
 #: src/Service/QuotePage.php:379
 msgid "Company:"
-msgstr "Firma:"
+msgstr "Compañía:"
 
 #: src/Service/QuotePage.php:383
 msgid "Requested items:"
-msgstr "Zapytane pozycje:"
+msgstr "Artículos solicitados:"
 
 #: src/Service/QuotePage.php:391
 msgid "Message:"
-msgstr "Wiadomość:"
+msgstr "Mensaje:"
 
 #: src/Service/QuotePage.php:399
 msgid "View in admin:"
-msgstr "Zobacz w panelu administracyjnym:"
+msgstr "Ver en administrador:"
 
 #. translators: %s: customer name or email
 #: src/Service/QuotePage.php:404
 #, php-format
 msgid "New quote request from %s"
-msgstr "Nowe zapytanie ofertowe od %s"
+msgstr "Nueva solicitud de cotización de %s"
 
 #: src/Service/QuoteProducts.php:146
 msgid "In your quote"
-msgstr "W Twoim zapytaniu"
-
-#~ msgid ""
-#~ "In \"selected\" mode, enable individual products via the \"Enable quote "
-#~ "requests\" checkbox in the product data box."
-#~ msgstr ""
-#~ "W trybie „wybrane” włącz poszczególne produkty za pomocą pola wyboru „Włącz "
-#~ "zapytania ofertowe” w sekcji danych produktu."
-
-#~ msgid ""
-#~ "Where new quote requests are emailed. Leave blank to use the site admin "
-#~ "email."
-#~ msgstr ""
-#~ "Adres, na który wysyłane są nowe zapytania ofertowe. Pozostaw puste, aby "
-#~ "użyć adresu e-mail administratora witryny."
+msgstr "en tu presupuesto"
