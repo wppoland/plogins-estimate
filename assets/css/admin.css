@@ -75,14 +75,3 @@
     color: var(--estimate-muted);
     font-style: italic;
 }
-
-@media (prefers-color-scheme: dark) {
-    .estimate-admin {
-        --estimate-card-bg: #1e1e1e;
-        --estimate-card-border: #3c3c3c;
-        --estimate-muted: #bbb;
-        /* Lighter ochre for the dark canvas, matching the storefront's dark accent. */
-        --estimate-accent: #e0a94a; /* 8.0:1 on #1e1e1e — AA. */
-        --estimate-accent-soft: rgba(224, 169, 74, 0.12);
-    }
-}
