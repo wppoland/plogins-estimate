@@ -266,11 +266,11 @@ final class QuoteRequest implements HasHooks
         <table class="widefat striped" style="margin-bottom:1em">
             <tbody>
                 <tr>
-                    <th style="width:160px"><?php esc_html_e('Name', 'plogins-estimate'); ?></th>
+                    <th scope="row" style="width:160px"><?php esc_html_e('Name', 'plogins-estimate'); ?></th>
                     <td><?php echo esc_html('' !== $name ? $name : '—'); ?></td>
                 </tr>
                 <tr>
-                    <th><?php esc_html_e('Email', 'plogins-estimate'); ?></th>
+                    <th scope="row"><?php esc_html_e('Email', 'plogins-estimate'); ?></th>
                     <td>
                         <?php if ('' !== $email) : ?>
                             <a href="<?php echo esc_url('mailto:' . $email); ?>"><?php echo esc_html($email); ?></a>
@@ -280,7 +280,7 @@ final class QuoteRequest implements HasHooks
                     </td>
                 </tr>
                 <tr>
-                    <th><?php esc_html_e('Company', 'plogins-estimate'); ?></th>
+                    <th scope="row"><?php esc_html_e('Company', 'plogins-estimate'); ?></th>
                     <td><?php echo esc_html('' !== $company ? $company : '—'); ?></td>
                 </tr>
             </tbody>
@@ -293,8 +293,8 @@ final class QuoteRequest implements HasHooks
             <table class="widefat striped">
                 <thead>
                     <tr>
-                        <th><?php esc_html_e('Product', 'plogins-estimate'); ?></th>
-                        <th style="width:120px"><?php esc_html_e('Quantity', 'plogins-estimate'); ?></th>
+                        <th scope="col"><?php esc_html_e('Product', 'plogins-estimate'); ?></th>
+                        <th scope="col" style="width:120px"><?php esc_html_e('Quantity', 'plogins-estimate'); ?></th>
                     </tr>
                 </thead>
                 <tbody>
