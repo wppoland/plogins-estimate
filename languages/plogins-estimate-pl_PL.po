@@ -12,7 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
+"|| n%100>14) ? 1 : 2);\n"
 "X-Domain: plogins-estimate\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
@@ -47,8 +48,7 @@ msgstr "https://plogins.com/"
 
 #: estimate.php:47
 msgid ""
-"Estimate - Request a Quote for WooCommerce requires WooCommerce to be "
-"active."
+"Estimate - Request a Quote for WooCommerce requires WooCommerce to be active."
 msgstr ""
 "Estimate - Zapytanie ofertowe dla WooCommerce wymaga aktywnego WooCommerce."
 
@@ -58,8 +58,8 @@ msgstr "Włącz zapytania ofertowe"
 
 #: src/Admin/ProductData.php:41
 msgid ""
-"Quote mode is set to \"all products\", so every product already shows an Add"
-" to quote button."
+"Quote mode is set to \"all products\", so every product already shows an Add "
+"to quote button."
 msgstr ""
 "Tryb zapytań ofertowych jest ustawiony na „wszystkie produkty”, więc każdy "
 "produkt wyświetla już przycisk Dodaj do zapytania."
@@ -90,16 +90,15 @@ msgid ""
 "B2B, bulk or made-to-order items. Customers build a quote list and send you "
 "their details; each request is emailed to you and saved for review."
 msgstr ""
-"Zamień produkty na zapytania ofertowe zamiast bezpośrednich zakupów, idealne"
-" dla produktów B2B, hurtowych lub na zamówienie. Klienci tworzą listę "
-"zapytania i przesyłają swoje dane; każde zapytanie jest wysyłane do Ciebie "
-"e-mailem i zapisywane do przeglądu."
+"Zamień produkty na zapytania ofertowe zamiast bezpośrednich zakupów, idealne "
+"dla produktów B2B, hurtowych lub na zamówienie. Klienci tworzą listę "
+"zapytania i przesyłają swoje dane; każde zapytanie jest wysyłane do Ciebie e-"
+"mailem i zapisywane do przeglądu."
 
 #. translators: %s: shortcode wrapped in <code>.
 #: src/Admin/Settings.php:98
 #, php-format
-msgid ""
-"Add the %s shortcode to a page to show the quote list and request form."
+msgid "Add the %s shortcode to a page to show the quote list and request form."
 msgstr ""
 "Dodaj shortcode %s do strony, aby wyświetlić listę zapytania i formularz."
 
@@ -147,17 +146,17 @@ msgid ""
 "every product in the store becomes quote-only and cannot be bought directly."
 msgstr ""
 "Tylko wybrane produkty: każdy produkt pozostaje w normalnej sprzedaży, "
-"dopóki nie zaznaczysz na nim opcji „Włącz zapytania ofertowe” (Dane produktu"
-" → Ogólne). Wszystkie produkty: każdy produkt w sklepie jest przedmiotem "
+"dopóki nie zaznaczysz na nim opcji „Włącz zapytania ofertowe” (Dane produktu "
+"→ Ogólne). Wszystkie produkty: każdy produkt w sklepie jest przedmiotem "
 "wyłącznie wyceny i nie można go kupić bezpośrednio."
 
 #: src/Admin/Settings.php:148
 msgid ""
-"Default: Selected products only, so nothing changes on your storefront until"
-" you choose the products."
+"Default: Selected products only, so nothing changes on your storefront until "
+"you choose the products."
 msgstr ""
-"Domyślnie: tylko wybrane produkty, więc nic się nie zmieni w Twojej witrynie"
-" sklepowej, dopóki nie wybierzesz produktów."
+"Domyślnie: tylko wybrane produkty, więc nic się nie zmieni w Twojej witrynie "
+"sklepowej, dopóki nie wybierzesz produktów."
 
 #: src/Admin/Settings.php:154
 msgid "Hide price"
@@ -169,13 +168,13 @@ msgstr "Ukryj cenę na produktach z włączonym zapytaniem ofertowym."
 
 #: src/Admin/Settings.php:164
 msgid ""
-"Leave on when pricing depends on quantity or specification, so customers ask"
-" rather than assume. Turn off to keep the list price visible next to the "
+"Leave on when pricing depends on quantity or specification, so customers ask "
+"rather than assume. Turn off to keep the list price visible next to the "
 "quote button."
 msgstr ""
 "Pozostaw włączone, gdy cena zależy od ilości lub specyfikacji, więc klienci "
-"raczej pytają, niż zakładają. Wyłącz, aby cena katalogowa była widoczna obok"
-" przycisku wyceny."
+"raczej pytają, niż zakładają. Wyłącz, aby cena katalogowa była widoczna obok "
+"przycisku wyceny."
 
 #: src/Admin/Settings.php:170
 msgid "Button text"
@@ -200,8 +199,7 @@ msgstr "Powiadomienia"
 #: src/Admin/Settings.php:189
 msgid "Decide where new quote requests land in your inbox."
 msgstr ""
-"Zdecyduj, gdzie w Twojej skrzynce odbiorczej znajdą się nowe prośby o "
-"wycenę."
+"Zdecyduj, gdzie w Twojej skrzynce odbiorczej znajdą się nowe prośby o wycenę."
 
 #: src/Admin/Settings.php:195
 msgid "Recipient email"
@@ -214,8 +212,8 @@ msgid ""
 "Each new request is emailed here and also saved under WooCommerce → Quote "
 "Requests. Leave blank to use the site admin email (%s)."
 msgstr ""
-"Każde nowe zapytanie jest wysyłane tutaj e-mailem i zapisywane w WooCommerce"
-" → Prośby o wycenę. Pozostaw puste, aby użyć adresu e-mail administratora "
+"Każde nowe zapytanie jest wysyłane tutaj e-mailem i zapisywane w WooCommerce "
+"→ Prośby o wycenę. Pozostaw puste, aby użyć adresu e-mail administratora "
 "witryny (%s)."
 
 #: src/PostType/QuoteRequest.php:53 src/PostType/QuoteRequest.php:55
@@ -406,12 +404,72 @@ msgstr "Nowe zapytanie ofertowe od %s"
 msgid "In your quote"
 msgstr "W Twoim zapytaniu"
 
+#: src/Admin/ProUpsell.php:78
+msgid "Wkrótce"
+msgstr "Wkrótce"
+
+#: src/Admin/ProUpsell.php:78
+msgid "Coming soon"
+msgstr "Wkrótce"
+
+#. translators: %d: yearly price in PLN
+#: src/Admin/ProUpsell.php:83
+#, php-format
+msgid "od %d zł/rok"
+msgstr "od %d zł/rok"
+
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:88
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "od %1$s%2$d/rok"
+
+#: src/Admin/ProUpsell.php:97
+msgid "Upgrade to PRO"
+msgstr "Przejdź na PRO"
+
+#: src/Admin/ProUpsell.php:98
+msgid "Powiadom mnie"
+msgstr "Powiadom mnie"
+
+#: src/Admin/ProUpsell.php:98
+msgid "Get notified"
+msgstr "Powiadom mnie"
+
+#: src/Admin/ProUpsell.php:128
+msgid "Permission denied."
+msgstr "Brak uprawnień."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:158
+#, php-format
+msgid "Do more with %s"
+msgstr "Zrób więcej dzięki %s"
+
+#: src/Admin/ProUpsell.php:165
+msgid "Dismiss this notice"
+msgstr "Odrzuć to powiadomienie"
+
+#: src/Admin/ProUpsell.php:182
+msgid "Unlock every PRO feature"
+msgstr "Odblokuj wszystkie funkcje PRO"
+
+#: src/Admin/ProUpsell.php:195
+msgid "one licence, every PRO feature"
+msgstr "jedna licencja, wszystkie funkcje PRO"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:214
+#, php-format
+msgid "What %s adds"
+msgstr "Co dodaje %s"
+
 #~ msgid ""
 #~ "In \"selected\" mode, enable individual products via the \"Enable quote "
 #~ "requests\" checkbox in the product data box."
 #~ msgstr ""
-#~ "W trybie „wybrane” włącz poszczególne produkty za pomocą pola wyboru „Włącz "
-#~ "zapytania ofertowe” w sekcji danych produktu."
+#~ "W trybie „wybrane” włącz poszczególne produkty za pomocą pola wyboru "
+#~ "„Włącz zapytania ofertowe” w sekcji danych produktu."
 
 #~ msgid ""
 #~ "Where new quote requests are emailed. Leave blank to use the site admin "
