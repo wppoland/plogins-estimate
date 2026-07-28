@@ -114,6 +114,9 @@ Plogins Estimate includes Polish, German and Spanish translations for the plugin
 
 == Changelog ==
 
+= Unreleased =
+* the estimate/quote_form_fields filter, so add-ons can append qualification questions to the quote form
+
 = 1.0.4 =
 * Translations: completed Polish, German and Spanish for the PRO upgrade panel.
 
