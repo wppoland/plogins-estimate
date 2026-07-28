@@ -1,6 +1,6 @@
 {
     "name": "wppoland/estimate",
-    "description": "Let customers request a quote instead of buying directly — ideal for B2B and made-to-order.",
+    "description": "Let customers request a quote instead of buying directly, ideal for B2B and made-to-order.",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
     "require": {

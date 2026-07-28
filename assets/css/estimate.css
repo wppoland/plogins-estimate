@@ -1,11 +1,11 @@
 /**
- * Estimate — storefront styles.
+ * Estimate, storefront styles.
  *
  * The quote page reads like an estimator's worksheet: a ruled ledger of
  * requested items totted up by hand, then signed off with the request form.
  * The accent is a pencil-ruled ledger ochre (not a stock SaaS blue) and the
- * single crafted moment is the "tally rule" — the under-total stroke a
- * quantity surveyor draws beneath a column of figures — which sweeps in under
+ * single crafted moment is the "tally rule", the under-total stroke a
+ * quantity surveyor draws beneath a column of figures, which sweeps in under
  * the submit button the instant the request is sent.
  *
  * Everything is driven by themeable --estimate-* tokens with theme-inheriting
@@ -15,7 +15,7 @@
  */
 
 .estimate-quote {
-    /* Ledger ochre — the colour of a pencil-ruled worksheet, not stock blue.
+    /* Ledger ochre, the colour of a pencil-ruled worksheet, not stock blue.
        Deepened to clear WCAG AA: as text on the paper surface it reaches
        5.5:1 (>=4.5), and the header rule alpha is raised so the 2px ledger
        hairline holds >=3:1. */
@@ -198,8 +198,8 @@
 
 /*
  * THE MOMENT: "Send quote request" is an estimate being signed off. The submit
- * sits on a baseline; pressing it draws the tally rule — the under-total stroke
- * an estimator rules beneath a column of figures before writing the total —
+ * sits on a baseline; pressing it draws the tally rule, the under-total stroke
+ * an estimator rules beneath a column of figures before writing the total, 
  * left to right beneath the button. No layout shift: the rule is a scaleX
  * transform on a pseudo-element that already occupies its space.
  */
