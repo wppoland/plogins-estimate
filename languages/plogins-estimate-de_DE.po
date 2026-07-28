@@ -19,7 +19,7 @@ msgstr ""
 #. Plugin Name of the plugin
 #: estimate.php
 msgid "Estimate - Request a Quote for WooCommerce"
-msgstr "Kostenvoranschlag – Fordere ein Angebot für WooCommerce an"
+msgstr "Kostenvoranschlag, Fordere ein Angebot für WooCommerce an"
 
 #. Plugin URI of the plugin
 #: estimate.php
@@ -49,7 +49,7 @@ msgstr "https://plogins.com/"
 msgid ""
 "Estimate - Request a Quote for WooCommerce requires WooCommerce to be active."
 msgstr ""
-"Kostenvoranschlag – Um ein Angebot für WooCommerce anzufordern, muss "
+"Kostenvoranschlag, Um ein Angebot für WooCommerce anzufordern, muss "
 "WooCommerce aktiv sein."
 
 #: src/Admin/ProductData.php:39 src/Admin/Settings.php:117

@@ -30,8 +30,8 @@ Requests sind dort willkommen.
 
 * <strong>Dokumentation</strong> - https://plogins.com/de/plogins-estimate/docs/
 * <strong>Plugin-Seite</strong> - https://plogins.com/de/plogins-estimate/
-* <strong>Quellcode</strong> – https://github.com/wppoland/plogins-estimate
-* <strong>Fehlerberichte und Funktionsanfragen</strong> – https://github.com/wppoland/plogins-estimate/issues
+* <strong>Quellcode</strong>, https://github.com/wppoland/plogins-estimate
+* <strong>Fehlerberichte und Funktionsanfragen</strong>, https://github.com/wppoland/plogins-estimate/issues
 
 
 = Features =
