@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Estimate - Request a Quote for WooCommerce 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/estimate\n"
-"POT-Creation-Date: 2026-06-16T20:23:35+00:00\n"
+"POT-Creation-Date: 2026-07-28T17:01:17+00:00\n"
 "PO-Revision-Date: 2026-06-16T20:23:35+00:00\n"
 "Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
@@ -17,17 +17,17 @@ msgstr ""
 "X-Generator: WP-CLI 2.12.0\n"
 
 #. Plugin Name of the plugin
-#: estimate.php
+#: plogins-estimate.php
 msgid "Estimate - Request a Quote for WooCommerce"
 msgstr "Kostenvoranschlag, Fordere ein Angebot für WooCommerce an"
 
 #. Plugin URI of the plugin
-#: estimate.php
-msgid "https://plogins.com/estimate/"
-msgstr "https://plogins.com/de/estimate/"
+#: plogins-estimate.php
+msgid "https://plogins.com/plogins-estimate/"
+msgstr "https://plogins.com/plogins-estimate/"
 
 #. Description of the plugin
-#: estimate.php
+#: plogins-estimate.php
 msgid ""
 "Let customers request a quote instead of buying directly, ideal for B2B and "
 "made-to-order."
@@ -36,23 +36,23 @@ msgstr ""
 "und Auftragsfertigung."
 
 #. Author of the plugin
-#: estimate.php
-msgid "WPPoland"
-msgstr "WPPoland"
+#: plogins-estimate.php
+msgid "WPPoland.com"
+msgstr "WPPoland.com"
 
 #. Author URI of the plugin
-#: estimate.php
-msgid "https://plogins.com/"
-msgstr "https://plogins.com/"
+#: plogins-estimate.php
+msgid "https://wppoland.com"
+msgstr "https://wppoland.com"
 
-#: estimate.php:47
+#: plogins-estimate.php:48
 msgid ""
 "Estimate - Request a Quote for WooCommerce requires WooCommerce to be active."
 msgstr ""
 "Kostenvoranschlag, Um ein Angebot für WooCommerce anzufordern, muss "
 "WooCommerce aktiv sein."
 
-#: src/Admin/ProductData.php:39 src/Admin/Settings.php:117
+#: src/Admin/ProductData.php:39 src/Admin/Settings.php:127
 msgid "Enable quote requests"
 msgstr "Angebotsanfragen aktivieren"
 
@@ -72,19 +72,79 @@ msgstr ""
 "Blende die Schaltfläche „Preis“ und „In den Warenkorb“ aus und zeige "
 "stattdessen die Schaltfläche „Zum Angebot hinzufügen“ an."
 
-#: src/Admin/Settings.php:52
+#: src/Admin/ProUpsell.php:78
+msgid "Wkrótce"
+msgstr "Demnächst"
+
+#: src/Admin/ProUpsell.php:78
+msgid "Coming soon"
+msgstr "Demnächst"
+
+#. translators: %d: yearly price in PLN
+#: src/Admin/ProUpsell.php:83
+#, php-format
+msgid "od %d zł/rok"
+msgstr "ab %d zł/Jahr"
+
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:88
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "ab %1$s%2$d/Jahr"
+
+#: src/Admin/ProUpsell.php:97
+msgid "Upgrade to PRO"
+msgstr "Auf PRO upgraden"
+
+#: src/Admin/ProUpsell.php:98
+msgid "Powiadom mnie"
+msgstr "Benachrichtige mich"
+
+#: src/Admin/ProUpsell.php:98
+msgid "Get notified"
+msgstr "Benachrichtige mich"
+
+#: src/Admin/ProUpsell.php:128
+msgid "Permission denied."
+msgstr "Zugriff verweigert."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:158
+#, php-format
+msgid "Do more with %s"
+msgstr "Mehr erreichen mit %s"
+
+#: src/Admin/ProUpsell.php:165
+msgid "Dismiss this notice"
+msgstr "Diesen Hinweis ausblenden"
+
+#: src/Admin/ProUpsell.php:182
+msgid "Unlock every PRO feature"
+msgstr "Alle PRO-Funktionen freischalten"
+
+#: src/Admin/ProUpsell.php:195
+msgid "one licence, every PRO feature"
+msgstr "eine Lizenz, alle PRO-Funktionen"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:214
+#, php-format
+msgid "What %s adds"
+msgstr "Was %s ergänzt"
+
+#: src/Admin/Settings.php:60
 msgid "Estimate: Request a Quote"
 msgstr "Kostenvoranschlag: Fordere ein Angebot an"
 
-#: src/Admin/Settings.php:53
+#: src/Admin/Settings.php:61
 msgid "Estimate"
 msgstr "Schätzen"
 
-#: src/Admin/Settings.php:90
+#: src/Admin/Settings.php:100
 msgid "Let customers request a quote"
 msgstr "Lass Kunden ein Angebot anfordern"
 
-#: src/Admin/Settings.php:92
+#: src/Admin/Settings.php:102
 msgid ""
 "Turn products into quote requests instead of direct purchases, ideal for "
 "B2B, bulk or made-to-order items. Customers build a quote list and send you "
@@ -96,18 +156,18 @@ msgstr ""
 "Überprüfung gespeichert."
 
 #. translators: %s: shortcode wrapped in <code>.
-#: src/Admin/Settings.php:98
+#: src/Admin/Settings.php:108
 #, php-format
 msgid "Add the %s shortcode to a page to show the quote list and request form."
 msgstr ""
 "Füge den Shortcode %s zu einer Seite hinzu, um die Angebotsliste und das "
 "Anfrageformular anzuzeigen."
 
-#: src/Admin/Settings.php:109
+#: src/Admin/Settings.php:119
 msgid "General"
 msgstr "Allgemein"
 
-#: src/Admin/Settings.php:111
+#: src/Admin/Settings.php:121
 msgid ""
 "Control whether quote requests appear on your store and which products use "
 "them."
@@ -115,11 +175,11 @@ msgstr ""
 "Kontrolliere, ob Angebotsanfragen in deinem Shop angezeigt werden und welche "
 "Produkte sie verwenden."
 
-#: src/Admin/Settings.php:124
+#: src/Admin/Settings.php:134
 msgid "Show quote requests on the storefront."
 msgstr "Angebotsanfragen im Store anzeigen."
 
-#: src/Admin/Settings.php:127
+#: src/Admin/Settings.php:137
 msgid ""
 "The master switch. When off, every product keeps its normal Add to cart "
 "button and the quote list is hidden, your store behaves as a standard shop."
@@ -128,19 +188,19 @@ msgstr ""
 "seine normale Schaltfläche „Zum Warenkorb hinzufügen“ und die Angebotsliste "
 "ist ausgeblendet. dein Shop verhält sich wie ein Standardshop."
 
-#: src/Admin/Settings.php:133
+#: src/Admin/Settings.php:143
 msgid "Quote mode"
 msgstr "Angebotsmodus"
 
-#: src/Admin/Settings.php:138
+#: src/Admin/Settings.php:148
 msgid "Selected products only"
 msgstr "Nur ausgewählte Produkte"
 
-#: src/Admin/Settings.php:141
+#: src/Admin/Settings.php:151
 msgid "All products"
 msgstr "Alle Produkte"
 
-#: src/Admin/Settings.php:145
+#: src/Admin/Settings.php:155
 msgid ""
 "Selected products only: each product stays a normal sale until you tick "
 "\"Enable quote requests\" on it (Product data → General). All products: "
@@ -151,7 +211,7 @@ msgstr ""
 "Alle Produkte: Für jedes Produkt im Shop gilt nur ein Angebot und kann nicht "
 "direkt gekauft werden."
 
-#: src/Admin/Settings.php:148
+#: src/Admin/Settings.php:158
 msgid ""
 "Default: Selected products only, so nothing changes on your storefront until "
 "you choose the products."
@@ -159,15 +219,15 @@ msgstr ""
 "Standard: Nur ausgewählte Produkte, daher ändert sich an deinem Store "
 "nichts, bis Sie die Produkte auswählen."
 
-#: src/Admin/Settings.php:154
+#: src/Admin/Settings.php:164
 msgid "Hide price"
 msgstr "Preis ausblenden"
 
-#: src/Admin/Settings.php:161
+#: src/Admin/Settings.php:171
 msgid "Hide the price on quote-enabled products."
 msgstr "Blende den Preis für angebotsfähige Produkte aus."
 
-#: src/Admin/Settings.php:164
+#: src/Admin/Settings.php:174
 msgid ""
 "Leave on when pricing depends on quantity or specification, so customers ask "
 "rather than assume. Turn off to keep the list price visible next to the "
@@ -178,15 +238,15 @@ msgstr ""
 "Deaktiviere diese Option, damit der Listenpreis neben der "
 "Angebotsschaltfläche sichtbar bleibt."
 
-#: src/Admin/Settings.php:170
+#: src/Admin/Settings.php:180
 msgid "Button text"
 msgstr "Schaltflächentext"
 
-#: src/Admin/Settings.php:176 src/Service/QuoteProducts.php:199
+#: src/Admin/Settings.php:186 src/Service/QuoteProducts.php:199
 msgid "Add to quote"
 msgstr "Zum Angebot hinzufügen"
 
-#: src/Admin/Settings.php:178
+#: src/Admin/Settings.php:188
 msgid ""
 "Replaces \"Add to cart\" on quote-enabled products. Leave blank to use the "
 "default, \"Add to quote\"."
@@ -195,20 +255,20 @@ msgstr ""
 "Lass das Feld leer, um die Standardeinstellung „Zum Angebot hinzufügen“ zu "
 "verwenden."
 
-#: src/Admin/Settings.php:187
+#: src/Admin/Settings.php:197
 msgid "Notifications"
 msgstr "Benachrichtigungen"
 
-#: src/Admin/Settings.php:189
+#: src/Admin/Settings.php:199
 msgid "Decide where new quote requests land in your inbox."
 msgstr "Entscheide, wo neue Angebotsanfragen in deinem Posteingang landen."
 
-#: src/Admin/Settings.php:195
+#: src/Admin/Settings.php:205
 msgid "Recipient email"
 msgstr "Empfänger-E-Mail"
 
 #. translators: %s: the site admin email address.
-#: src/Admin/Settings.php:206
+#: src/Admin/Settings.php:216
 #, php-format
 msgid ""
 "Each new request is emailed here and also saved under WooCommerce → Quote "
@@ -218,73 +278,73 @@ msgstr ""
 "→ Angebotsanfragen gespeichert. Lass das Feld leer, um die E-Mail-Adresse "
 "des Site-Administrators (%s) zu verwenden."
 
-#: src/PostType/QuoteRequest.php:53 src/PostType/QuoteRequest.php:55
-#: src/PostType/QuoteRequest.php:56
+#: src/PostType/QuoteRequest.php:54 src/PostType/QuoteRequest.php:56
+#: src/PostType/QuoteRequest.php:57
 msgid "Quote Requests"
 msgstr "Angebotsanfragen"
 
-#: src/PostType/QuoteRequest.php:54
+#: src/PostType/QuoteRequest.php:55
 msgid "Quote Request"
 msgstr "Angebotsanfrage"
 
-#: src/PostType/QuoteRequest.php:57 src/PostType/QuoteRequest.php:58
+#: src/PostType/QuoteRequest.php:58 src/PostType/QuoteRequest.php:59
 msgid "View Quote Request"
 msgstr "Angebotsanfrage anzeigen"
 
-#: src/PostType/QuoteRequest.php:59
+#: src/PostType/QuoteRequest.php:60
 msgid "Search quote requests"
 msgstr "Suche nach Angebotsanfragen"
 
-#: src/PostType/QuoteRequest.php:60
+#: src/PostType/QuoteRequest.php:61
 msgid "No quote requests found."
 msgstr "Keine Angebotsanfragen gefunden."
 
-#: src/PostType/QuoteRequest.php:61
+#: src/PostType/QuoteRequest.php:62
 msgid "No quote requests in Trash."
 msgstr "Keine Angebotsanfragen im Papierkorb."
 
 #. translators: 1: customer name, 2: human-readable date
-#: src/PostType/QuoteRequest.php:94
+#: src/PostType/QuoteRequest.php:95
 #, php-format
 msgid "Quote from %1$s: %2$s"
 msgstr "Angebot von %1$s: %2$s"
 
-#: src/PostType/QuoteRequest.php:131 src/PostType/QuoteRequest.php:192
+#: src/PostType/QuoteRequest.php:212 src/PostType/QuoteRequest.php:273
 #: src/Service/QuotePage.php:301
 msgid "Email"
 msgstr "E-Mail"
 
-#: src/PostType/QuoteRequest.php:132 src/PostType/QuoteRequest.php:202
+#: src/PostType/QuoteRequest.php:213 src/PostType/QuoteRequest.php:283
 #: src/Service/QuotePage.php:311
 msgid "Company"
 msgstr "Unternehmen"
 
-#: src/PostType/QuoteRequest.php:133
+#: src/PostType/QuoteRequest.php:214
 msgid "Items"
 msgstr "Artikel"
 
-#: src/PostType/QuoteRequest.php:169
+#: src/PostType/QuoteRequest.php:250
 msgid "Quote details"
 msgstr "Angebotsdetails"
 
-#: src/PostType/QuoteRequest.php:188 src/Service/QuotePage.php:291
+#: src/PostType/QuoteRequest.php:269 src/Service/QuotePage.php:291
 msgid "Name"
 msgstr "Name"
 
-#: src/PostType/QuoteRequest.php:208
+#: src/PostType/QuoteRequest.php:289
 msgid "Requested items"
 msgstr "Angeforderte Artikel"
 
-#: src/PostType/QuoteRequest.php:210
+#: src/PostType/QuoteRequest.php:291
 msgid "No items recorded."
 msgstr "Keine Artikel erfasst."
 
-#: src/PostType/QuoteRequest.php:215 src/Service/QuotePage.php:230
+#: src/PostType/QuoteRequest.php:296 src/Service/QuotePage.php:230
 #: src/Service/QuotePage.php:238
 msgid "Product"
 msgstr "Produkt"
 
-#: src/PostType/QuoteRequest.php:216 src/Service/QuotePage.php:231
+#: src/PostType/QuoteRequest.php:297 src/Service/QuotePage.php:231
 #: src/Service/QuotePage.php:239 src/Service/QuotePage.php:241
 msgid "Quantity"
 msgstr "Menge"
@@ -406,63 +466,3 @@ msgstr "Neue Angebotsanfrage von %s"
 #: src/Service/QuoteProducts.php:146
 msgid "In your quote"
 msgstr "In deinem Angebot"
-
-#: src/Admin/ProUpsell.php:78
-msgid "Wkrótce"
-msgstr "Demnächst"
-
-#: src/Admin/ProUpsell.php:78
-msgid "Coming soon"
-msgstr "Demnächst"
-
-#. translators: %d: yearly price in PLN
-#: src/Admin/ProUpsell.php:83
-#, php-format
-msgid "od %d zł/rok"
-msgstr "ab %d zł/Jahr"
-
-#. translators: 1: currency symbol, 2: yearly price
-#: src/Admin/ProUpsell.php:88
-#, php-format
-msgid "from %1$s%2$d/yr"
-msgstr "ab %1$s%2$d/Jahr"
-
-#: src/Admin/ProUpsell.php:97
-msgid "Upgrade to PRO"
-msgstr "Auf PRO upgraden"
-
-#: src/Admin/ProUpsell.php:98
-msgid "Powiadom mnie"
-msgstr "Benachrichtige mich"
-
-#: src/Admin/ProUpsell.php:98
-msgid "Get notified"
-msgstr "Benachrichtige mich"
-
-#: src/Admin/ProUpsell.php:128
-msgid "Permission denied."
-msgstr "Zugriff verweigert."
-
-#. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:158
-#, php-format
-msgid "Do more with %s"
-msgstr "Mehr erreichen mit %s"
-
-#: src/Admin/ProUpsell.php:165
-msgid "Dismiss this notice"
-msgstr "Diesen Hinweis ausblenden"
-
-#: src/Admin/ProUpsell.php:182
-msgid "Unlock every PRO feature"
-msgstr "Alle PRO-Funktionen freischalten"
-
-#: src/Admin/ProUpsell.php:195
-msgid "one licence, every PRO feature"
-msgstr "eine Lizenz, alle PRO-Funktionen"
-
-#. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:214
-#, php-format
-msgid "What %s adds"
-msgstr "Was %s ergänzt"
