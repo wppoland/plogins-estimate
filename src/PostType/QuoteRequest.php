@@ -25,6 +25,7 @@ final class QuoteRequest implements HasHooks
     public const META_COMPANY = '_estimate_company';
     public const META_ITEMS   = '_estimate_items';
     public const META_USER_ID = '_estimate_user_id';
+    public const META_ANSWERS = '_estimate_answers';
 
     public function registerHooks(): void
     {
@@ -85,10 +86,15 @@ final class QuoteRequest implements HasHooks
     /**
      * Persist a quote request. Returns the new post ID, or 0 on failure.
      *
-     * @param array{name: string, email: string, company: string, message: string} $contact
-     * @param array<int, array{product_id: int, name: string, qty: int}>            $items
+     * $answers holds the sanitised answers to add-on fields declared through
+     * the `estimate/quote_form_fields` filter, keyed by field key. The argument
+     * is optional so existing callers keep working unchanged.
+     *
+     * @param array{name: string, email: string, company: string, message: string}             $contact
+     * @param array<int, array{product_id: int, name: string, qty: int}>                        $items
+     * @param array<string, array{label: string, type: string, value: string, display: string}> $answers
      */
-    public function create(array $contact, array $items): int
+    public function create(array $contact, array $items, array $answers = []): int
     {
         $title = sprintf(
             /* translators: 1: customer name, 2: human-readable date */
@@ -116,6 +122,12 @@ final class QuoteRequest implements HasHooks
         update_post_meta($postId, self::META_COMPANY, $contact['company']);
         update_post_meta($postId, self::META_ITEMS, $items);
 
+        $answers = self::normaliseAnswers($answers);
+
+        if ([] !== $answers) {
+            update_post_meta($postId, self::META_ANSWERS, $answers);
+        }
+
         $userId = get_current_user_id();
 
         if ($userId > 0) {
@@ -131,6 +143,78 @@ final class QuoteRequest implements HasHooks
         do_action('estimate/quote_created', (int) $postId, $userId);
 
         return (int) $postId;
+    }
+
+    /**
+     * Answers stored with a quote request, keyed by field key.
+     *
+     * This is the public read path for add-ons. Each row carries the label and
+     * type the field was declared with, the machine `value` (what a webhook
+     * payload wants) and, for selects, the chosen option label in `display`.
+     *
+     *     $requests = \Estimate\Plugin::instance()->container()
+     *         ->get(\Estimate\PostType\QuoteRequest::class);
+     *     $answers = $requests->answers($postId);
+     *     $budget  = $answers['budget']['value'] ?? '';
+     *
+     * @return array<string, array{label: string, type: string, value: string, display: string}>
+     */
+    public function answers(int $postId): array
+    {
+        $stored = get_post_meta($postId, self::META_ANSWERS, true);
+
+        return self::normaliseAnswers(is_array($stored) ? $stored : []);
+    }
+
+    /**
+     * Human-readable text for one stored answer.
+     *
+     * @param array{label: string, type: string, value: string, display: string} $answer
+     */
+    public static function answerText(array $answer): string
+    {
+        if ('checkbox' === $answer['type']) {
+            return '1' === $answer['value']
+                ? __('Yes', 'plogins-estimate')
+                : __('No', 'plogins-estimate');
+        }
+
+        return '' !== $answer['display'] ? $answer['display'] : $answer['value'];
+    }
+
+    /**
+     * Coerce stored or incoming answers into the documented shape, dropping
+     * anything that does not fit.
+     *
+     * @param array<array-key, mixed> $answers
+     * @return array<string, array{label: string, type: string, value: string, display: string}>
+     */
+    private static function normaliseAnswers(array $answers): array
+    {
+        $rows = [];
+
+        foreach ($answers as $key => $answer) {
+            $key = sanitize_key((string) $key);
+
+            if ('' === $key || ! is_array($answer)) {
+                continue;
+            }
+
+            $value = isset($answer['value']) && is_scalar($answer['value']) ? (string) $answer['value'] : '';
+
+            if ('' === $value) {
+                continue;
+            }
+
+            $rows[$key] = [
+                'label'   => isset($answer['label']) && is_scalar($answer['label']) ? (string) $answer['label'] : $key,
+                'type'    => isset($answer['type']) && is_scalar($answer['type']) ? (string) $answer['type'] : 'text',
+                'value'   => $value,
+                'display' => isset($answer['display']) && is_scalar($answer['display']) ? (string) $answer['display'] : '',
+            ];
+        }
+
+        return $rows;
     }
 
     /**
@@ -262,6 +346,7 @@ final class QuoteRequest implements HasHooks
         $company = (string) get_post_meta($post->ID, self::META_COMPANY, true);
         $items   = get_post_meta($post->ID, self::META_ITEMS, true);
         $items   = is_array($items) ? $items : [];
+        $answers = $this->answers($post->ID);
         ?>
         <table class="widefat striped" style="margin-bottom:1em">
             <tbody>
@@ -283,6 +368,12 @@ final class QuoteRequest implements HasHooks
                     <th><?php esc_html_e('Company', 'plogins-estimate'); ?></th>
                     <td><?php echo esc_html('' !== $company ? $company : '—'); ?></td>
                 </tr>
+                <?php foreach ($answers as $answer) : ?>
+                    <tr>
+                        <th><?php echo esc_html($answer['label']); ?></th>
+                        <td><?php echo wp_kses_post(nl2br(esc_html(self::answerText($answer)))); ?></td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
 

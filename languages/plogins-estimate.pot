@@ -349,3 +349,33 @@ msgstr ""
 #: src/Service/QuoteProducts.php:146
 msgid "In your quote"
 msgstr ""
+
+#: src/PostType/QuoteRequest.php:178
+msgid "Yes"
+msgstr ""
+
+#: src/PostType/QuoteRequest.php:179
+msgid "No"
+msgstr ""
+
+#. translators: %s: field label
+#: src/Service/QuoteFields.php:275
+#, php-format
+msgid "Please confirm \"%s\"."
+msgstr ""
+
+#. translators: %s: field label
+#: src/Service/QuoteFields.php:280
+#, php-format
+msgid "Please choose an option for \"%s\"."
+msgstr ""
+
+#. translators: %s: field label
+#: src/Service/QuoteFields.php:285
+#, php-format
+msgid "Please fill in \"%s\"."
+msgstr ""
+
+#: src/Service/QuoteFields.php:372
+msgid "Select an option"
+msgstr ""

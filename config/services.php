@@ -15,6 +15,7 @@ use Estimate\Container;
 use Estimate\Migrator;
 use Estimate\PostType\QuoteRequest;
 use Estimate\Service\ElementorWidgets;
+use Estimate\Service\QuoteFields;
 use Estimate\Service\QuoteList;
 use Estimate\Service\QuotePage;
 use Estimate\Service\QuoteProducts;
@@ -35,10 +36,14 @@ return static function (Container $c): void {
         $c->get(QuoteList::class),
     ));
 
+    // Extra request form fields declared by add-ons (estimate/quote_form_fields).
+    $c->singleton(QuoteFields::class, static fn (): QuoteFields => new QuoteFields());
+
     // Storefront: the [estimate_quote] page (list + request form + submission).
     $c->singleton(QuotePage::class, static fn (): QuotePage => new QuotePage(
         $c->get(QuoteList::class),
         $c->get(QuoteRequest::class),
+        $c->get(QuoteFields::class),
     ));
 
     // Elementor integration (self-guards on the elementor/widgets/register hook).
