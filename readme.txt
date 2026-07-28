@@ -1,11 +1,11 @@
-=== Plogins Estimate - Request a Quote for WooCommerce ===
+=== Estimate - Request a Quote for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, request a quote, quote, b2b, hide price
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 0.1.3
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,10 +108,24 @@ Yes. This plugin is compatible with WordPress Multisite. Network activate it or 
 
 This plugin does not connect to, send data to, or load anything from any external service. Everything runs on your own site. Quote requests are saved locally as private `estimate_quote` posts with the customer's details (name, email, company and chosen items) kept in `_estimate_*` post meta, the per-product opt-in lives in the `_estimate_quote_enabled` meta key, and settings are stored in the `estimate_settings` option. Shoppers' in-progress quote lists are held in a first-party cookie on your domain, not on any third-party server. When a quote is submitted, the notification email is sent through WordPress's own `wp_mail()` to the recipient you configure (the site admin email by default); no other delivery service is involved. The bundled CSS and JavaScript are served from the plugin folder, with no remote CDN, fonts, maps or analytics.
 
+== Translations ==
+
+Plogins Estimate includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-estimate`, so WordPress.org language packs can also override or extend these bundled translations.
+
 == Changelog ==
 
-= 0.1.3 =
-* Add the `estimate/quote_form_fields` filter so add-ons can append their own questions (text, textarea, select, checkbox) to the quote request form. Answers are validated, saved with the request, shown in the merchant email and in wp-admin, and readable by key through `QuoteRequest::answers()`.
+= 1.0.4 =
+* Translations: completed Polish, German and Spanish for the PRO upgrade panel.
+
+= 1.0.3 =
+* Accessibility improvements to the admin and storefront markup.
+* Fixed low-contrast admin headings under an OS dark-mode preference.
+
+= 1.0.2 =
+* Added bundled Polish, German and Spanish translations for the plugin interface.
+
+= 1.0.1 =
+* First stable release.
 
 = 0.1.2 =
 * Renamed to Plogins Estimate for WooCommerce for a more distinctive plugin name.

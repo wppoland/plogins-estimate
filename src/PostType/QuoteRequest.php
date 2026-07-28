@@ -11,7 +11,7 @@ defined('ABSPATH') || exit;
 /**
  * The private custom post type that stores submitted quote requests.
  *
- * Requests are not public — the CPT is registered with public => false and is
+ * Requests are not public, the CPT is registered with public => false and is
  * surfaced only in wp-admin under the WooCommerce menu. Each post stores the
  * customer's contact details and the requested line items as post meta, and the
  * message body as post content.
@@ -312,12 +312,12 @@ final class QuoteRequest implements HasHooks
                 if ('' !== $email) {
                     printf('<a href="%1$s">%2$s</a>', esc_url('mailto:' . $email), esc_html($email));
                 } else {
-                    echo '—';
+                    echo '-';
                 }
                 break;
 
             case 'estimate_company':
-                echo esc_html((string) get_post_meta($postId, self::META_COMPANY, true) ?: '—');
+                echo esc_html((string) get_post_meta($postId, self::META_COMPANY, true) ?: '-');
                 break;
 
             case 'estimate_items':
@@ -351,22 +351,22 @@ final class QuoteRequest implements HasHooks
         <table class="widefat striped" style="margin-bottom:1em">
             <tbody>
                 <tr>
-                    <th style="width:160px"><?php esc_html_e('Name', 'plogins-estimate'); ?></th>
-                    <td><?php echo esc_html('' !== $name ? $name : '—'); ?></td>
+                    <th scope="row" style="width:160px"><?php esc_html_e('Name', 'plogins-estimate'); ?></th>
+                    <td><?php echo esc_html('' !== $name ? $name : '-'); ?></td>
                 </tr>
                 <tr>
-                    <th><?php esc_html_e('Email', 'plogins-estimate'); ?></th>
+                    <th scope="row"><?php esc_html_e('Email', 'plogins-estimate'); ?></th>
                     <td>
                         <?php if ('' !== $email) : ?>
                             <a href="<?php echo esc_url('mailto:' . $email); ?>"><?php echo esc_html($email); ?></a>
                         <?php else : ?>
-                            —
+                            -
                         <?php endif; ?>
                     </td>
                 </tr>
                 <tr>
-                    <th><?php esc_html_e('Company', 'plogins-estimate'); ?></th>
-                    <td><?php echo esc_html('' !== $company ? $company : '—'); ?></td>
+                    <th scope="row"><?php esc_html_e('Company', 'plogins-estimate'); ?></th>
+                    <td><?php echo esc_html('' !== $company ? $company : '-'); ?></td>
                 </tr>
                 <?php foreach ($answers as $answer) : ?>
                     <tr>
@@ -384,8 +384,8 @@ final class QuoteRequest implements HasHooks
             <table class="widefat striped">
                 <thead>
                     <tr>
-                        <th><?php esc_html_e('Product', 'plogins-estimate'); ?></th>
-                        <th style="width:120px"><?php esc_html_e('Quantity', 'plogins-estimate'); ?></th>
+                        <th scope="col"><?php esc_html_e('Product', 'plogins-estimate'); ?></th>
+                        <th scope="col" style="width:120px"><?php esc_html_e('Quantity', 'plogins-estimate'); ?></th>
                     </tr>
                 </thead>
                 <tbody>
