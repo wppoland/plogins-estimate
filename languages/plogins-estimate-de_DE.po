@@ -47,8 +47,7 @@ msgstr "https://plogins.com/"
 
 #: estimate.php:47
 msgid ""
-"Estimate - Request a Quote for WooCommerce requires WooCommerce to be "
-"active."
+"Estimate - Request a Quote for WooCommerce requires WooCommerce to be active."
 msgstr ""
 "Kostenvoranschlag – Um ein Angebot für WooCommerce anzufordern, muss "
 "WooCommerce aktiv sein."
@@ -59,8 +58,8 @@ msgstr "Angebotsanfragen aktivieren"
 
 #: src/Admin/ProductData.php:41
 msgid ""
-"Quote mode is set to \"all products\", so every product already shows an Add"
-" to quote button."
+"Quote mode is set to \"all products\", so every product already shows an Add "
+"to quote button."
 msgstr ""
 "Der Angebotsmodus ist auf „Alle Produkte“ eingestellt, sodass für jedes "
 "Produkt bereits die Schaltfläche „Zum Angebot hinzufügen“ angezeigt wird."
@@ -99,8 +98,7 @@ msgstr ""
 #. translators: %s: shortcode wrapped in <code>.
 #: src/Admin/Settings.php:98
 #, php-format
-msgid ""
-"Add the %s shortcode to a page to show the quote list and request form."
+msgid "Add the %s shortcode to a page to show the quote list and request form."
 msgstr ""
 "Füge den Shortcode %s zu einer Seite hinzu, um die Angebotsliste und das "
 "Anfrageformular anzuzeigen."
@@ -114,8 +112,8 @@ msgid ""
 "Control whether quote requests appear on your store and which products use "
 "them."
 msgstr ""
-"Kontrolliere, ob Angebotsanfragen in deinem Shop angezeigt werden und welche"
-" Produkte sie verwenden."
+"Kontrolliere, ob Angebotsanfragen in deinem Shop angezeigt werden und welche "
+"Produkte sie verwenden."
 
 #: src/Admin/Settings.php:124
 msgid "Show quote requests on the storefront."
@@ -148,15 +146,15 @@ msgid ""
 "\"Enable quote requests\" on it (Product data → General). All products: "
 "every product in the store becomes quote-only and cannot be bought directly."
 msgstr ""
-"Nur ausgewählte Produkte: Jedes Produkt bleibt ein normaler Verkauf, bis Sie"
-" darauf „Angebotsanfragen aktivieren“ aktivieren (Produktdaten → Allgemein)."
-" Alle Produkte: Für jedes Produkt im Shop gilt nur ein Angebot und kann "
-"nicht direkt gekauft werden."
+"Nur ausgewählte Produkte: Jedes Produkt bleibt ein normaler Verkauf, bis Sie "
+"darauf „Angebotsanfragen aktivieren“ aktivieren (Produktdaten → Allgemein). "
+"Alle Produkte: Für jedes Produkt im Shop gilt nur ein Angebot und kann nicht "
+"direkt gekauft werden."
 
 #: src/Admin/Settings.php:148
 msgid ""
-"Default: Selected products only, so nothing changes on your storefront until"
-" you choose the products."
+"Default: Selected products only, so nothing changes on your storefront until "
+"you choose the products."
 msgstr ""
 "Standard: Nur ausgewählte Produkte, daher ändert sich an deinem Store "
 "nichts, bis Sie die Produkte auswählen."
@@ -171,8 +169,8 @@ msgstr "Blende den Preis für angebotsfähige Produkte aus."
 
 #: src/Admin/Settings.php:164
 msgid ""
-"Leave on when pricing depends on quantity or specification, so customers ask"
-" rather than assume. Turn off to keep the list price visible next to the "
+"Leave on when pricing depends on quantity or specification, so customers ask "
+"rather than assume. Turn off to keep the list price visible next to the "
 "quote button."
 msgstr ""
 "Lass die Option aktiviert, wenn die Preisgestaltung von der Menge oder "
@@ -193,8 +191,8 @@ msgid ""
 "Replaces \"Add to cart\" on quote-enabled products. Leave blank to use the "
 "default, \"Add to quote\"."
 msgstr ""
-"Ersetzt „In den Warenkorb“ bei Produkten, für die ein Angebot aktiviert ist."
-" Lass das Feld leer, um die Standardeinstellung „Zum Angebot hinzufügen“ zu "
+"Ersetzt „In den Warenkorb“ bei Produkten, für die ein Angebot aktiviert ist. "
+"Lass das Feld leer, um die Standardeinstellung „Zum Angebot hinzufügen“ zu "
 "verwenden."
 
 #: src/Admin/Settings.php:187
@@ -216,8 +214,8 @@ msgid ""
 "Each new request is emailed here and also saved under WooCommerce → Quote "
 "Requests. Leave blank to use the site admin email (%s)."
 msgstr ""
-"Jede neue Anfrage wird hier per E-Mail verschickt und auch unter WooCommerce"
-" → Angebotsanfragen gespeichert. Lass das Feld leer, um die E-Mail-Adresse "
+"Jede neue Anfrage wird hier per E-Mail verschickt und auch unter WooCommerce "
+"→ Angebotsanfragen gespeichert. Lass das Feld leer, um die E-Mail-Adresse "
 "des Site-Administrators (%s) zu verwenden."
 
 #: src/PostType/QuoteRequest.php:53 src/PostType/QuoteRequest.php:55
@@ -408,3 +406,63 @@ msgstr "Neue Angebotsanfrage von %s"
 #: src/Service/QuoteProducts.php:146
 msgid "In your quote"
 msgstr "In deinem Angebot"
+
+#: src/Admin/ProUpsell.php:78
+msgid "Wkrótce"
+msgstr "Demnächst"
+
+#: src/Admin/ProUpsell.php:78
+msgid "Coming soon"
+msgstr "Demnächst"
+
+#. translators: %d: yearly price in PLN
+#: src/Admin/ProUpsell.php:83
+#, php-format
+msgid "od %d zł/rok"
+msgstr "ab %d zł/Jahr"
+
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:88
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "ab %1$s%2$d/Jahr"
+
+#: src/Admin/ProUpsell.php:97
+msgid "Upgrade to PRO"
+msgstr "Auf PRO upgraden"
+
+#: src/Admin/ProUpsell.php:98
+msgid "Powiadom mnie"
+msgstr "Benachrichtige mich"
+
+#: src/Admin/ProUpsell.php:98
+msgid "Get notified"
+msgstr "Benachrichtige mich"
+
+#: src/Admin/ProUpsell.php:128
+msgid "Permission denied."
+msgstr "Zugriff verweigert."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:158
+#, php-format
+msgid "Do more with %s"
+msgstr "Mehr erreichen mit %s"
+
+#: src/Admin/ProUpsell.php:165
+msgid "Dismiss this notice"
+msgstr "Diesen Hinweis ausblenden"
+
+#: src/Admin/ProUpsell.php:182
+msgid "Unlock every PRO feature"
+msgstr "Alle PRO-Funktionen freischalten"
+
+#: src/Admin/ProUpsell.php:195
+msgid "one licence, every PRO feature"
+msgstr "eine Lizenz, alle PRO-Funktionen"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:214
+#, php-format
+msgid "What %s adds"
+msgstr "Was %s ergänzt"
