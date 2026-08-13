@@ -30,12 +30,12 @@ return [
             'pl' => ['title' => 'Wyceny PDF', 'desc' => 'Pobierz PDF dla pojedynczego zapytania z danymi klienta i listą produktów.'],
         ],
         [
-            'en' => ['title' => 'Quote-to-order', 'desc' => 'Convert an approved quote into a WooCommerce order in one click (QuoteToOrderActions, shipped).'],
-            'pl' => ['title' => 'Zamiana wyceny na zamówienie', 'desc' => 'Przekształć zatwierdzoną wycenę w zamówienie WooCommerce jednym kliknięciem (QuoteToOrderActions, wdrożone).'],
+            'en' => ['title' => 'Quote-to-order', 'desc' => 'Convert an approved quote into a WooCommerce order in one click (shipped).'],
+            'pl' => ['title' => 'Zamiana wyceny na zamówienie', 'desc' => 'Przekształć zatwierdzoną wycenę w zamówienie WooCommerce jednym kliknięciem (wdrożone).'],
         ],
         [
-            'en' => ['title' => 'Customer quote accounts', 'desc' => 'Logged-in shoppers see past requests in My Account, open details and re-order from a quote (MyAccountQuotes, shipped).'],
-            'pl' => ['title' => 'Konta wycen klientów', 'desc' => 'Zalogowani kupujący widzą wcześniejsze zapytania w Moim koncie, szczegóły i ponowne zamówienie z wyceny (MyAccountQuotes, wdrożone).'],
+            'en' => ['title' => 'Customer quote accounts', 'desc' => 'Logged-in shoppers see past requests in My Account, open details and re-order from a quote (shipped).'],
+            'pl' => ['title' => 'Konta wycen klientów', 'desc' => 'Zalogowani kupujący widzą wcześniejsze zapytania w Moim koncie, szczegóły i ponowne zamówienie z wyceny (wdrożone).'],
         ],
         [
             'en' => ['title' => 'Custom quote fields (planned)', 'desc' => 'Extra fields on the request form and quote record.'],
