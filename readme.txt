@@ -23,15 +23,15 @@ It suits B2B stores, wholesale, bulk orders and made-to-order products where
 prices are negotiated rather than fixed.
 
 The plugin isn't on WordPress.org yet. The code, releases and issue tracker
-live on GitHub: https://github.com/wppoland/plogins-estimate; bug reports and pull
+live on GitHub: [github.com/wppoland/plogins-estimate](https://github.com/wppoland/plogins-estimate); bug reports and pull
 requests are welcome there.
 
 = Documentation and links =
 
-* **Documentation** - https://plogins.com/plogins-estimate/docs/
-* **Plugin page** - https://plogins.com/plogins-estimate/
-* **Source code** - https://github.com/wppoland/plogins-estimate
-* **Bug reports and feature requests** - https://github.com/wppoland/plogins-estimate/issues
+* **Documentation**: [plogins.com/plogins-estimate/docs/](https://plogins.com/plogins-estimate/docs/)
+* **Plugin page**: [plogins.com/plogins-estimate/](https://plogins.com/plogins-estimate/)
+* **Source code**: [github.com/wppoland/plogins-estimate](https://github.com/wppoland/plogins-estimate)
+* **Bug reports and feature requests**: [github.com/wppoland/plogins-estimate/issues](https://github.com/wppoland/plogins-estimate/issues)
 
 
 = Features =
