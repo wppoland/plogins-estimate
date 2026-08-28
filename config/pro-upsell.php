@@ -15,7 +15,6 @@ return [
     'sellable'   => true,
     'price_from' => 29,
     'currency'   => 'EUR',
-    'price_pln'  => 129,
     'lead'       => [
         'en' => 'CSV export, PDF quote downloads, quote-to-order and customer quote accounts ship in the 0.4.0 release. Custom fields are planned.',
         'pl' => 'Eksport CSV, wyceny PDF, zamiana na zamówienie i konta wycen klientów są dostępne w wydaniu 0.4.0. Własne pola są planowane.',
