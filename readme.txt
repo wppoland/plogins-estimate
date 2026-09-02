@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -114,6 +114,10 @@ Plogins Estimate is fully translatable and ships the `plogins-estimate.pot` temp
 
 == Changelog ==
 
+= 1.0.10 =
+* Added: the `estimate/quote_form_fields` filter, so an add-on can append its own qualification questions (text, textarea, select, checkbox) to the quote request form. Answers are validated server-side, saved with the request, shown in the merchant notification email and in the quote's wp-admin detail screen, and readable by key through `QuoteRequest::answers()` for anything downstream that needs them, such as a CRM webhook payload.
+* Note: this closes a gap where a paid add-on (Plogins Estimate Pro) shipped and sold this exact feature against a version of this filter that only ever existed on an unreleased development branch. Every install that updates to 1.0.10 or later now has the real thing.
+
 = 1.0.9 =
 * Tested against WordPress 7.1. Verified by activating this build on a clean 7.1 install with WooCommerce 11.1, not by editing the header.
 
@@ -136,7 +140,6 @@ Plogins Estimate is fully translatable and ships the `plogins-estimate.pot` temp
 
 = 1.0.1 =
 * First stable release.
-
 = 0.1.2 =
 * Renamed to Plogins Estimate for WooCommerce for a more distinctive plugin name.
 
