@@ -31,9 +31,16 @@ final class QuotePage implements HasHooks
     /** @var array{name: string, email: string, company: string, message: string} */
     private array $values = ['name' => '', 'email' => '', 'company' => '', 'message' => ''];
 
+    /** @var array<string, string> Answers to add-on fields, keyed by field key. */
+    private array $answers = [];
+
+    /** @var array<string, string> Add-on field errors, keyed by field key. */
+    private array $fieldErrors = [];
+
     public function __construct(
         private readonly QuoteList $list,
         private readonly QuoteRequest $requests,
+        private readonly QuoteFields $fields,
     ) {
     }
 
@@ -111,6 +118,10 @@ final class QuotePage implements HasHooks
             'message' => isset($_POST['estimate_message']) ? sanitize_textarea_field(wp_unslash($_POST['estimate_message'])) : '',
         ];
 
+        // Add-on fields: only declared keys are read, each sanitised by type.
+        $this->answers     = $this->fields->sanitizeSubmission();
+        $this->fieldErrors = $this->fields->validate($this->answers);
+
         if ('' === $this->values['name']) {
             $this->errors['name'] = __('Please tell us your name.', 'plogins-estimate');
         }
@@ -125,14 +136,16 @@ final class QuotePage implements HasHooks
             $this->errors['_form'] = __('Your quote list is empty.', 'plogins-estimate');
         }
 
-        if ([] !== $this->errors) {
+        if ([] !== $this->errors || [] !== $this->fieldErrors) {
             return;
         }
 
-        $postId = $this->requests->create($this->values, $items);
+        $answers = $this->fields->rows($this->answers);
+
+        $postId = $this->requests->create($this->values, $items, $answers);
 
         if ($postId > 0) {
-            $this->notifyMerchant($postId, $this->values, $items);
+            $this->notifyMerchant($postId, $this->values, $items, $answers);
             $this->list->clear();
         }
 
@@ -318,6 +331,8 @@ final class QuotePage implements HasHooks
                 <textarea id="estimate-message" name="estimate_message" rows="5"><?php echo esc_textarea($this->values['message']); ?></textarea>
             </p>
 
+            <?php $this->fields->render($this->answers, $this->fieldErrors); ?>
+
             <p class="estimate-quote__submit">
                 <button type="submit" name="estimate_submit" value="1" class="button alt"><?php esc_html_e('Send quote request', 'plogins-estimate'); ?></button>
             </p>
@@ -354,10 +369,11 @@ final class QuotePage implements HasHooks
     /**
      * Email the merchant about a new quote request.
      *
-     * @param array{name: string, email: string, company: string, message: string} $contact
-     * @param array<int, array{product_id: int, name: string, qty: int}>            $items
+     * @param array{name: string, email: string, company: string, message: string}             $contact
+     * @param array<int, array{product_id: int, name: string, qty: int}>                        $items
+     * @param array<string, array{label: string, type: string, value: string, display: string}> $answers
      */
-    private function notifyMerchant(int $postId, array $contact, array $items): void
+    private function notifyMerchant(int $postId, array $contact, array $items, array $answers = []): void
     {
         $recipient = trim((string) ($this->settings()['recipient'] ?? ''));
 
@@ -377,6 +393,24 @@ final class QuotePage implements HasHooks
 
         if ('' !== $contact['company']) {
             $lines[] = __('Company:', 'plogins-estimate') . ' ' . $contact['company'];
+        }
+
+        foreach ($answers as $answer) {
+            $text = QuoteRequest::answerText($answer);
+
+            if ('' === $text) {
+                continue;
+            }
+
+            if (str_contains($text, "\n")) {
+                $lines[] = '';
+                $lines[] = $answer['label'] . ':';
+                $lines[] = $text;
+                $lines[] = '';
+                continue;
+            }
+
+            $lines[] = $answer['label'] . ': ' . $text;
         }
 
         $lines[] = '';
