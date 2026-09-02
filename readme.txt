@@ -110,7 +110,7 @@ This plugin does not connect to, send data to, or load anything from any externa
 
 == Translations ==
 
-Plogins Estimate includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-estimate`, so WordPress.org language packs can also override or extend these bundled translations.
+Plogins Estimate is fully translatable and ships the `plogins-estimate.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
 
