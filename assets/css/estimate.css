@@ -154,15 +154,34 @@
 }
 
 .estimate-quote__field input,
-.estimate-quote__field textarea {
+.estimate-quote__field textarea,
+.estimate-quote__field select {
     width: 100%;
     max-width: 480px;
 }
 
 .estimate-quote__field input:focus,
-.estimate-quote__field textarea:focus {
+.estimate-quote__field textarea:focus,
+.estimate-quote__field select:focus {
     outline: 2px solid var(--estimate-accent);
     outline-offset: 1px;
+}
+
+/* Add-on checkbox fields keep the box next to its label, not above it. */
+.estimate-quote__check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.estimate-quote__check input {
+    width: auto;
+    margin-top: 0.2rem;
+}
+
+.estimate-quote__hint {
+    color: var(--estimate-muted);
+    font-size: 0.875em;
 }
 
 .estimate-quote__req {
