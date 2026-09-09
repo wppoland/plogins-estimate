@@ -3,7 +3,7 @@
  * Plugin Name:       Plogins Estimate - Request a Quote for WooCommerce
  * Plugin URI:        https://plogins.com/plogins-estimate/
  * Description:        Let customers request a quote instead of buying directly, ideal for B2B and made-to-order.
- * Version:           1.0.11
+ * Version:           1.0.12
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
@@ -25,7 +25,7 @@ namespace Estimate;
 
 defined('ABSPATH') || exit;
 
-const VERSION     = '1.0.11';
+const VERSION     = '1.0.12';
 const PLUGIN_FILE = __FILE__;
 
 define('ESTIMATE_DIR', plugin_dir_path(__FILE__));
