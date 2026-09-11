@@ -203,12 +203,12 @@ msgstr "Todos los productos"
 #: src/Admin/Settings.php:155
 msgid ""
 "Selected products only: each product stays a normal sale until you tick "
-"\"Enable quote requests\" on it (Product data → General). All products: "
+"\"Enable quote requests\" on it (Product data > General). All products: "
 "every product in the store becomes quote-only and cannot be bought directly."
 msgstr ""
 "Solo productos seleccionados: cada producto sigue siendo una venta normal "
 "hasta que marques en él \"Habilitar solicitudes de presupuesto\" (Datos del "
-"producto → General). Todos los productos: todos los productos de la tienda "
+"producto > General). Todos los productos: todos los productos de la tienda "
 "pasan a ser solo de presupuesto y no se pueden comprar directamente."
 
 #: src/Admin/Settings.php:158
@@ -272,11 +272,11 @@ msgstr "Correo electrónico del destinatario"
 #: src/Admin/Settings.php:216
 #, php-format
 msgid ""
-"Each new request is emailed here and also saved under WooCommerce → Quote "
+"Each new request is emailed here and also saved under WooCommerce > Quote "
 "Requests. Leave blank to use the site admin email (%s)."
 msgstr ""
 "Cada nueva solicitud se envía por correo electrónico aquí y también se "
-"guarda en WooCommerce → Solicitudes de presupuesto. Déjalo en blanco para "
+"guarda en WooCommerce > Solicitudes de presupuesto. Déjalo en blanco para "
 "usar el correo electrónico del administrador del sitio (%s)."
 
 #: src/PostType/QuoteRequest.php:54 src/PostType/QuoteRequest.php:56

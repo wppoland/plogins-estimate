@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.0.13
+Stable tag: 1.0.14
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,9 +61,9 @@ empty it shows a short message with a link back to the shop instead.
 
 == Installation ==
 
-1. Upload the plugin to `/wp-content/plugins/estimate`, or install via Plugins → Add New.
+1. Upload the plugin to `/wp-content/plugins/estimate`, or install via Plugins > Add New.
 2. Activate it. WooCommerce must be active.
-3. Go to **WooCommerce → Estimate** and choose your quote mode and options.
+3. Go to **WooCommerce > Estimate** and choose your quote mode and options.
 4. Create a page with the `[estimate_quote]` shortcode to host the quote list and request form.
 5. In "selected" mode, edit a product and tick **Enable quote requests** in the Product data box.
 
@@ -113,6 +113,10 @@ This plugin does not connect to, send data to, or load anything from any externa
 Plogins Estimate is fully translatable and ships the `plogins-estimate.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.14 =
+* Fixed: the PRO upgrade promo kept selling to people who had already bought the paid edition. Only the banner could be dismissed, so the sidebar promo and the locked feature cards followed a paying customer around for good. The promo now checks whether the paid edition is active and steps aside when it is.
+* Fixed: arrow glyphs in the admin menu paths, and in the strings handed to translators. An arrow inside a translatable string makes the glyph every translator's problem and changes the layout in any locale that drops it.
 
 = 1.0.13 =
 * Fixed: deleting the plugin left the per-user "dismiss" flag from the PRO notice in the database. Uninstall now removes it for every user, not just the one who dismissed it.

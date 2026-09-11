@@ -61,9 +61,9 @@ está vacía, muestra en su lugar un mensaje corto con un enlace de vuelta a la 
 
 == Installation ==
 
-1. Sube el complemento a `/wp-content/plugins/estimate`, o instálalo desde Complementos → Añadir nuevo.
+1. Sube el complemento a `/wp-content/plugins/estimate`, o instálalo desde Complementos > Añadir nuevo.
 2. Actívalo. WooCommerce debe estar activo.
-3. Ve a <strong>WooCommerce → Estimate</strong> y elige el modo de cotización y las opciones.
+3. Ve a <strong>WooCommerce > Estimate</strong> y elige el modo de cotización y las opciones.
 4. Crea una página con el shortcode `[estimate_quote]` para alojar la lista de cotizaciones y el formulario de solicitud.
 5. En el modo «seleccionado», edita un producto y marca <strong>Habilitar solicitudes de cotización</strong> en el cuadro Datos del producto.
 
