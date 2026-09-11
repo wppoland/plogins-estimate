@@ -161,7 +161,7 @@ msgid "All products"
 msgstr ""
 
 #: src/Admin/Settings.php:155
-msgid "Selected products only: each product stays a normal sale until you tick \"Enable quote requests\" on it (Product data → General). All products: every product in the store becomes quote-only and cannot be bought directly."
+msgid "Selected products only: each product stays a normal sale until you tick \"Enable quote requests\" on it (Product data > General). All products: every product in the store becomes quote-only and cannot be bought directly."
 msgstr ""
 
 #: src/Admin/Settings.php:158
@@ -208,7 +208,7 @@ msgstr ""
 #. translators: %s: the site admin email address.
 #: src/Admin/Settings.php:216
 #, php-format
-msgid "Each new request is emailed here and also saved under WooCommerce → Quote Requests. Leave blank to use the site admin email (%s)."
+msgid "Each new request is emailed here and also saved under WooCommerce > Quote Requests. Leave blank to use the site admin email (%s)."
 msgstr ""
 
 #: src/PostType/QuoteRequest.php:55

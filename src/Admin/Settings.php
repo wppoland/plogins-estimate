@@ -152,7 +152,7 @@ final class Settings implements HasHooks
                                         </option>
                                     </select>
                                     <p class="description">
-                                        <?php esc_html_e('Selected products only: each product stays a normal sale until you tick "Enable quote requests" on it (Product data → General). All products: every product in the store becomes quote-only and cannot be bought directly.', 'plogins-estimate'); ?>
+                                        <?php esc_html_e('Selected products only: each product stays a normal sale until you tick "Enable quote requests" on it (Product data > General). All products: every product in the store becomes quote-only and cannot be bought directly.', 'plogins-estimate'); ?>
                                     </p>
                                     <p class="description estimate-default-note">
                                         <?php esc_html_e('Default: Selected products only, so nothing changes on your storefront until you choose the products.', 'plogins-estimate'); ?>
@@ -213,7 +213,7 @@ final class Settings implements HasHooks
                                         <?php
                                         printf(
                                             /* translators: %s: the site admin email address. */
-                                            esc_html__('Each new request is emailed here and also saved under WooCommerce → Quote Requests. Leave blank to use the site admin email (%s).', 'plogins-estimate'),
+                                            esc_html__('Each new request is emailed here and also saved under WooCommerce > Quote Requests. Leave blank to use the site admin email (%s).', 'plogins-estimate'),
                                             '<code>' . esc_html((string) get_option('admin_email')) . '</code>',
                                         );
                                         ?>

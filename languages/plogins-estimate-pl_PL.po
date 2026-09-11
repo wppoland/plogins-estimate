@@ -202,12 +202,12 @@ msgstr "Wszystkie produkty"
 #: src/Admin/Settings.php:155
 msgid ""
 "Selected products only: each product stays a normal sale until you tick "
-"\"Enable quote requests\" on it (Product data → General). All products: "
+"\"Enable quote requests\" on it (Product data > General). All products: "
 "every product in the store becomes quote-only and cannot be bought directly."
 msgstr ""
 "Tylko wybrane produkty: każdy produkt pozostaje w normalnej sprzedaży, "
 "dopóki nie zaznaczysz na nim opcji „Włącz zapytania ofertowe” (Dane produktu "
-"→ Ogólne). Wszystkie produkty: każdy produkt w sklepie jest przedmiotem "
+"> Ogólne). Wszystkie produkty: każdy produkt w sklepie jest przedmiotem "
 "wyłącznie wyceny i nie można go kupić bezpośrednio."
 
 #: src/Admin/Settings.php:158
@@ -269,11 +269,11 @@ msgstr "Adres e-mail odbiorcy"
 #: src/Admin/Settings.php:216
 #, php-format
 msgid ""
-"Each new request is emailed here and also saved under WooCommerce → Quote "
+"Each new request is emailed here and also saved under WooCommerce > Quote "
 "Requests. Leave blank to use the site admin email (%s)."
 msgstr ""
 "Każde nowe zapytanie jest wysyłane tutaj e-mailem i zapisywane w WooCommerce "
-"→ Prośby o wycenę. Pozostaw puste, aby użyć adresu e-mail administratora "
+"> Prośby o wycenę. Pozostaw puste, aby użyć adresu e-mail administratora "
 "witryny (%s)."
 
 #: src/PostType/QuoteRequest.php:54 src/PostType/QuoteRequest.php:56
