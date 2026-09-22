@@ -82,13 +82,13 @@ final class ProUpsell
     private function priceLabel(): string
     {
         if (! $this->sellable()) {
-            return $this->isPolish() ? __('Wkrótce', 'plogins-estimate') : __('Coming soon', 'plogins-estimate');
+            return $this->isPolish() ? __('Wkrótce', 'takso') : __('Coming soon', 'takso');
         }
         $d = $this->data();
         if (! empty($d['price_from'])) {
             $cur = ($d['currency'] ?? 'EUR') === 'EUR' ? '€' : (string) $d['currency'] . ' ';
             /* translators: 1: currency symbol, 2: yearly price */
-            return sprintf(__('from %1$s%2$d/yr', 'plogins-estimate'), $cur, (int) $d['price_from']);
+            return sprintf(__('from %1$s%2$d/yr', 'takso'), $cur, (int) $d['price_from']);
         }
         return '';
     }
@@ -97,8 +97,8 @@ final class ProUpsell
     private function ctaLabel(): string
     {
         return $this->sellable()
-            ? __('Upgrade to PRO', 'plogins-estimate')
-            : ($this->isPolish() ? __('Powiadom mnie', 'plogins-estimate') : __('Get notified', 'plogins-estimate'));
+            ? __('Upgrade to PRO', 'takso')
+            : ($this->isPolish() ? __('Powiadom mnie', 'takso') : __('Get notified', 'takso'));
     }
 
     /** @return array<int, array{title: string, desc: string}> */
@@ -128,7 +128,7 @@ final class ProUpsell
     public function handleDismiss(): void
     {
         if (! current_user_can('manage_woocommerce')) {
-            wp_die(esc_html__('Permission denied.', 'plogins-estimate'));
+            wp_die(esc_html__('Permission denied.', 'takso'));
         }
         check_admin_referer(self::ACTION);
         update_user_meta(get_current_user_id(), self::META, 1);
@@ -146,7 +146,7 @@ final class ProUpsell
         if (! $this->enabled() || $this->bannerDismissed()) {
             return;
         }
-        $name     = (string) ($this->data()['name'] ?? 'Estimate Pro');
+        $name     = (string) ($this->data()['name'] ?? 'Takso Pro');
         $price    = $this->priceLabel();
         $subtitle = implode(', ', array_slice(array_map(
             static fn (array $f): string => $f['title'],
@@ -158,14 +158,14 @@ final class ProUpsell
             <p class="estimate-pro-banner__text">
                 <strong><?php
                 /* translators: %s: PRO edition name */
-                printf(esc_html__('Do more with %s', 'plogins-estimate'), esc_html($name)); ?></strong>
+                printf(esc_html__('Do more with %s', 'takso'), esc_html($name)); ?></strong>
                 <?php if ($subtitle !== '') : ?><span class="estimate-pro-banner__sub"><?php echo esc_html($subtitle); ?></span><?php endif; ?>
                 <?php if ($price !== '') : ?><span class="estimate-pro-banner__price"><?php echo esc_html($price); ?></span><?php endif; ?>
             </p>
             <a class="button button-primary estimate-pro-banner__cta" href="<?php echo esc_url($this->url()); ?>" target="_blank" rel="noopener noreferrer">
                 <?php echo esc_html($this->ctaLabel()); ?>
             </a>
-            <a class="estimate-pro-banner__dismiss" href="<?php echo esc_url($this->dismissUrl()); ?>" aria-label="<?php esc_attr_e('Dismiss this notice', 'plogins-estimate'); ?>">&times;</a>
+            <a class="estimate-pro-banner__dismiss" href="<?php echo esc_url($this->dismissUrl()); ?>" aria-label="<?php esc_attr_e('Dismiss this notice', 'takso'); ?>">&times;</a>
         </div>
         <?php
     }
@@ -176,13 +176,13 @@ final class ProUpsell
         if (! $this->enabled()) {
             return;
         }
-        $name     = (string) ($this->data()['name'] ?? 'Estimate Pro');
+        $name     = (string) ($this->data()['name'] ?? 'Takso Pro');
         $price    = $this->priceLabel();
         $features = $this->features();
         ?>
         <aside class="estimate-card estimate-pro-aside" aria-labelledby="estimate-pro-aside-h">
             <p class="estimate-pro-aside__eyebrow"><?php echo esc_html($name); ?></p>
-            <h2 id="estimate-pro-aside-h" class="estimate-pro-aside__heading"><?php esc_html_e('Unlock every PRO feature', 'plogins-estimate'); ?></h2>
+            <h2 id="estimate-pro-aside-h" class="estimate-pro-aside__heading"><?php esc_html_e('Unlock every PRO feature', 'takso'); ?></h2>
             <ul class="estimate-pro-aside__list">
                 <?php foreach ($features as $f) : ?>
                     <li>
@@ -195,7 +195,7 @@ final class ProUpsell
                 <?php echo esc_html($this->ctaLabel()); ?>
             </a>
             <?php if ($price !== '') : ?>
-                <p class="estimate-pro-aside__price"><?php echo esc_html($price); ?><?php if ($this->sellable()) : ?> · <?php esc_html_e('one licence, every PRO feature', 'plogins-estimate'); ?><?php endif; ?></p>
+                <p class="estimate-pro-aside__price"><?php echo esc_html($price); ?><?php if ($this->sellable()) : ?> · <?php esc_html_e('one licence, every PRO feature', 'takso'); ?><?php endif; ?></p>
             <?php endif; ?>
         </aside>
         <?php
@@ -208,13 +208,13 @@ final class ProUpsell
             return;
         }
         $features = $this->features();
-        $name     = (string) ($this->data()['name'] ?? 'Estimate Pro');
+        $name     = (string) ($this->data()['name'] ?? 'Takso Pro');
         ?>
         <section class="estimate-pro-cards" aria-labelledby="estimate-pro-cards-h">
             <h2 id="estimate-pro-cards-h" class="estimate-pro-cards__title">
                 <?php
                 /* translators: %s: PRO edition name */
-                printf(esc_html__('What %s adds', 'plogins-estimate'), esc_html($name)); ?>
+                printf(esc_html__('What %s adds', 'takso'), esc_html($name)); ?>
             </h2>
             <div class="estimate-pro-cards__grid">
                 <?php foreach ($features as $f) : ?>

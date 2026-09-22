@@ -1,11 +1,11 @@
-=== Plogins Estimate - Request a Quote for WooCommerce ===
+=== Takso - Request a Quote for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, request a quote, quote, b2b, hide price
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.0.14
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Let customers request a quote instead of buying directly, ideal for B2B and made
 
 == Description ==
 
-Estimate turns WooCommerce products into quote requests. On quote-enabled
+Takso turns WooCommerce products into quote requests. On quote-enabled
 products it swaps the add-to-cart button for an **Add to quote** button, and can
 hide the price as well. Customers collect the products they want into a quote
 list and send their details through a short request form. Each submission is
@@ -61,9 +61,9 @@ empty it shows a short message with a link back to the shop instead.
 
 == Installation ==
 
-1. Upload the plugin to `/wp-content/plugins/estimate`, or install via Plugins > Add New.
+1. Upload the plugin to `/wp-content/plugins/takso`, or install via Plugins > Add New.
 2. Activate it. WooCommerce must be active.
-3. Go to **WooCommerce > Estimate** and choose your quote mode and options.
+3. Go to **WooCommerce > Request a Quote** and choose your quote mode and options.
 4. Create a page with the `[estimate_quote]` shortcode to host the quote list and request form.
 5. In "selected" mode, edit a product and tick **Enable quote requests** in the Product data box.
 
@@ -110,9 +110,12 @@ This plugin does not connect to, send data to, or load anything from any externa
 
 == Translations ==
 
-Plogins Estimate is fully translatable and ships the `plogins-estimate.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
+Takso is fully translatable and ships the `takso.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.0 =
+* Renamed to Takso. The WordPress.org review team asks a plugin name to lead with a distinctive, coined identifier rather than a generic descriptive word. Takso is Esperanto for an assessment. The text domain follows the name; the stored data, the settings and every hook are unchanged.
 
 = 1.0.14 =
 * Fixed: the PRO upgrade promo kept selling to people who had already bought the paid edition. Only the banner could be dismissed, so the sidebar promo and the locked feature cards followed a paying customer around for good. The promo now checks whether the paid edition is active and steps aside when it is.
