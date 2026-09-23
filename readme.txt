@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,7 +90,7 @@ Yes. The list is stored in a cookie per visitor, so no account is required.
 
 = Can I hide prices on quote-enabled products? =
 
-Yes. Estimate can hide product prices while shoppers build a quote list and submit a request.
+Yes. Takso can hide product prices while shoppers build a quote list and submit a request.
 
 
 = Does this plugin work on WordPress Multisite? =
@@ -101,7 +101,7 @@ Yes. This plugin is compatible with WordPress Multisite. Network activate it or 
 
 1. The Add to quote button replacing add-to-cart on a product.
 2. The quote page: list, quantities and the request form.
-3. The Estimate settings screen under WooCommerce.
+3. The Takso settings screen under WooCommerce.
 4. A saved quote request in wp-admin.
 
 == External Services ==
@@ -113,6 +113,9 @@ This plugin does not connect to, send data to, or load anything from any externa
 Takso is fully translatable and ships the `takso.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.2 =
+* The readme still called the plugin Estimate in two places, including a screenshot caption, after the rename to Takso. The screenshot of the settings screen was recaptured so its heading matches the plugin name.
 
 = 1.1.1 =
 * Belt-and-braces capability check on the product-level quote setting. WooCommerce already checks it before firing the save, but the guard now sits in the file that does the writing.
