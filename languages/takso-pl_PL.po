@@ -20,7 +20,7 @@ msgstr ""
 #. Plugin Name of the plugin
 #: takso.php
 msgid "Takso - Request a Quote for WooCommerce"
-msgstr ""
+msgstr "Takso - zapytanie ofertowe dla WooCommerce"
 
 #. Plugin URI of the plugin
 #: takso.php
@@ -48,7 +48,7 @@ msgstr "https://wppoland.com"
 
 #: takso.php:48
 msgid "Takso requires WooCommerce to be installed and activated."
-msgstr ""
+msgstr "Takso wymaga zainstalowanego i aktywnego WooCommerce."
 
 #: src/Admin/ProductData.php:39 src/Admin/Settings.php:127
 msgid "Enable quote requests"
@@ -126,11 +126,11 @@ msgstr "Co dodaje %s"
 
 #: src/Admin/Settings.php:60
 msgid "Takso: request a quote"
-msgstr ""
+msgstr "Takso: zapytania ofertowe"
 
 #: src/Admin/Settings.php:61
 msgid "Request a Quote"
-msgstr ""
+msgstr "Ustawienia zapytań ofertowych"
 
 #: src/Admin/Settings.php:100
 msgid "Let customers request a quote"
@@ -301,11 +301,11 @@ msgstr "Zapytanie od %1$s: %2$s"
 
 #: src/PostType/QuoteRequest.php:178
 msgid "Yes"
-msgstr ""
+msgstr "Tak"
 
 #: src/PostType/QuoteRequest.php:179
 msgid "No"
-msgstr ""
+msgstr "Nie"
 
 #: src/PostType/QuoteRequest.php:296 src/PostType/QuoteRequest.php:358
 #: src/Service/QuotePage.php:314
@@ -351,23 +351,23 @@ msgstr "Ilość"
 #: src/Service/QuoteFields.php:275
 #, php-format
 msgid "Please confirm \"%s\"."
-msgstr ""
+msgstr "Potwierdź \"%s\"."
 
 #. translators: %s: field label
 #: src/Service/QuoteFields.php:280
 #, php-format
 msgid "Please choose an option for \"%s\"."
-msgstr ""
+msgstr "Wybierz opcję dla \"%s\"."
 
 #. translators: %s: field label
 #: src/Service/QuoteFields.php:285
 #, php-format
 msgid "Please fill in \"%s\"."
-msgstr ""
+msgstr "Wypełnij \"%s\"."
 
 #: src/Service/QuoteFields.php:372
 msgid "Select an option"
-msgstr ""
+msgstr "Wybierz opcję"
 
 #: src/Service/QuotePage.php:110
 msgid "Your session expired. Please try again."
@@ -409,7 +409,7 @@ msgstr "Przeglądaj produkty"
 
 #: src/Service/QuotePage.php:227
 msgid "Quote worksheet"
-msgstr ""
+msgstr "Arkusz zapytania ofertowego"
 
 #. translators: %d: number of line items on the quote worksheet
 #: src/Service/QuotePage.php:233
