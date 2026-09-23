@@ -41,8 +41,8 @@ return [
             'pl' => ['title' => 'Własne pola wyceny (planowane)', 'desc' => 'Dodatkowe pola w formularzu zapytania i rekordzie wyceny.'],
         ],
         [
-            'en' => ['title' => 'Requires the free Takso', 'desc' => 'Estimate Pro is an add-on to the free plugin, it boots only after the free plugin loads.'],
-            'pl' => ['title' => 'Wymaga darmowego Takso', 'desc' => 'Estimate Pro to rozszerzenie darmowej wtyczki, boota dopiero po jej załadowaniu.'],
+            'en' => ['title' => 'Requires the free Takso', 'desc' => 'Takso Pro is an add-on to the free plugin, it boots only after the free plugin loads.'],
+            'pl' => ['title' => 'Wymaga darmowego Takso', 'desc' => 'Takso Pro to rozszerzenie darmowej wtyczki, boota dopiero po jej załadowaniu.'],
         ],
     ],
 ];
