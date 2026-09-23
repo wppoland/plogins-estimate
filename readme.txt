@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -113,6 +113,9 @@ This plugin does not connect to, send data to, or load anything from any externa
 Takso is fully translatable and ships the `takso.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.1 =
+* Belt-and-braces capability check on the product-level quote setting. WooCommerce already checks it before firing the save, but the guard now sits in the file that does the writing.
 
 = 1.1.0 =
 * Renamed to Takso. The WordPress.org review team asks a plugin name to lead with a distinctive, coined identifier rather than a generic descriptive word. Takso is Esperanto for an assessment. The text domain follows the name; the stored data, the settings and every hook are unchanged.

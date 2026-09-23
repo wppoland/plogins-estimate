@@ -55,6 +55,14 @@ final class ProductData implements HasHooks
             return;
         }
 
+        // WooCommerce only fires this inside its own product save, which has
+        // already checked the caps, so this is belt and braces. It is here so
+        // the guard is visible in the file that does the writing rather than
+        // inferred from the hook.
+        if (! current_user_can('edit_product', $product->get_id())) {
+            return;
+        }
+
         $enabled = isset($_POST[QuoteProducts::META_ENABLED]) ? 'yes' : 'no';
         $product->update_meta_data(QuoteProducts::META_ENABLED, $enabled);
     }
