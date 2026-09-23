@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Estimate - Request a Quote for WooCommerce 0.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/estimate\n"
-"POT-Creation-Date: 2026-07-28T17:01:17+00:00\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/takso\n"
+"POT-Creation-Date: 2026-09-09T14:37:50+00:00\n"
 "PO-Revision-Date: 2026-07-28T12:00:00+00:00\n"
 "Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 
 #. Plugin Name of the plugin
 #: takso.php
-msgid "Estimate - Request a Quote for WooCommerce"
-msgstr "Estimate, Angebotsanfragen für WooCommerce"
+msgid "Takso - Request a Quote for WooCommerce"
+msgstr ""
 
 #. Plugin URI of the plugin
 #: takso.php
@@ -46,10 +46,8 @@ msgid "https://wppoland.com"
 msgstr "https://wppoland.com"
 
 #: takso.php:48
-msgid ""
-"Estimate - Request a Quote for WooCommerce requires WooCommerce to be active."
+msgid "Takso requires WooCommerce to be installed and activated."
 msgstr ""
-"Für „Estimate, Angebotsanfragen für WooCommerce“ muss WooCommerce aktiv sein."
 
 #: src/Admin/ProductData.php:39 src/Admin/Settings.php:127
 msgid "Enable quote requests"
@@ -79,65 +77,59 @@ msgstr "Demnächst"
 msgid "Coming soon"
 msgstr "Demnächst"
 
-#. translators: %d: yearly price in PLN
-#: src/Admin/ProUpsell.php:83
-#, php-format
-msgid "od %d zł/rok"
-msgstr "ab %d zł/Jahr"
-
 #. translators: 1: currency symbol, 2: yearly price
-#: src/Admin/ProUpsell.php:88
+#: src/Admin/ProUpsell.php:84
 #, php-format
 msgid "from %1$s%2$d/yr"
 msgstr "ab %1$s%2$d/Jahr"
 
-#: src/Admin/ProUpsell.php:97
+#: src/Admin/ProUpsell.php:93
 msgid "Upgrade to PRO"
 msgstr "Auf PRO upgraden"
 
-#: src/Admin/ProUpsell.php:98
+#: src/Admin/ProUpsell.php:94
 msgid "Powiadom mnie"
 msgstr "Benachrichtige mich"
 
-#: src/Admin/ProUpsell.php:98
+#: src/Admin/ProUpsell.php:94
 msgid "Get notified"
 msgstr "Benachrichtige mich"
 
-#: src/Admin/ProUpsell.php:128
+#: src/Admin/ProUpsell.php:124
 msgid "Permission denied."
 msgstr "Zugriff verweigert."
 
 #. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:158
+#: src/Admin/ProUpsell.php:154
 #, php-format
 msgid "Do more with %s"
 msgstr "Mehr erreichen mit %s"
 
-#: src/Admin/ProUpsell.php:165
+#: src/Admin/ProUpsell.php:161
 msgid "Dismiss this notice"
 msgstr "Diesen Hinweis ausblenden"
 
-#: src/Admin/ProUpsell.php:182
+#: src/Admin/ProUpsell.php:178
 msgid "Unlock every PRO feature"
 msgstr "Alle PRO-Funktionen freischalten"
 
-#: src/Admin/ProUpsell.php:195
+#: src/Admin/ProUpsell.php:191
 msgid "one licence, every PRO feature"
 msgstr "eine Lizenz, alle PRO-Funktionen"
 
 #. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:214
+#: src/Admin/ProUpsell.php:210
 #, php-format
 msgid "What %s adds"
 msgstr "Was %s ergänzt"
 
 #: src/Admin/Settings.php:60
-msgid "Estimate: Request a Quote"
-msgstr "Estimate: Angebotsanfragen"
+msgid "Takso: request a quote"
+msgstr ""
 
 #: src/Admin/Settings.php:61
-msgid "Estimate"
-msgstr "Estimate"
+msgid "Request a Quote"
+msgstr ""
 
 #: src/Admin/Settings.php:100
 msgid "Let customers request a quote"
@@ -277,186 +269,216 @@ msgstr ""
 "> Angebotsanfragen gespeichert. Lass das Feld leer, um die E-Mail-Adresse "
 "des Website-Administrators (%s) zu verwenden."
 
-#: src/PostType/QuoteRequest.php:54 src/PostType/QuoteRequest.php:56
-#: src/PostType/QuoteRequest.php:57
+#: src/PostType/QuoteRequest.php:55 src/PostType/QuoteRequest.php:57
+#: src/PostType/QuoteRequest.php:58
 msgid "Quote Requests"
 msgstr "Angebotsanfragen"
 
-#: src/PostType/QuoteRequest.php:55
+#: src/PostType/QuoteRequest.php:56
 msgid "Quote Request"
 msgstr "Angebotsanfrage"
 
-#: src/PostType/QuoteRequest.php:58 src/PostType/QuoteRequest.php:59
+#: src/PostType/QuoteRequest.php:59 src/PostType/QuoteRequest.php:60
 msgid "View Quote Request"
 msgstr "Angebotsanfrage anzeigen"
 
-#: src/PostType/QuoteRequest.php:60
+#: src/PostType/QuoteRequest.php:61
 msgid "Search quote requests"
 msgstr "Angebotsanfragen durchsuchen"
 
-#: src/PostType/QuoteRequest.php:61
+#: src/PostType/QuoteRequest.php:62
 msgid "No quote requests found."
 msgstr "Keine Angebotsanfragen gefunden."
 
-#: src/PostType/QuoteRequest.php:62
+#: src/PostType/QuoteRequest.php:63
 msgid "No quote requests in Trash."
 msgstr "Keine Angebotsanfragen im Papierkorb."
 
 #. translators: 1: customer name, 2: human-readable date
-#: src/PostType/QuoteRequest.php:95
+#: src/PostType/QuoteRequest.php:101
 #, php-format
 msgid "Quote from %1$s: %2$s"
 msgstr "Angebot von %1$s: %2$s"
 
-#: src/PostType/QuoteRequest.php:212 src/PostType/QuoteRequest.php:273
-#: src/Service/QuotePage.php:301
+#: src/PostType/QuoteRequest.php:178
+msgid "Yes"
+msgstr ""
+
+#: src/PostType/QuoteRequest.php:179
+msgid "No"
+msgstr ""
+
+#: src/PostType/QuoteRequest.php:296 src/PostType/QuoteRequest.php:358
+#: src/Service/QuotePage.php:314
 msgid "Email"
 msgstr "E-Mail"
 
-#: src/PostType/QuoteRequest.php:213 src/PostType/QuoteRequest.php:283
-#: src/Service/QuotePage.php:311
+#: src/PostType/QuoteRequest.php:297 src/PostType/QuoteRequest.php:368
+#: src/Service/QuotePage.php:324
 msgid "Company"
 msgstr "Unternehmen"
 
-#: src/PostType/QuoteRequest.php:214
+#: src/PostType/QuoteRequest.php:298
 msgid "Items"
 msgstr "Artikel"
 
-#: src/PostType/QuoteRequest.php:250
+#: src/PostType/QuoteRequest.php:334
 msgid "Quote details"
 msgstr "Angebotsdetails"
 
-#: src/PostType/QuoteRequest.php:269 src/Service/QuotePage.php:291
+#: src/PostType/QuoteRequest.php:354 src/Service/QuotePage.php:304
 msgid "Name"
 msgstr "Name"
 
-#: src/PostType/QuoteRequest.php:289
+#: src/PostType/QuoteRequest.php:380
 msgid "Requested items"
 msgstr "Angefragte Artikel"
 
-#: src/PostType/QuoteRequest.php:291
+#: src/PostType/QuoteRequest.php:382
 msgid "No items recorded."
 msgstr "Keine Artikel erfasst."
 
-#: src/PostType/QuoteRequest.php:296 src/Service/QuotePage.php:230
-#: src/Service/QuotePage.php:238
+#: src/PostType/QuoteRequest.php:387 src/Service/QuotePage.php:243
+#: src/Service/QuotePage.php:251
 msgid "Product"
 msgstr "Produkt"
 
-#: src/PostType/QuoteRequest.php:297 src/Service/QuotePage.php:231
-#: src/Service/QuotePage.php:239 src/Service/QuotePage.php:241
+#: src/PostType/QuoteRequest.php:388 src/Service/QuotePage.php:244
+#: src/Service/QuotePage.php:252 src/Service/QuotePage.php:254
 msgid "Quantity"
 msgstr "Menge"
 
-#: src/Service/QuotePage.php:103
+#. translators: %s: field label
+#: src/Service/QuoteFields.php:275
+#, php-format
+msgid "Please confirm \"%s\"."
+msgstr ""
+
+#. translators: %s: field label
+#: src/Service/QuoteFields.php:280
+#, php-format
+msgid "Please choose an option for \"%s\"."
+msgstr ""
+
+#. translators: %s: field label
+#: src/Service/QuoteFields.php:285
+#, php-format
+msgid "Please fill in \"%s\"."
+msgstr ""
+
+#: src/Service/QuoteFields.php:372
+msgid "Select an option"
+msgstr ""
+
+#: src/Service/QuotePage.php:110
 msgid "Your session expired. Please try again."
 msgstr "Deine Sitzung ist abgelaufen. Bitte versuche es erneut."
 
-#: src/Service/QuotePage.php:115
+#: src/Service/QuotePage.php:126
 msgid "Please tell us your name."
 msgstr "Bitte teile uns deinen Namen mit."
 
-#: src/Service/QuotePage.php:119
+#: src/Service/QuotePage.php:130
 msgid "Please enter a valid email address."
 msgstr "Bitte gib eine gültige E-Mail-Adresse ein."
 
-#: src/Service/QuotePage.php:125
+#: src/Service/QuotePage.php:136
 msgid "Your quote list is empty."
 msgstr "Deine Angebotsliste ist leer."
 
-#: src/Service/QuotePage.php:184
+#: src/Service/QuotePage.php:197
 msgid "Thank you: your request is on its way"
 msgstr "Vielen Dank: deine Anfrage ist unterwegs"
 
-#: src/Service/QuotePage.php:185
+#: src/Service/QuotePage.php:198
 msgid "We have received your quote request and will get back to you shortly."
 msgstr ""
 "Wir haben deine Angebotsanfrage erhalten und melden uns in Kürze bei dir."
 
-#: src/Service/QuotePage.php:196
+#: src/Service/QuotePage.php:209
 msgid "Your quote list is empty"
 msgstr "Deine Angebotsliste ist leer"
 
-#: src/Service/QuotePage.php:197
+#: src/Service/QuotePage.php:210
 msgid "Browse the shop and add products to build your quote request."
 msgstr ""
 "Durchsuche den Shop und füge Produkte hinzu, um deine Angebotsanfrage zu "
 "erstellen."
 
-#: src/Service/QuotePage.php:198
+#: src/Service/QuotePage.php:211
 msgid "Browse products"
 msgstr "Produkte durchsuchen"
 
-#: src/Service/QuotePage.php:214
-msgid "Estimate worksheet"
-msgstr "Estimate-Arbeitsblatt"
+#: src/Service/QuotePage.php:227
+msgid "Quote worksheet"
+msgstr ""
 
 #. translators: %d: number of line items on the quote worksheet
-#: src/Service/QuotePage.php:220
+#: src/Service/QuotePage.php:233
 #, php-format
 msgid "%d line"
 msgid_plural "%d lines"
 msgstr[0] "%d Zeile"
 msgstr[1] "%d Zeilen"
 
-#: src/Service/QuotePage.php:232
+#: src/Service/QuotePage.php:245
 msgid "Remove"
 msgstr "Entfernen"
 
 #. translators: %s: product name
-#: src/Service/QuotePage.php:261
+#: src/Service/QuotePage.php:274
 #, php-format
 msgid "Remove %s"
 msgstr "%s entfernen"
 
-#: src/Service/QuotePage.php:271
+#: src/Service/QuotePage.php:284
 msgid "Update quantities"
 msgstr "Mengen aktualisieren"
 
-#: src/Service/QuotePage.php:287
+#: src/Service/QuotePage.php:300
 msgid "Request your quote"
 msgstr "Fordere dein Angebot an"
 
-#: src/Service/QuotePage.php:317
+#: src/Service/QuotePage.php:330
 msgid "Message"
 msgstr "Nachricht"
 
-#: src/Service/QuotePage.php:322
+#: src/Service/QuotePage.php:337
 msgid "Send quote request"
 msgstr "Angebotsanfrage senden"
 
 #. translators: %s: site name
-#: src/Service/QuotePage.php:371
+#: src/Service/QuotePage.php:387
 #, php-format
 msgid "A new quote request was submitted on %s."
 msgstr "Auf %s wurde eine neue Angebotsanfrage eingereicht."
 
-#: src/Service/QuotePage.php:375
+#: src/Service/QuotePage.php:391
 msgid "Name:"
 msgstr "Name:"
 
-#: src/Service/QuotePage.php:376
+#: src/Service/QuotePage.php:392
 msgid "Email:"
 msgstr "E-Mail:"
 
-#: src/Service/QuotePage.php:379
+#: src/Service/QuotePage.php:395
 msgid "Company:"
 msgstr "Unternehmen:"
 
-#: src/Service/QuotePage.php:383
+#: src/Service/QuotePage.php:417
 msgid "Requested items:"
 msgstr "Angefragte Artikel:"
 
-#: src/Service/QuotePage.php:391
+#: src/Service/QuotePage.php:425
 msgid "Message:"
 msgstr "Nachricht:"
 
-#: src/Service/QuotePage.php:399
+#: src/Service/QuotePage.php:433
 msgid "View in admin:"
 msgstr "Im Adminbereich anzeigen:"
 
 #. translators: %s: customer name or email
-#: src/Service/QuotePage.php:404
+#: src/Service/QuotePage.php:438
 #, php-format
 msgid "New quote request from %s"
 msgstr "Neue Angebotsanfrage von %s"
@@ -464,3 +486,26 @@ msgstr "Neue Angebotsanfrage von %s"
 #: src/Service/QuoteProducts.php:146
 msgid "In your quote"
 msgstr "In deinem Angebot"
+
+#~ msgid "Estimate - Request a Quote for WooCommerce"
+#~ msgstr "Estimate, Angebotsanfragen für WooCommerce"
+
+#~ msgid ""
+#~ "Estimate - Request a Quote for WooCommerce requires WooCommerce to be "
+#~ "active."
+#~ msgstr ""
+#~ "Für „Estimate, Angebotsanfragen für WooCommerce“ muss WooCommerce aktiv "
+#~ "sein."
+
+#, php-format
+#~ msgid "od %d zł/rok"
+#~ msgstr "ab %d zł/Jahr"
+
+#~ msgid "Estimate: Request a Quote"
+#~ msgstr "Estimate: Angebotsanfragen"
+
+#~ msgid "Estimate"
+#~ msgstr "Estimate"
+
+#~ msgid "Estimate worksheet"
+#~ msgstr "Estimate-Arbeitsblatt"
