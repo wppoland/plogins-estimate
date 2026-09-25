@@ -52,15 +52,15 @@ final class QuoteRequest implements HasHooks
             self::POST_TYPE,
             [
                 'labels'              => [
-                    'name'               => __('Quote Requests', 'takso'),
-                    'singular_name'      => __('Quote Request', 'takso'),
-                    'menu_name'          => __('Quote Requests', 'takso'),
-                    'all_items'          => __('Quote Requests', 'takso'),
-                    'edit_item'          => __('View Quote Request', 'takso'),
-                    'view_item'          => __('View Quote Request', 'takso'),
-                    'search_items'       => __('Search quote requests', 'takso'),
-                    'not_found'          => __('No quote requests found.', 'takso'),
-                    'not_found_in_trash' => __('No quote requests in Trash.', 'takso'),
+                    'name'               => __('Quote Requests', 'quotlet'),
+                    'singular_name'      => __('Quote Request', 'quotlet'),
+                    'menu_name'          => __('Quote Requests', 'quotlet'),
+                    'all_items'          => __('Quote Requests', 'quotlet'),
+                    'edit_item'          => __('View Quote Request', 'quotlet'),
+                    'view_item'          => __('View Quote Request', 'quotlet'),
+                    'search_items'       => __('Search quote requests', 'quotlet'),
+                    'not_found'          => __('No quote requests found.', 'quotlet'),
+                    'not_found_in_trash' => __('No quote requests in Trash.', 'quotlet'),
                 ],
                 'public'              => false,
                 'show_ui'             => true,
@@ -98,7 +98,7 @@ final class QuoteRequest implements HasHooks
     {
         $title = sprintf(
             /* translators: 1: customer name, 2: human-readable date */
-            __('Quote from %1$s: %2$s', 'takso'),
+            __('Quote from %1$s: %2$s', 'quotlet'),
             '' !== $contact['name'] ? $contact['name'] : $contact['email'],
             wp_date(get_option('date_format') . ' ' . get_option('time_format')),
         );
@@ -175,8 +175,8 @@ final class QuoteRequest implements HasHooks
     {
         if ('checkbox' === $answer['type']) {
             return '1' === $answer['value']
-                ? __('Yes', 'takso')
-                : __('No', 'takso');
+                ? __('Yes', 'quotlet')
+                : __('No', 'quotlet');
         }
 
         return '' !== $answer['display'] ? $answer['display'] : $answer['value'];
@@ -293,9 +293,9 @@ final class QuoteRequest implements HasHooks
 
         foreach ($columns as $key => $label) {
             if ('date' === $key) {
-                $reordered['estimate_email']   = __('Email', 'takso');
-                $reordered['estimate_company'] = __('Company', 'takso');
-                $reordered['estimate_items']   = __('Items', 'takso');
+                $reordered['estimate_email']   = __('Email', 'quotlet');
+                $reordered['estimate_company'] = __('Company', 'quotlet');
+                $reordered['estimate_items']   = __('Items', 'quotlet');
             }
 
             $reordered[$key] = $label;
@@ -331,7 +331,7 @@ final class QuoteRequest implements HasHooks
     {
         add_meta_box(
             'estimate_quote_details',
-            __('Quote details', 'takso'),
+            __('Quote details', 'quotlet'),
             [$this, 'renderMetaBox'],
             self::POST_TYPE,
             'normal',
@@ -351,11 +351,11 @@ final class QuoteRequest implements HasHooks
         <table class="widefat striped" style="margin-bottom:1em">
             <tbody>
                 <tr>
-                    <th scope="row" style="width:160px"><?php esc_html_e('Name', 'takso'); ?></th>
+                    <th scope="row" style="width:160px"><?php esc_html_e('Name', 'quotlet'); ?></th>
                     <td><?php echo esc_html('' !== $name ? $name : '-'); ?></td>
                 </tr>
                 <tr>
-                    <th scope="row"><?php esc_html_e('Email', 'takso'); ?></th>
+                    <th scope="row"><?php esc_html_e('Email', 'quotlet'); ?></th>
                     <td>
                         <?php if ('' !== $email) : ?>
                             <a href="<?php echo esc_url('mailto:' . $email); ?>"><?php echo esc_html($email); ?></a>
@@ -365,7 +365,7 @@ final class QuoteRequest implements HasHooks
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><?php esc_html_e('Company', 'takso'); ?></th>
+                    <th scope="row"><?php esc_html_e('Company', 'quotlet'); ?></th>
                     <td><?php echo esc_html('' !== $company ? $company : '-'); ?></td>
                 </tr>
                 <?php foreach ($answers as $answer) : ?>
@@ -377,15 +377,15 @@ final class QuoteRequest implements HasHooks
             </tbody>
         </table>
 
-        <h3><?php esc_html_e('Requested items', 'takso'); ?></h3>
+        <h3><?php esc_html_e('Requested items', 'quotlet'); ?></h3>
         <?php if ([] === $items) : ?>
-            <p><?php esc_html_e('No items recorded.', 'takso'); ?></p>
+            <p><?php esc_html_e('No items recorded.', 'quotlet'); ?></p>
         <?php else : ?>
             <table class="widefat striped">
                 <thead>
                     <tr>
-                        <th scope="col"><?php esc_html_e('Product', 'takso'); ?></th>
-                        <th scope="col" style="width:120px"><?php esc_html_e('Quantity', 'takso'); ?></th>
+                        <th scope="col"><?php esc_html_e('Product', 'quotlet'); ?></th>
+                        <th scope="col" style="width:120px"><?php esc_html_e('Quantity', 'quotlet'); ?></th>
                     </tr>
                 </thead>
                 <tbody>

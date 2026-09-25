@@ -1,11 +1,11 @@
-=== Takso - Request a Quote for WooCommerce ===
+=== Quotlet - Request a Quote for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, request a quote, quote, b2b, hide price
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Let customers request a quote instead of buying directly, ideal for B2B and made
 
 == Description ==
 
-Takso turns WooCommerce products into quote requests. On quote-enabled
+Quotlet turns WooCommerce products into quote requests. On quote-enabled
 products it swaps the add-to-cart button for an **Add to quote** button, and can
 hide the price as well. Customers collect the products they want into a quote
 list and send their details through a short request form. Each submission is
@@ -61,7 +61,7 @@ empty it shows a short message with a link back to the shop instead.
 
 == Installation ==
 
-1. Upload the plugin to `/wp-content/plugins/takso`, or install via Plugins > Add New.
+1. Upload the plugin to `/wp-content/plugins/quotlet`, or install via Plugins > Add New.
 2. Activate it. WooCommerce must be active.
 3. Go to **WooCommerce > Request a Quote** and choose your quote mode and options.
 4. Create a page with the `[estimate_quote]` shortcode to host the quote list and request form.
@@ -90,7 +90,7 @@ Yes. The list is stored in a cookie per visitor, so no account is required.
 
 = Can I hide prices on quote-enabled products? =
 
-Yes. Takso can hide product prices while shoppers build a quote list and submit a request.
+Yes. Quotlet can hide product prices while shoppers build a quote list and submit a request.
 
 
 = Does this plugin work on WordPress Multisite? =
@@ -101,7 +101,7 @@ Yes. This plugin is compatible with WordPress Multisite. Network activate it or 
 
 1. The Add to quote button replacing add-to-cart on a product.
 2. The quote page: list, quantities and the request form.
-3. The Takso settings screen under WooCommerce.
+3. The Quotlet settings screen under WooCommerce.
 4. A saved quote request in wp-admin.
 
 == External Services ==
@@ -110,12 +110,15 @@ This plugin does not connect to, send data to, or load anything from any externa
 
 == Translations ==
 
-Takso is fully translatable and ships the `takso.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
+Quotlet is fully translatable and ships the `quotlet.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
 
+= 1.1.3 =
+* Renamed to Quotlet, a plain English name in place of the Esperanto one. The text domain and the plugin folder follow the name; the stored settings, options and every hook are unchanged.
+
 = 1.1.2 =
-* The readme still called the plugin Estimate in two places, including a screenshot caption, after the rename to Takso. The screenshot of the settings screen was recaptured so its heading matches the plugin name.
+* The readme still called the plugin Estimate in two places, including a screenshot caption, after the rename to Quotlet. The screenshot of the settings screen was recaptured so its heading matches the plugin name.
 
 = 1.1.1 =
 * Belt-and-braces capability check on the product-level quote setting. WooCommerce already checks it before firing the save, but the guard now sits in the file that does the writing.
