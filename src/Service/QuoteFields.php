@@ -272,17 +272,17 @@ final class QuoteFields
             switch ($field['type']) {
                 case 'checkbox':
                     /* translators: %s: field label */
-                    $message = __('Please confirm "%s".', 'takso');
+                    $message = __('Please confirm "%s".', 'quotlet');
                     break;
 
                 case 'select':
                     /* translators: %s: field label */
-                    $message = __('Please choose an option for "%s".', 'takso');
+                    $message = __('Please choose an option for "%s".', 'quotlet');
                     break;
 
                 default:
                     /* translators: %s: field label */
-                    $message = __('Please fill in "%s".', 'takso');
+                    $message = __('Please fill in "%s".', 'quotlet');
                     break;
             }
 
@@ -369,7 +369,7 @@ final class QuoteFields
                     <textarea id="<?php echo esc_attr($inputId); ?>" name="<?php echo esc_attr($name); ?>" rows="5"<?php echo $attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- fixed keywords plus values escaped above. ?>><?php echo esc_textarea($value); ?></textarea>
                 <?php elseif ('select' === $field['type']) : ?>
                     <select id="<?php echo esc_attr($inputId); ?>" name="<?php echo esc_attr($name); ?>"<?php echo $attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- fixed keywords plus values escaped above. ?>>
-                        <option value=""><?php esc_html_e('Select an option', 'takso'); ?></option>
+                        <option value=""><?php esc_html_e('Select an option', 'quotlet'); ?></option>
                         <?php foreach ($field['options'] as $optionValue => $optionLabel) : ?>
                             <option value="<?php echo esc_attr($optionValue); ?>"<?php selected($optionValue, $value); ?>><?php echo esc_html($optionLabel); ?></option>
                         <?php endforeach; ?>

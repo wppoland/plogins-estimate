@@ -3,137 +3,138 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Estimate - Request a Quote for WooCommerce 0.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/takso\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/quotlet\n"
 "POT-Creation-Date: 2026-09-09T14:37:50+00:00\n"
-"PO-Revision-Date: 2026-07-28T12:00:00+00:00\n"
+"PO-Revision-Date: 2026-06-15 00:00+0000\n"
 "Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
-"Language-Team: German <de@li.org>\n"
-"Language: de_DE\n"
+"Language-Team: Polish <pl@li.org>\n"
+"Language: pl_PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Domain: takso\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
+"|| n%100>14) ? 1 : 2);\n"
+"X-Domain: quotlet\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
 #. Plugin Name of the plugin
-#: takso.php
-msgid "Takso - Request a Quote for WooCommerce"
-msgstr ""
+#: quotlet.php
+msgid "Quotlet - Request a Quote for WooCommerce"
+msgstr "Quotlet - zapytanie ofertowe dla WooCommerce"
 
 #. Plugin URI of the plugin
-#: takso.php
-msgid "https://plogins.com/takso/"
-msgstr "https://plogins.com/takso/"
+#: quotlet.php
+msgid "https://plogins.com/quotlet/"
+msgstr "https://plogins.com/quotlet/"
 
 #. Description of the plugin
-#: takso.php
+#: quotlet.php
 msgid ""
 "Let customers request a quote instead of buying directly, ideal for B2B and "
 "made-to-order."
 msgstr ""
-"Lass Kunden ein Angebot anfordern, anstatt direkt zu kaufen, ideal für B2B "
-"und Auftragsfertigung."
+"Pozwól klientom wysłać zapytanie ofertowe zamiast kupować bezpośrednio, "
+"idealne dla B2B i produktów na zamówienie."
 
 #. Author of the plugin
-#: takso.php
+#: quotlet.php
 msgid "WPPoland.com"
 msgstr "WPPoland.com"
 
 #. Author URI of the plugin
-#: takso.php
+#: quotlet.php
 msgid "https://wppoland.com"
 msgstr "https://wppoland.com"
 
-#: takso.php:48
-msgid "Takso requires WooCommerce to be installed and activated."
-msgstr ""
+#: quotlet.php:48
+msgid "Quotlet requires WooCommerce to be installed and activated."
+msgstr "Quotlet wymaga zainstalowanego i aktywnego WooCommerce."
 
 #: src/Admin/ProductData.php:39 src/Admin/Settings.php:127
 msgid "Enable quote requests"
-msgstr "Angebotsanfragen aktivieren"
+msgstr "Włącz zapytania ofertowe"
 
 #: src/Admin/ProductData.php:41
 msgid ""
 "Quote mode is set to \"all products\", so every product already shows an Add "
 "to quote button."
 msgstr ""
-"Der Angebotsmodus ist auf „Alle Produkte“ eingestellt, sodass für jedes "
-"Produkt bereits die Schaltfläche „Zum Angebot hinzufügen“ angezeigt wird."
+"Tryb zapytań ofertowych jest ustawiony na „wszystkie produkty”, więc każdy "
+"produkt wyświetla już przycisk Dodaj do zapytania."
 
 #: src/Admin/ProductData.php:42
 msgid ""
 "Hide the price and add-to-cart button and show an \"Add to quote\" button "
 "instead."
 msgstr ""
-"Blende den Preis und die Schaltfläche „In den Warenkorb“ aus und zeige "
-"stattdessen die Schaltfläche „Zum Angebot hinzufügen“ an."
+"Ukryj cenę i przycisk dodawania do koszyka, a zamiast nich pokaż przycisk "
+"„Dodaj do zapytania”."
 
 #: src/Admin/ProUpsell.php:78
 msgid "Wkrótce"
-msgstr "Demnächst"
+msgstr "Wkrótce"
 
 #: src/Admin/ProUpsell.php:78
 msgid "Coming soon"
-msgstr "Demnächst"
+msgstr "Wkrótce"
 
 #. translators: 1: currency symbol, 2: yearly price
 #: src/Admin/ProUpsell.php:84
 #, php-format
 msgid "from %1$s%2$d/yr"
-msgstr "ab %1$s%2$d/Jahr"
+msgstr "od %1$s%2$d/rok"
 
 #: src/Admin/ProUpsell.php:93
 msgid "Upgrade to PRO"
-msgstr "Auf PRO upgraden"
+msgstr "Przejdź na PRO"
 
 #: src/Admin/ProUpsell.php:94
 msgid "Powiadom mnie"
-msgstr "Benachrichtige mich"
+msgstr "Powiadom mnie"
 
 #: src/Admin/ProUpsell.php:94
 msgid "Get notified"
-msgstr "Benachrichtige mich"
+msgstr "Powiadom mnie"
 
 #: src/Admin/ProUpsell.php:124
 msgid "Permission denied."
-msgstr "Zugriff verweigert."
+msgstr "Brak uprawnień."
 
 #. translators: %s: PRO edition name
 #: src/Admin/ProUpsell.php:154
 #, php-format
 msgid "Do more with %s"
-msgstr "Mehr erreichen mit %s"
+msgstr "Zrób więcej dzięki %s"
 
 #: src/Admin/ProUpsell.php:161
 msgid "Dismiss this notice"
-msgstr "Diesen Hinweis ausblenden"
+msgstr "Odrzuć to powiadomienie"
 
 #: src/Admin/ProUpsell.php:178
 msgid "Unlock every PRO feature"
-msgstr "Alle PRO-Funktionen freischalten"
+msgstr "Odblokuj wszystkie funkcje PRO"
 
 #: src/Admin/ProUpsell.php:191
 msgid "one licence, every PRO feature"
-msgstr "eine Lizenz, alle PRO-Funktionen"
+msgstr "jedna licencja, wszystkie funkcje PRO"
 
 #. translators: %s: PRO edition name
 #: src/Admin/ProUpsell.php:210
 #, php-format
 msgid "What %s adds"
-msgstr "Was %s ergänzt"
+msgstr "Co dodaje %s"
 
 #: src/Admin/Settings.php:60
-msgid "Takso: request a quote"
-msgstr ""
+msgid "Quotlet: request a quote"
+msgstr "Quotlet: zapytania ofertowe"
 
 #: src/Admin/Settings.php:61
 msgid "Request a Quote"
-msgstr ""
+msgstr "Ustawienia zapytań ofertowych"
 
 #: src/Admin/Settings.php:100
 msgid "Let customers request a quote"
-msgstr "Lass Kunden ein Angebot anfordern"
+msgstr "Pozwól klientom wysyłać zapytania ofertowe"
 
 #: src/Admin/Settings.php:102
 msgid ""
@@ -141,55 +142,54 @@ msgid ""
 "B2B, bulk or made-to-order items. Customers build a quote list and send you "
 "their details; each request is emailed to you and saved for review."
 msgstr ""
-"Verwandle Produkte in Angebotsanfragen statt in Direktkäufe, ideal für B2B-, "
-"Großmengen- oder Auftragsartikel. Kunden erstellen eine Angebotsliste und "
-"senden dir ihre Daten; jede Anfrage wird dir per E-Mail zugestellt und zur "
-"Überprüfung gespeichert."
+"Zamień produkty na zapytania ofertowe zamiast bezpośrednich zakupów, idealne "
+"dla produktów B2B, hurtowych lub na zamówienie. Klienci tworzą listę "
+"zapytania i przesyłają swoje dane; każde zapytanie jest wysyłane do Ciebie e-"
+"mailem i zapisywane do przeglądu."
 
 #. translators: %s: shortcode wrapped in <code>.
 #: src/Admin/Settings.php:108
 #, php-format
 msgid "Add the %s shortcode to a page to show the quote list and request form."
 msgstr ""
-"Füge den Shortcode %s zu einer Seite hinzu, um die Angebotsliste und das "
-"Anfrageformular anzuzeigen."
+"Dodaj shortcode %s do strony, aby wyświetlić listę zapytania i formularz."
 
 #: src/Admin/Settings.php:119
 msgid "General"
-msgstr "Allgemein"
+msgstr "Ogólne"
 
 #: src/Admin/Settings.php:121
 msgid ""
 "Control whether quote requests appear on your store and which products use "
 "them."
 msgstr ""
-"Kontrolliere, ob Angebotsanfragen in deinem Shop angezeigt werden und welche "
-"Produkte sie verwenden."
+"Kontroluj, czy zapytania ofertowe pojawiają się w Twoim sklepie i które "
+"produkty z nich korzystają."
 
 #: src/Admin/Settings.php:134
 msgid "Show quote requests on the storefront."
-msgstr "Angebotsanfragen im Shop anzeigen."
+msgstr "Wyświetlaj zapytania ofertowe w sklepie."
 
 #: src/Admin/Settings.php:137
 msgid ""
 "The master switch. When off, every product keeps its normal Add to cart "
 "button and the quote list is hidden, your store behaves as a standard shop."
 msgstr ""
-"Der Hauptschalter. Wenn diese Option deaktiviert ist, behält jedes Produkt "
-"seine normale Schaltfläche „In den Warenkorb“ und die Angebotsliste ist "
-"ausgeblendet, dein Shop verhält sich wie ein Standardshop."
+"Główny wyłącznik. Kiedy opcja jest wyłączona, każdy produkt zachowuje swój "
+"normalny przycisk Dodaj do koszyka, a lista ofert jest ukryta, Twój sklep "
+"zachowuje się jak sklep standardowy."
 
 #: src/Admin/Settings.php:143
 msgid "Quote mode"
-msgstr "Angebotsmodus"
+msgstr "Tryb zapytań ofertowych"
 
 #: src/Admin/Settings.php:148
 msgid "Selected products only"
-msgstr "Nur ausgewählte Produkte"
+msgstr "Tylko wybrane produkty"
 
 #: src/Admin/Settings.php:151
 msgid "All products"
-msgstr "Alle Produkte"
+msgstr "Wszystkie produkty"
 
 #: src/Admin/Settings.php:155
 msgid ""
@@ -197,26 +197,26 @@ msgid ""
 "\"Enable quote requests\" on it (Product data > General). All products: "
 "every product in the store becomes quote-only and cannot be bought directly."
 msgstr ""
-"Nur ausgewählte Produkte: Jedes Produkt bleibt ein normaler Verkauf, bis du "
-"dort „Angebotsanfragen aktivieren“ ankreuzt (Produktdaten > Allgemein). Alle "
-"Produkte: Jedes Produkt im Shop wird zu einem reinen Angebotsartikel und "
-"kann nicht direkt gekauft werden."
+"Tylko wybrane produkty: każdy produkt pozostaje w normalnej sprzedaży, "
+"dopóki nie zaznaczysz na nim opcji „Włącz zapytania ofertowe” (Dane produktu "
+"> Ogólne). Wszystkie produkty: każdy produkt w sklepie jest przedmiotem "
+"wyłącznie wyceny i nie można go kupić bezpośrednio."
 
 #: src/Admin/Settings.php:158
 msgid ""
 "Default: Selected products only, so nothing changes on your storefront until "
 "you choose the products."
 msgstr ""
-"Standard: Nur ausgewählte Produkte, daher ändert sich in deinem Shop nichts, "
-"bis du die Produkte auswählst."
+"Domyślnie: tylko wybrane produkty, więc nic się nie zmieni w Twojej witrynie "
+"sklepowej, dopóki nie wybierzesz produktów."
 
 #: src/Admin/Settings.php:164
 msgid "Hide price"
-msgstr "Preis ausblenden"
+msgstr "Ukryj cenę"
 
 #: src/Admin/Settings.php:171
 msgid "Hide the price on quote-enabled products."
-msgstr "Blende den Preis für angebotsfähige Produkte aus."
+msgstr "Ukryj cenę na produktach z włączonym zapytaniem ofertowym."
 
 #: src/Admin/Settings.php:174
 msgid ""
@@ -224,39 +224,38 @@ msgid ""
 "rather than assume. Turn off to keep the list price visible next to the "
 "quote button."
 msgstr ""
-"Lass die Option aktiviert, wenn die Preisgestaltung von der Menge oder "
-"Spezifikation abhängt, damit Kunden nachfragen und nicht vermuten. "
-"Deaktiviere diese Option, damit der Listenpreis neben der "
-"Angebotsschaltfläche sichtbar bleibt."
+"Pozostaw włączone, gdy cena zależy od ilości lub specyfikacji, więc klienci "
+"raczej pytają, niż zakładają. Wyłącz, aby cena katalogowa była widoczna obok "
+"przycisku wyceny."
 
 #: src/Admin/Settings.php:180
 msgid "Button text"
-msgstr "Schaltflächentext"
+msgstr "Tekst przycisku"
 
 #: src/Admin/Settings.php:186 src/Service/QuoteProducts.php:199
 msgid "Add to quote"
-msgstr "Zum Angebot hinzufügen"
+msgstr "Dodaj do zapytania"
 
 #: src/Admin/Settings.php:188
 msgid ""
 "Replaces \"Add to cart\" on quote-enabled products. Leave blank to use the "
 "default, \"Add to quote\"."
 msgstr ""
-"Ersetzt „In den Warenkorb“ bei Produkten, für die ein Angebot aktiviert ist. "
-"Lass das Feld leer, um die Standardeinstellung „Zum Angebot hinzufügen“ zu "
-"verwenden."
+"Zastępuje opcję „Dodaj do koszyka” w przypadku produktów objętych wyceną. "
+"Pozostaw puste, aby użyć domyślnej opcji „Dodaj do zapytania”."
 
 #: src/Admin/Settings.php:197
 msgid "Notifications"
-msgstr "Benachrichtigungen"
+msgstr "Powiadomienia"
 
 #: src/Admin/Settings.php:199
 msgid "Decide where new quote requests land in your inbox."
-msgstr "Entscheide, wo neue Angebotsanfragen in deinem Posteingang landen."
+msgstr ""
+"Zdecyduj, gdzie w Twojej skrzynce odbiorczej znajdą się nowe prośby o wycenę."
 
 #: src/Admin/Settings.php:205
 msgid "Recipient email"
-msgstr "Empfänger-E-Mail"
+msgstr "Adres e-mail odbiorcy"
 
 #. translators: %s: the site admin email address.
 #: src/Admin/Settings.php:216
@@ -265,78 +264,78 @@ msgid ""
 "Each new request is emailed here and also saved under WooCommerce > Quote "
 "Requests. Leave blank to use the site admin email (%s)."
 msgstr ""
-"Jede neue Anfrage wird hier per E-Mail verschickt und auch unter WooCommerce "
-"> Angebotsanfragen gespeichert. Lass das Feld leer, um die E-Mail-Adresse "
-"des Website-Administrators (%s) zu verwenden."
+"Każde nowe zapytanie jest wysyłane tutaj e-mailem i zapisywane w WooCommerce "
+"> Prośby o wycenę. Pozostaw puste, aby użyć adresu e-mail administratora "
+"witryny (%s)."
 
 #: src/PostType/QuoteRequest.php:55 src/PostType/QuoteRequest.php:57
 #: src/PostType/QuoteRequest.php:58
 msgid "Quote Requests"
-msgstr "Angebotsanfragen"
+msgstr "Zapytania ofertowe"
 
 #: src/PostType/QuoteRequest.php:56
 msgid "Quote Request"
-msgstr "Angebotsanfrage"
+msgstr "Zapytanie ofertowe"
 
 #: src/PostType/QuoteRequest.php:59 src/PostType/QuoteRequest.php:60
 msgid "View Quote Request"
-msgstr "Angebotsanfrage anzeigen"
+msgstr "Zobacz zapytanie ofertowe"
 
 #: src/PostType/QuoteRequest.php:61
 msgid "Search quote requests"
-msgstr "Angebotsanfragen durchsuchen"
+msgstr "Szukaj zapytań ofertowych"
 
 #: src/PostType/QuoteRequest.php:62
 msgid "No quote requests found."
-msgstr "Keine Angebotsanfragen gefunden."
+msgstr "Nie znaleziono zapytań ofertowych."
 
 #: src/PostType/QuoteRequest.php:63
 msgid "No quote requests in Trash."
-msgstr "Keine Angebotsanfragen im Papierkorb."
+msgstr "Brak zapytań ofertowych w koszu."
 
 #. translators: 1: customer name, 2: human-readable date
 #: src/PostType/QuoteRequest.php:101
 #, php-format
 msgid "Quote from %1$s: %2$s"
-msgstr "Angebot von %1$s: %2$s"
+msgstr "Zapytanie od %1$s: %2$s"
 
 #: src/PostType/QuoteRequest.php:178
 msgid "Yes"
-msgstr ""
+msgstr "Tak"
 
 #: src/PostType/QuoteRequest.php:179
 msgid "No"
-msgstr ""
+msgstr "Nie"
 
 #: src/PostType/QuoteRequest.php:296 src/PostType/QuoteRequest.php:358
 #: src/Service/QuotePage.php:314
 msgid "Email"
-msgstr "E-Mail"
+msgstr "E-mail"
 
 #: src/PostType/QuoteRequest.php:297 src/PostType/QuoteRequest.php:368
 #: src/Service/QuotePage.php:324
 msgid "Company"
-msgstr "Unternehmen"
+msgstr "Firma"
 
 #: src/PostType/QuoteRequest.php:298
 msgid "Items"
-msgstr "Artikel"
+msgstr "Pozycje"
 
 #: src/PostType/QuoteRequest.php:334
 msgid "Quote details"
-msgstr "Angebotsdetails"
+msgstr "Szczegóły zapytania"
 
 #: src/PostType/QuoteRequest.php:354 src/Service/QuotePage.php:304
 msgid "Name"
-msgstr "Name"
+msgstr "Imię i nazwisko"
 
 #: src/PostType/QuoteRequest.php:380
 msgid "Requested items"
-msgstr "Angefragte Artikel"
+msgstr "Zapytane pozycje"
 
 #: src/PostType/QuoteRequest.php:382
 msgid "No items recorded."
-msgstr "Keine Artikel erfasst."
+msgstr "Brak zapisanych pozycji."
 
 #: src/PostType/QuoteRequest.php:387 src/Service/QuotePage.php:243
 #: src/Service/QuotePage.php:251
@@ -346,166 +345,180 @@ msgstr "Produkt"
 #: src/PostType/QuoteRequest.php:388 src/Service/QuotePage.php:244
 #: src/Service/QuotePage.php:252 src/Service/QuotePage.php:254
 msgid "Quantity"
-msgstr "Menge"
+msgstr "Ilość"
 
 #. translators: %s: field label
 #: src/Service/QuoteFields.php:275
 #, php-format
 msgid "Please confirm \"%s\"."
-msgstr ""
+msgstr "Potwierdź \"%s\"."
 
 #. translators: %s: field label
 #: src/Service/QuoteFields.php:280
 #, php-format
 msgid "Please choose an option for \"%s\"."
-msgstr ""
+msgstr "Wybierz opcję dla \"%s\"."
 
 #. translators: %s: field label
 #: src/Service/QuoteFields.php:285
 #, php-format
 msgid "Please fill in \"%s\"."
-msgstr ""
+msgstr "Wypełnij \"%s\"."
 
 #: src/Service/QuoteFields.php:372
 msgid "Select an option"
-msgstr ""
+msgstr "Wybierz opcję"
 
 #: src/Service/QuotePage.php:110
 msgid "Your session expired. Please try again."
-msgstr "Deine Sitzung ist abgelaufen. Bitte versuche es erneut."
+msgstr "Twoja sesja wygasła. Spróbuj ponownie."
 
 #: src/Service/QuotePage.php:126
 msgid "Please tell us your name."
-msgstr "Bitte teile uns deinen Namen mit."
+msgstr "Podaj swoje imię i nazwisko."
 
 #: src/Service/QuotePage.php:130
 msgid "Please enter a valid email address."
-msgstr "Bitte gib eine gültige E-Mail-Adresse ein."
+msgstr "Podaj prawidłowy adres e-mail."
 
 #: src/Service/QuotePage.php:136
 msgid "Your quote list is empty."
-msgstr "Deine Angebotsliste ist leer."
+msgstr "Twoja lista zapytania jest pusta."
 
 #: src/Service/QuotePage.php:197
 msgid "Thank you: your request is on its way"
-msgstr "Vielen Dank: deine Anfrage ist unterwegs"
+msgstr "Dziękujemy, Twoje zapytanie jest w drodze"
 
 #: src/Service/QuotePage.php:198
 msgid "We have received your quote request and will get back to you shortly."
 msgstr ""
-"Wir haben deine Angebotsanfrage erhalten und melden uns in Kürze bei dir."
+"Otrzymaliśmy Twoje zapytanie ofertowe i wkrótce się z Tobą skontaktujemy."
 
 #: src/Service/QuotePage.php:209
 msgid "Your quote list is empty"
-msgstr "Deine Angebotsliste ist leer"
+msgstr "Twoja lista zapytania jest pusta"
 
 #: src/Service/QuotePage.php:210
 msgid "Browse the shop and add products to build your quote request."
 msgstr ""
-"Durchsuche den Shop und füge Produkte hinzu, um deine Angebotsanfrage zu "
-"erstellen."
+"Przeglądaj sklep i dodawaj produkty, aby zbudować swoje zapytanie ofertowe."
 
 #: src/Service/QuotePage.php:211
 msgid "Browse products"
-msgstr "Produkte durchsuchen"
+msgstr "Przeglądaj produkty"
 
 #: src/Service/QuotePage.php:227
 msgid "Quote worksheet"
-msgstr ""
+msgstr "Arkusz zapytania ofertowego"
 
 #. translators: %d: number of line items on the quote worksheet
 #: src/Service/QuotePage.php:233
 #, php-format
 msgid "%d line"
 msgid_plural "%d lines"
-msgstr[0] "%d Zeile"
-msgstr[1] "%d Zeilen"
+msgstr[0] "%d wiersz"
+msgstr[1] "%d wiersze"
+msgstr[2] "%d wierszy"
 
 #: src/Service/QuotePage.php:245
 msgid "Remove"
-msgstr "Entfernen"
+msgstr "Usuń"
 
 #. translators: %s: product name
 #: src/Service/QuotePage.php:274
 #, php-format
 msgid "Remove %s"
-msgstr "%s entfernen"
+msgstr "Usuń %s"
 
 #: src/Service/QuotePage.php:284
 msgid "Update quantities"
-msgstr "Mengen aktualisieren"
+msgstr "Zaktualizuj ilości"
 
 #: src/Service/QuotePage.php:300
 msgid "Request your quote"
-msgstr "Fordere dein Angebot an"
+msgstr "Wyślij zapytanie ofertowe"
 
 #: src/Service/QuotePage.php:330
 msgid "Message"
-msgstr "Nachricht"
+msgstr "Wiadomość"
 
 #: src/Service/QuotePage.php:337
 msgid "Send quote request"
-msgstr "Angebotsanfrage senden"
+msgstr "Wyślij zapytanie ofertowe"
 
 #. translators: %s: site name
 #: src/Service/QuotePage.php:387
 #, php-format
 msgid "A new quote request was submitted on %s."
-msgstr "Auf %s wurde eine neue Angebotsanfrage eingereicht."
+msgstr "Nowe zapytanie ofertowe zostało przesłane w %s."
 
 #: src/Service/QuotePage.php:391
 msgid "Name:"
-msgstr "Name:"
+msgstr "Imię i nazwisko:"
 
 #: src/Service/QuotePage.php:392
 msgid "Email:"
-msgstr "E-Mail:"
+msgstr "E-mail:"
 
 #: src/Service/QuotePage.php:395
 msgid "Company:"
-msgstr "Unternehmen:"
+msgstr "Firma:"
 
 #: src/Service/QuotePage.php:417
 msgid "Requested items:"
-msgstr "Angefragte Artikel:"
+msgstr "Zapytane pozycje:"
 
 #: src/Service/QuotePage.php:425
 msgid "Message:"
-msgstr "Nachricht:"
+msgstr "Wiadomość:"
 
 #: src/Service/QuotePage.php:433
 msgid "View in admin:"
-msgstr "Im Adminbereich anzeigen:"
+msgstr "Zobacz w panelu administracyjnym:"
 
 #. translators: %s: customer name or email
 #: src/Service/QuotePage.php:438
 #, php-format
 msgid "New quote request from %s"
-msgstr "Neue Angebotsanfrage von %s"
+msgstr "Nowe zapytanie ofertowe od %s"
 
 #: src/Service/QuoteProducts.php:146
 msgid "In your quote"
-msgstr "In deinem Angebot"
+msgstr "W Twoim zapytaniu"
 
 #~ msgid "Estimate - Request a Quote for WooCommerce"
-#~ msgstr "Estimate, Angebotsanfragen für WooCommerce"
+#~ msgstr "Estimate - Zapytanie ofertowe dla WooCommerce"
 
 #~ msgid ""
 #~ "Estimate - Request a Quote for WooCommerce requires WooCommerce to be "
 #~ "active."
 #~ msgstr ""
-#~ "Für „Estimate, Angebotsanfragen für WooCommerce“ muss WooCommerce aktiv "
-#~ "sein."
+#~ "Estimate - Zapytanie ofertowe dla WooCommerce wymaga aktywnego "
+#~ "WooCommerce."
 
 #, php-format
 #~ msgid "od %d zł/rok"
-#~ msgstr "ab %d zł/Jahr"
+#~ msgstr "od %d zł/rok"
 
 #~ msgid "Estimate: Request a Quote"
-#~ msgstr "Estimate: Angebotsanfragen"
+#~ msgstr "Estimate: Zapytanie ofertowe"
 
 #~ msgid "Estimate"
 #~ msgstr "Estimate"
 
 #~ msgid "Estimate worksheet"
-#~ msgstr "Estimate-Arbeitsblatt"
+#~ msgstr "Arkusz szacunkowy"
+
+#~ msgid ""
+#~ "In \"selected\" mode, enable individual products via the \"Enable quote "
+#~ "requests\" checkbox in the product data box."
+#~ msgstr ""
+#~ "W trybie „wybrane” włącz poszczególne produkty za pomocą pola wyboru "
+#~ "„Włącz zapytania ofertowe” w sekcji danych produktu."
+
+#~ msgid ""
+#~ "Where new quote requests are emailed. Leave blank to use the site admin "
+#~ "email."
+#~ msgstr ""
+#~ "Adres, na który wysyłane są nowe zapytania ofertowe. Pozostaw puste, aby "
+#~ "użyć adresu e-mail administratora witryny."
