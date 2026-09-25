@@ -56,16 +56,25 @@ final class QuotePage implements HasHooks
      */
     public function maybeHandlePost(): void
     {
-        // Nonce is verified inside each handler before any data is processed.
+        // Each form carries its own nonce field, verified here before any
+        // other field is read. A present but stale nonce shows an error.
         // List item updates / removals.
-        if (isset($_POST['estimate_list_action'])) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
-            $this->handleListUpdate();
+        if (isset($_POST['estimate_list_nonce'])) {
+            if (wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['estimate_list_nonce'])), self::LIST_NONCE)) {
+                $this->handleListUpdate();
+            } else {
+                $this->errors['_form'] = __('Your session expired. Please try again.', 'quotlet');
+            }
             return;
         }
 
         // Quote request submission.
-        if (isset($_POST['estimate_submit'])) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
-            $this->handleSubmit();
+        if (isset($_POST['estimate_nonce'])) {
+            if (wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['estimate_nonce'])), self::NONCE)) {
+                $this->handleSubmit();
+            } else {
+                $this->errors['_form'] = __('Your session expired. Please try again.', 'quotlet');
+            }
         }
     }
 
@@ -76,6 +85,7 @@ final class QuotePage implements HasHooks
             : '';
 
         if (! wp_verify_nonce($nonce, self::LIST_NONCE)) {
+            $this->errors['_form'] = __('Your session expired. Please try again.', 'quotlet');
             return;
         }
 
@@ -89,9 +99,8 @@ final class QuotePage implements HasHooks
                 $this->list->remove($productId);
             }
         } elseif ('update' === $action && isset($_POST['qty']) && is_array($_POST['qty'])) {
-            // Sanitise each submitted quantity.
-            $qtys = wp_unslash($_POST['qty']); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- each value cast to int below.
-            foreach ((array) $qtys as $productId => $qty) {
+            $qtys = map_deep(wp_unslash($_POST['qty']), 'absint');
+            foreach ($qtys as $productId => $qty) {
                 $this->list->setQuantity(absint($productId), absint($qty));
             }
         }
@@ -118,8 +127,15 @@ final class QuotePage implements HasHooks
             'message' => isset($_POST['estimate_message']) ? sanitize_textarea_field(wp_unslash($_POST['estimate_message'])) : '',
         ];
 
-        // Add-on fields: only declared keys are read, each sanitised by type.
-        $this->answers     = $this->fields->sanitizeSubmission();
+        // Add-on fields: only declared keys are read, each sanitised on read
+        // and then again by field type.
+        $posted = [];
+        foreach (array_keys($this->fields->all()) as $key) {
+            $name         = QuoteFields::INPUT_PREFIX . $key;
+            $posted[$key] = isset($_POST[$name]) ? sanitize_textarea_field(wp_unslash($_POST[$name])) : '';
+        }
+
+        $this->answers     = $this->fields->sanitizeSubmission($posted);
         $this->fieldErrors = $this->fields->validate($this->answers);
 
         if ('' === $this->values['name']) {
@@ -162,7 +178,7 @@ final class QuotePage implements HasHooks
             return '';
         }
 
-        $sent = isset($_GET['estimate_sent']) && '1' === sanitize_text_field(wp_unslash($_GET['estimate_sent'])); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only confirmation flag.
+        $sent = isset($_GET['estimate_sent']) && '1' === sanitize_text_field(wp_unslash($_GET['estimate_sent'])); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only view parameter, validated against the single allowed value '1'.
 
         ob_start();
 

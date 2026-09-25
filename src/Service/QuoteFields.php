@@ -57,7 +57,7 @@ defined('ABSPATH') || exit;
 final class QuoteFields
 {
     /** Prefix for the input name of every add-on field. */
-    private const INPUT_PREFIX = 'estimate_field_';
+    public const INPUT_PREFIX = 'estimate_field_';
 
     /** Supported field types. */
     private const TYPES = ['text', 'textarea', 'select', 'checkbox'];
@@ -203,29 +203,20 @@ final class QuoteFields
     }
 
     /**
-     * Read the submitted answers from $_POST, one sanitiser per field type.
+     * Sanitise the submitted answers, one sanitiser per field type.
      *
-     * Only declared keys are read: anything else in the POST body is ignored.
-     * The caller verifies the form nonce before this runs.
+     * Only declared keys are used: anything else in $posted is ignored.
      *
+     * @param array<string, string> $posted Field key => value, already read
+     *                                      from the nonce-verified request.
      * @return array<string, string> Field key => sanitised value.
      */
-    public function sanitizeSubmission(): array
+    public function sanitizeSubmission(array $posted): array
     {
         $values = [];
 
         foreach ($this->all() as $key => $field) {
-            $name = self::INPUT_PREFIX . $key;
-
-            // The caller verifies the submission nonce; each value is sanitised per field type immediately below.
-            $raw = isset($_POST[$name]) ? wp_unslash($_POST[$name]) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-
-            if (! is_scalar($raw)) {
-                // Arrays and objects are never valid for these field types.
-                $raw = '';
-            }
-
-            $raw = (string) $raw;
+            $raw = isset($posted[$key]) && is_scalar($posted[$key]) ? (string) $posted[$key] : '';
 
             switch ($field['type']) {
                 case 'textarea':
