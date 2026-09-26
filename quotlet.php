@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:       Estimate - Request a Quote for WooCommerce
+ * Plugin Name:       Quotlet - Request a Quote for WooCommerce
  * Plugin URI:        https://plogins.com/plogins-estimate/
  * Description:        Let customers request a quote instead of buying directly, ideal for B2B and made-to-order.
- * Version:           1.0.5
+ * Version:           1.1.4
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
@@ -11,10 +11,10 @@
  * Author URI:        https://wppoland.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       plogins-estimate
+ * Text Domain:       quotlet
  * Domain Path:       /languages
  * WC requires at least: 8.0
- * WC tested up to: 10.9
+ * WC tested up to: 11.0
  *
  * @package Estimate
  */
@@ -25,7 +25,7 @@ namespace Estimate;
 
 defined('ABSPATH') || exit;
 
-const VERSION     = '1.0.5';
+const VERSION     = '1.1.4';
 const PLUGIN_FILE = __FILE__;
 
 define('ESTIMATE_DIR', plugin_dir_path(__FILE__));
@@ -45,7 +45,7 @@ add_action('plugins_loaded', static function (): void {
     if (! class_exists('WooCommerce')) {
         add_action('admin_notices', static function (): void {
             echo '<div class="notice notice-error"><p>';
-            echo esc_html__('Estimate - Request a Quote for WooCommerce requires WooCommerce to be active.', 'plogins-estimate');
+            echo esc_html__('Quotlet requires WooCommerce to be installed and activated.', 'quotlet');
             echo '</p></div>';
         });
         return;

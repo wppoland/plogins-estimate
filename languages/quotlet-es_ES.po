@@ -1,0 +1,512 @@
+# Copyright (C) 2026 WPPoland
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Estimate - Request a Quote for WooCommerce 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/quotlet\n"
+"POT-Creation-Date: 2026-09-09T14:37:50+00:00\n"
+"PO-Revision-Date: 2026-07-28T12:00:00+00:00\n"
+"Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: quotlet\n"
+"X-Generator: WP-CLI 2.12.0\n"
+
+#. Plugin Name of the plugin
+#: quotlet.php
+msgid "Quotlet - Request a Quote for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: quotlet.php
+msgid "https://plogins.com/quotlet/"
+msgstr "https://plogins.com/quotlet/"
+
+#. Description of the plugin
+#: quotlet.php
+msgid ""
+"Let customers request a quote instead of buying directly, ideal for B2B and "
+"made-to-order."
+msgstr ""
+"Permite que los clientes soliciten un presupuesto en lugar de comprar "
+"directamente, ideal para B2B y por encargo."
+
+#. Author of the plugin
+#: quotlet.php
+msgid "WPPoland.com"
+msgstr "WPPoland.com"
+
+#. Author URI of the plugin
+#: quotlet.php
+msgid "https://wppoland.com"
+msgstr "https://wppoland.com"
+
+#: quotlet.php:48
+msgid "Quotlet requires WooCommerce to be installed and activated."
+msgstr ""
+
+#: src/Admin/ProductData.php:39 src/Admin/Settings.php:127
+msgid "Enable quote requests"
+msgstr "Habilitar solicitudes de presupuesto"
+
+#: src/Admin/ProductData.php:41
+msgid ""
+"Quote mode is set to \"all products\", so every product already shows an Add "
+"to quote button."
+msgstr ""
+"El modo de presupuesto está configurado en \"todos los productos\", por lo "
+"que cada producto ya muestra un botón Añadir al presupuesto."
+
+#: src/Admin/ProductData.php:42
+msgid ""
+"Hide the price and add-to-cart button and show an \"Add to quote\" button "
+"instead."
+msgstr ""
+"Oculta el precio y el botón Añadir al carrito y, en su lugar, muestra el "
+"botón \"Añadir al presupuesto\"."
+
+#: src/Admin/ProUpsell.php:78
+msgid "Wkrótce"
+msgstr "Próximamente"
+
+#: src/Admin/ProUpsell.php:78
+msgid "Coming soon"
+msgstr "Próximamente"
+
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:84
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "desde %1$s%2$d/año"
+
+#: src/Admin/ProUpsell.php:93
+msgid "Upgrade to PRO"
+msgstr "Mejora a PRO"
+
+#: src/Admin/ProUpsell.php:94
+msgid "Powiadom mnie"
+msgstr "Avísame"
+
+#: src/Admin/ProUpsell.php:94
+msgid "Get notified"
+msgstr "Avísame"
+
+#: src/Admin/ProUpsell.php:124
+msgid "Permission denied."
+msgstr "Permiso denegado."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:154
+#, php-format
+msgid "Do more with %s"
+msgstr "Haz más con %s"
+
+#: src/Admin/ProUpsell.php:161
+msgid "Dismiss this notice"
+msgstr "Descartar este aviso"
+
+#: src/Admin/ProUpsell.php:178
+msgid "Unlock every PRO feature"
+msgstr "Desbloquea todas las funciones PRO"
+
+#: src/Admin/ProUpsell.php:191
+msgid "one licence, every PRO feature"
+msgstr "una licencia, todas las funciones PRO"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:210
+#, php-format
+msgid "What %s adds"
+msgstr "Lo que añade %s"
+
+#: src/Admin/Settings.php:60
+msgid "Quotlet: request a quote"
+msgstr ""
+
+#: src/Admin/Settings.php:61
+msgid "Request a Quote"
+msgstr ""
+
+#: src/Admin/Settings.php:100
+msgid "Let customers request a quote"
+msgstr "Permitir que los clientes soliciten un presupuesto"
+
+#: src/Admin/Settings.php:102
+msgid ""
+"Turn products into quote requests instead of direct purchases, ideal for "
+"B2B, bulk or made-to-order items. Customers build a quote list and send you "
+"their details; each request is emailed to you and saved for review."
+msgstr ""
+"Convierte los productos en solicitudes de presupuesto en lugar de compras "
+"directas, ideal para artículos B2B, al por mayor o por encargo. Los clientes "
+"crean una lista de presupuesto y te envían sus datos; cada solicitud se te "
+"envía por correo electrónico y se guarda para que la revises."
+
+#. translators: %s: shortcode wrapped in <code>.
+#: src/Admin/Settings.php:108
+#, php-format
+msgid "Add the %s shortcode to a page to show the quote list and request form."
+msgstr ""
+"Añade el shortcode %s a una página para mostrar la lista de presupuesto y el "
+"formulario de solicitud."
+
+#: src/Admin/Settings.php:119
+msgid "General"
+msgstr "General"
+
+#: src/Admin/Settings.php:121
+msgid ""
+"Control whether quote requests appear on your store and which products use "
+"them."
+msgstr ""
+"Controla si las solicitudes de presupuesto aparecen en tu tienda y qué "
+"productos las utilizan."
+
+#: src/Admin/Settings.php:134
+msgid "Show quote requests on the storefront."
+msgstr "Mostrar las solicitudes de presupuesto en la tienda."
+
+#: src/Admin/Settings.php:137
+msgid ""
+"The master switch. When off, every product keeps its normal Add to cart "
+"button and the quote list is hidden, your store behaves as a standard shop."
+msgstr ""
+"El interruptor principal. Cuando está desactivado, cada producto mantiene su "
+"botón Añadir al carrito normal y la lista de presupuesto queda oculta, tu "
+"tienda se comporta como una tienda estándar."
+
+#: src/Admin/Settings.php:143
+msgid "Quote mode"
+msgstr "Modo presupuesto"
+
+#: src/Admin/Settings.php:148
+msgid "Selected products only"
+msgstr "Solo productos seleccionados"
+
+#: src/Admin/Settings.php:151
+msgid "All products"
+msgstr "Todos los productos"
+
+#: src/Admin/Settings.php:155
+msgid ""
+"Selected products only: each product stays a normal sale until you tick "
+"\"Enable quote requests\" on it (Product data > General). All products: "
+"every product in the store becomes quote-only and cannot be bought directly."
+msgstr ""
+"Solo productos seleccionados: cada producto sigue siendo una venta normal "
+"hasta que marques en él \"Habilitar solicitudes de presupuesto\" (Datos del "
+"producto > General). Todos los productos: todos los productos de la tienda "
+"pasan a ser solo de presupuesto y no se pueden comprar directamente."
+
+#: src/Admin/Settings.php:158
+msgid ""
+"Default: Selected products only, so nothing changes on your storefront until "
+"you choose the products."
+msgstr ""
+"Predeterminado: solo productos seleccionados, por lo que nada cambia en tu "
+"tienda hasta que elijas los productos."
+
+#: src/Admin/Settings.php:164
+msgid "Hide price"
+msgstr "Ocultar precio"
+
+#: src/Admin/Settings.php:171
+msgid "Hide the price on quote-enabled products."
+msgstr "Ocultar el precio en los productos con presupuesto activado."
+
+#: src/Admin/Settings.php:174
+msgid ""
+"Leave on when pricing depends on quantity or specification, so customers ask "
+"rather than assume. Turn off to keep the list price visible next to the "
+"quote button."
+msgstr ""
+"Déjalo activado cuando el precio dependa de la cantidad o la especificación, "
+"para que los clientes pregunten en lugar de suponerlo. Desactívalo para "
+"mantener el precio de lista visible junto al botón de presupuesto."
+
+#: src/Admin/Settings.php:180
+msgid "Button text"
+msgstr "Texto del botón"
+
+#: src/Admin/Settings.php:186 src/Service/QuoteProducts.php:199
+msgid "Add to quote"
+msgstr "Añadir al presupuesto"
+
+#: src/Admin/Settings.php:188
+msgid ""
+"Replaces \"Add to cart\" on quote-enabled products. Leave blank to use the "
+"default, \"Add to quote\"."
+msgstr ""
+"Sustituye a \"Añadir al carrito\" en los productos con presupuesto activado. "
+"Déjalo en blanco para usar el valor predeterminado, \"Añadir al "
+"presupuesto\"."
+
+#: src/Admin/Settings.php:197
+msgid "Notifications"
+msgstr "Notificaciones"
+
+#: src/Admin/Settings.php:199
+msgid "Decide where new quote requests land in your inbox."
+msgstr ""
+"Decide dónde llegan las nuevas solicitudes de presupuesto en tu bandeja de "
+"entrada."
+
+#: src/Admin/Settings.php:205
+msgid "Recipient email"
+msgstr "Correo electrónico del destinatario"
+
+#. translators: %s: the site admin email address.
+#: src/Admin/Settings.php:216
+#, php-format
+msgid ""
+"Each new request is emailed here and also saved under WooCommerce > Quote "
+"Requests. Leave blank to use the site admin email (%s)."
+msgstr ""
+"Cada nueva solicitud se envía por correo electrónico aquí y también se "
+"guarda en WooCommerce > Solicitudes de presupuesto. Déjalo en blanco para "
+"usar el correo electrónico del administrador del sitio (%s)."
+
+#: src/PostType/QuoteRequest.php:55 src/PostType/QuoteRequest.php:57
+#: src/PostType/QuoteRequest.php:58
+msgid "Quote Requests"
+msgstr "Solicitudes de presupuesto"
+
+#: src/PostType/QuoteRequest.php:56
+msgid "Quote Request"
+msgstr "Solicitud de presupuesto"
+
+#: src/PostType/QuoteRequest.php:59 src/PostType/QuoteRequest.php:60
+msgid "View Quote Request"
+msgstr "Ver solicitud de presupuesto"
+
+#: src/PostType/QuoteRequest.php:61
+msgid "Search quote requests"
+msgstr "Buscar solicitudes de presupuesto"
+
+#: src/PostType/QuoteRequest.php:62
+msgid "No quote requests found."
+msgstr "No se han encontrado solicitudes de presupuesto."
+
+#: src/PostType/QuoteRequest.php:63
+msgid "No quote requests in Trash."
+msgstr "No hay solicitudes de presupuesto en la papelera."
+
+#. translators: 1: customer name, 2: human-readable date
+#: src/PostType/QuoteRequest.php:101
+#, php-format
+msgid "Quote from %1$s: %2$s"
+msgstr "Presupuesto de %1$s: %2$s"
+
+#: src/PostType/QuoteRequest.php:178
+msgid "Yes"
+msgstr ""
+
+#: src/PostType/QuoteRequest.php:179
+msgid "No"
+msgstr ""
+
+#: src/PostType/QuoteRequest.php:296 src/PostType/QuoteRequest.php:358
+#: src/Service/QuotePage.php:314
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: src/PostType/QuoteRequest.php:297 src/PostType/QuoteRequest.php:368
+#: src/Service/QuotePage.php:324
+msgid "Company"
+msgstr "Empresa"
+
+#: src/PostType/QuoteRequest.php:298
+msgid "Items"
+msgstr "Artículos"
+
+#: src/PostType/QuoteRequest.php:334
+msgid "Quote details"
+msgstr "Detalles del presupuesto"
+
+#: src/PostType/QuoteRequest.php:354 src/Service/QuotePage.php:304
+msgid "Name"
+msgstr "Nombre"
+
+#: src/PostType/QuoteRequest.php:380
+msgid "Requested items"
+msgstr "Artículos solicitados"
+
+#: src/PostType/QuoteRequest.php:382
+msgid "No items recorded."
+msgstr "No hay artículos registrados."
+
+#: src/PostType/QuoteRequest.php:387 src/Service/QuotePage.php:243
+#: src/Service/QuotePage.php:251
+msgid "Product"
+msgstr "Producto"
+
+#: src/PostType/QuoteRequest.php:388 src/Service/QuotePage.php:244
+#: src/Service/QuotePage.php:252 src/Service/QuotePage.php:254
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. translators: %s: field label
+#: src/Service/QuoteFields.php:275
+#, php-format
+msgid "Please confirm \"%s\"."
+msgstr ""
+
+#. translators: %s: field label
+#: src/Service/QuoteFields.php:280
+#, php-format
+msgid "Please choose an option for \"%s\"."
+msgstr ""
+
+#. translators: %s: field label
+#: src/Service/QuoteFields.php:285
+#, php-format
+msgid "Please fill in \"%s\"."
+msgstr ""
+
+#: src/Service/QuoteFields.php:372
+msgid "Select an option"
+msgstr ""
+
+#: src/Service/QuotePage.php:110
+msgid "Your session expired. Please try again."
+msgstr "Tu sesión ha caducado. Por favor, inténtalo de nuevo."
+
+#: src/Service/QuotePage.php:126
+msgid "Please tell us your name."
+msgstr "Por favor, dinos tu nombre."
+
+#: src/Service/QuotePage.php:130
+msgid "Please enter a valid email address."
+msgstr "Por favor, introduce una dirección de correo electrónico válida."
+
+#: src/Service/QuotePage.php:136
+msgid "Your quote list is empty."
+msgstr "Tu lista de presupuesto está vacía."
+
+#: src/Service/QuotePage.php:197
+msgid "Thank you: your request is on its way"
+msgstr "Gracias: tu solicitud está en camino"
+
+#: src/Service/QuotePage.php:198
+msgid "We have received your quote request and will get back to you shortly."
+msgstr ""
+"Hemos recibido tu solicitud de presupuesto y nos pondremos en contacto "
+"contigo en breve."
+
+#: src/Service/QuotePage.php:209
+msgid "Your quote list is empty"
+msgstr "Tu lista de presupuesto está vacía"
+
+#: src/Service/QuotePage.php:210
+msgid "Browse the shop and add products to build your quote request."
+msgstr ""
+"Explora la tienda y añade productos para crear tu solicitud de presupuesto."
+
+#: src/Service/QuotePage.php:211
+msgid "Browse products"
+msgstr "Explorar productos"
+
+#: src/Service/QuotePage.php:227
+msgid "Quote worksheet"
+msgstr ""
+
+#. translators: %d: number of line items on the quote worksheet
+#: src/Service/QuotePage.php:233
+#, php-format
+msgid "%d line"
+msgid_plural "%d lines"
+msgstr[0] "%d línea"
+msgstr[1] "%d líneas"
+
+#: src/Service/QuotePage.php:245
+msgid "Remove"
+msgstr "Eliminar"
+
+#. translators: %s: product name
+#: src/Service/QuotePage.php:274
+#, php-format
+msgid "Remove %s"
+msgstr "Eliminar %s"
+
+#: src/Service/QuotePage.php:284
+msgid "Update quantities"
+msgstr "Actualizar cantidades"
+
+#: src/Service/QuotePage.php:300
+msgid "Request your quote"
+msgstr "Solicita tu presupuesto"
+
+#: src/Service/QuotePage.php:330
+msgid "Message"
+msgstr "Mensaje"
+
+#: src/Service/QuotePage.php:337
+msgid "Send quote request"
+msgstr "Enviar solicitud de presupuesto"
+
+#. translators: %s: site name
+#: src/Service/QuotePage.php:387
+#, php-format
+msgid "A new quote request was submitted on %s."
+msgstr "Se ha enviado una nueva solicitud de presupuesto en %s."
+
+#: src/Service/QuotePage.php:391
+msgid "Name:"
+msgstr "Nombre:"
+
+#: src/Service/QuotePage.php:392
+msgid "Email:"
+msgstr "Correo electrónico:"
+
+#: src/Service/QuotePage.php:395
+msgid "Company:"
+msgstr "Empresa:"
+
+#: src/Service/QuotePage.php:417
+msgid "Requested items:"
+msgstr "Artículos solicitados:"
+
+#: src/Service/QuotePage.php:425
+msgid "Message:"
+msgstr "Mensaje:"
+
+#: src/Service/QuotePage.php:433
+msgid "View in admin:"
+msgstr "Ver en la administración:"
+
+#. translators: %s: customer name or email
+#: src/Service/QuotePage.php:438
+#, php-format
+msgid "New quote request from %s"
+msgstr "Nueva solicitud de presupuesto de %s"
+
+#: src/Service/QuoteProducts.php:146
+msgid "In your quote"
+msgstr "En tu presupuesto"
+
+#~ msgid "Estimate - Request a Quote for WooCommerce"
+#~ msgstr "Estimate - Solicitud de presupuesto para WooCommerce"
+
+#~ msgid ""
+#~ "Estimate - Request a Quote for WooCommerce requires WooCommerce to be "
+#~ "active."
+#~ msgstr ""
+#~ "Estimate - Solicitud de presupuesto para WooCommerce requiere que "
+#~ "WooCommerce esté activo."
+
+#, php-format
+#~ msgid "od %d zł/rok"
+#~ msgstr "desde %d zł/año"
+
+#~ msgid "Estimate: Request a Quote"
+#~ msgstr "Estimate: Solicitud de presupuesto"
+
+#~ msgid "Estimate"
+#~ msgstr "Estimate"
+
+#~ msgid "Estimate worksheet"
+#~ msgstr "Hoja de trabajo de Estimate"

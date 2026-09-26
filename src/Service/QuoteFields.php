@@ -57,7 +57,7 @@ defined('ABSPATH') || exit;
 final class QuoteFields
 {
     /** Prefix for the input name of every add-on field. */
-    private const INPUT_PREFIX = 'estimate_field_';
+    public const INPUT_PREFIX = 'estimate_field_';
 
     /** Supported field types. */
     private const TYPES = ['text', 'textarea', 'select', 'checkbox'];
@@ -203,29 +203,20 @@ final class QuoteFields
     }
 
     /**
-     * Read the submitted answers from $_POST, one sanitiser per field type.
+     * Sanitise the submitted answers, one sanitiser per field type.
      *
-     * Only declared keys are read: anything else in the POST body is ignored.
-     * The caller verifies the form nonce before this runs.
+     * Only declared keys are used: anything else in $posted is ignored.
      *
+     * @param array<string, string> $posted Field key => value, already read
+     *                                      from the nonce-verified request.
      * @return array<string, string> Field key => sanitised value.
      */
-    public function sanitizeSubmission(): array
+    public function sanitizeSubmission(array $posted): array
     {
         $values = [];
 
         foreach ($this->all() as $key => $field) {
-            $name = self::INPUT_PREFIX . $key;
-
-            // The caller verifies the submission nonce; each value is sanitised per field type immediately below.
-            $raw = isset($_POST[$name]) ? wp_unslash($_POST[$name]) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-
-            if (! is_scalar($raw)) {
-                // Arrays and objects are never valid for these field types.
-                $raw = '';
-            }
-
-            $raw = (string) $raw;
+            $raw = isset($posted[$key]) && is_scalar($posted[$key]) ? (string) $posted[$key] : '';
 
             switch ($field['type']) {
                 case 'textarea':
@@ -272,17 +263,17 @@ final class QuoteFields
             switch ($field['type']) {
                 case 'checkbox':
                     /* translators: %s: field label */
-                    $message = __('Please confirm "%s".', 'plogins-estimate');
+                    $message = __('Please confirm "%s".', 'quotlet');
                     break;
 
                 case 'select':
                     /* translators: %s: field label */
-                    $message = __('Please choose an option for "%s".', 'plogins-estimate');
+                    $message = __('Please choose an option for "%s".', 'quotlet');
                     break;
 
                 default:
                     /* translators: %s: field label */
-                    $message = __('Please fill in "%s".', 'plogins-estimate');
+                    $message = __('Please fill in "%s".', 'quotlet');
                     break;
             }
 
@@ -369,7 +360,7 @@ final class QuoteFields
                     <textarea id="<?php echo esc_attr($inputId); ?>" name="<?php echo esc_attr($name); ?>" rows="5"<?php echo $attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- fixed keywords plus values escaped above. ?>><?php echo esc_textarea($value); ?></textarea>
                 <?php elseif ('select' === $field['type']) : ?>
                     <select id="<?php echo esc_attr($inputId); ?>" name="<?php echo esc_attr($name); ?>"<?php echo $attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- fixed keywords plus values escaped above. ?>>
-                        <option value=""><?php esc_html_e('Select an option', 'plogins-estimate'); ?></option>
+                        <option value=""><?php esc_html_e('Select an option', 'quotlet'); ?></option>
                         <?php foreach ($field['options'] as $optionValue => $optionLabel) : ?>
                             <option value="<?php echo esc_attr($optionValue); ?>"<?php selected($optionValue, $value); ?>><?php echo esc_html($optionLabel); ?></option>
                         <?php endforeach; ?>

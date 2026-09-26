@@ -61,9 +61,9 @@ leer ist, wird stattdessen eine kurze Nachricht mit einem Link zurück zum Shop 
 
 == Installation ==
 
-1. Lade das Plugin nach `/wp-content/plugins/estimate` hoch oder installiere es über Plugins → Neu hinzufügen.
+1. Lade das Plugin nach `/wp-content/plugins/estimate` hoch oder installiere es über Plugins > Neu hinzufügen.
 2. Aktiviere es. WooCommerce muss aktiv sein.
-3. Gehe zu <strong>WooCommerce → Estimate</strong> und wähle deinen Angebotsmodus und deine Optionen aus.
+3. Gehe zu <strong>WooCommerce > Estimate</strong> und wähle deinen Angebotsmodus und deine Optionen aus.
 4. Erstelle eine Seite mit dem Shortcode `[estimate_quote]`, um die Angebotsliste und das Anfrageformular bereitzustellen.
 5. Bearbeite im Modus „Ausgewählt“ ein Produkt und aktiviere im Feld „Produktdaten“ das Kontrollkästchen <strong>Angebotsanfragen aktivieren</strong>.
 

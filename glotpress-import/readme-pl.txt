@@ -61,9 +61,9 @@ pusta, zamiast niej wyświetlany jest krótki komunikat z linkiem powrotnym do s
 
 == Installation ==
 
-1. Prześlij wtyczkę do `/wp-content/plugins/estimate` lub zainstaluj poprzez Wtyczki → Dodaj nową.
+1. Prześlij wtyczkę do `/wp-content/plugins/estimate` lub zainstaluj poprzez Wtyczki > Dodaj nową.
 2. Aktywuj. WooCommerce musi być aktywny.
-3. Przejdź do <strong>WooCommerce → Estimate</strong> i wybierz tryb wyceny oraz opcje.
+3. Przejdź do <strong>WooCommerce > Estimate</strong> i wybierz tryb wyceny oraz opcje.
 4. Utwórz stronę z shortcodem `[estimate_quote]`, na której znajdą się lista wyceny i formularz zapytania.
 5. W trybie „wybranym” edytuj produkt i zaznacz <strong>Włącz prośby o wycenę</strong> w polu Dane produktu.
 
