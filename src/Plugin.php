@@ -56,7 +56,7 @@ final class Plugin
         /**
          * Fires after the plugin has fully booted and all services are registered.
          *
-         * Add-ons (e.g. Estimate Pro) hook this to extend the DI container and
+         * Add-ons (e.g. Quotlet Pro) hook this to extend the DI container and
          * register their own services once the FREE plugin is ready.
          *
          * @param Plugin $plugin The booted plugin instance.

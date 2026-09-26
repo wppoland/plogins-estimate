@@ -36,10 +36,10 @@ final class ProductData implements HasHooks
         woocommerce_wp_checkbox([
             'id'          => QuoteProducts::META_ENABLED,
             'value'       => $this->fieldValue(),
-            'label'       => __('Enable quote requests', 'plogins-estimate'),
+            'label'       => __('Enable quote requests', 'quotlet'),
             'description' => 'all' === $mode
-                ? __('Quote mode is set to "all products", so every product already shows an Add to quote button.', 'plogins-estimate')
-                : __('Hide the price and add-to-cart button and show an "Add to quote" button instead.', 'plogins-estimate'),
+                ? __('Quote mode is set to "all products", so every product already shows an Add to quote button.', 'quotlet')
+                : __('Hide the price and add-to-cart button and show an "Add to quote" button instead.', 'quotlet'),
         ]);
 
         echo '</div>';
@@ -52,6 +52,14 @@ final class ProductData implements HasHooks
             : '';
 
         if (! wp_verify_nonce($nonce, self::NONCE)) {
+            return;
+        }
+
+        // WooCommerce only fires this inside its own product save, which has
+        // already checked the caps, so this is belt and braces. It is here so
+        // the guard is visible in the file that does the writing rather than
+        // inferred from the hook.
+        if (! current_user_can('edit_product', $product->get_id())) {
             return;
         }
 

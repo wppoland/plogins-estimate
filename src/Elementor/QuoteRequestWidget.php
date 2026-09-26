@@ -39,7 +39,7 @@ final class QuoteRequestWidget extends Widget_Base
      */
     public function get_title(): string
     {
-        return esc_html__('Request a Quote', 'plogins-estimate');
+        return esc_html__('Request a Quote', 'quotlet');
     }
 
     /**
@@ -81,7 +81,7 @@ final class QuoteRequestWidget extends Widget_Base
     {
         $this->start_controls_section(
             'content',
-            ['label' => esc_html__('Request a Quote', 'plogins-estimate')]
+            ['label' => esc_html__('Request a Quote', 'quotlet')]
         );
 
         $this->end_controls_section();
