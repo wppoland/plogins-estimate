@@ -116,6 +116,7 @@ Quotlet is fully translatable and ships the `quotlet.pot` template. Translations
 
 = 1.1.6 =
 * The quote list only keeps published, non password protected, quote-enabled products. A hand-edited list cookie could show the names of draft, private or password protected products on the quote page and in the request email.
+* The quote list refuses variation ids: the add link only sends products, and a variation id could reveal the name of a hidden parent product.
 
 = 1.1.5 =
 * The upgrade notice's "Coming soon" and "Get notified" labels are English source strings for every language; Polish sites used to get their own Polish source text, which translators in other languages then saw untranslated.
