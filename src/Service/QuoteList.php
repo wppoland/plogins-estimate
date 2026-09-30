@@ -21,6 +21,9 @@ final class QuoteList implements HasHooks
 {
     private const COOKIE = 'estimate_quote_items';
 
+    /** Product meta flag set by the merchant in "selected" mode. */
+    public const META_ENABLED = '_estimate_quote_enabled';
+
     /** Cookie lifetime in seconds (30 days). */
     private const LIFETIME = 30 * DAY_IN_SECONDS;
 
@@ -42,8 +45,8 @@ final class QuoteList implements HasHooks
     }
 
     /**
-     * Current items as product ID => quantity, skipping anything no longer
-     * purchasable so the list never shows stale or deleted products.
+     * Current items as product ID => quantity. The cookie is client-controlled,
+     * so only products a visitor may request a quote for are kept.
      *
      * @return array<int, int>
      */
@@ -55,7 +58,7 @@ final class QuoteList implements HasHooks
         foreach ($items as $productId => $qty) {
             $product = wc_get_product($productId);
 
-            if (! $product instanceof \WC_Product) {
+            if (! $product instanceof \WC_Product || ! $this->accepts($product)) {
                 continue;
             }
 
@@ -63,6 +66,29 @@ final class QuoteList implements HasHooks
         }
 
         return $clean;
+    }
+
+    /**
+     * Whether a product is quote-enabled (every product in "all" mode, flagged
+     * ones in "selected" mode).
+     */
+    public function isQuoteProduct(\WC_Product $product): bool
+    {
+        $stored = get_option('estimate_settings', []);
+        $mode   = is_array($stored) ? (string) ($stored['mode'] ?? 'selected') : 'selected';
+
+        return 'all' === $mode || 'yes' === $product->get_meta(self::META_ENABLED);
+    }
+
+    /**
+     * Whether a product may be on a visitor's list: published, not password
+     * protected, and quote-enabled.
+     */
+    public function accepts(\WC_Product $product): bool
+    {
+        return 'publish' === $product->get_status()
+            && '' === $product->get_post_password()
+            && $this->isQuoteProduct($product);
     }
 
     public function has(int $productId): bool

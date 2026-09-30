@@ -21,7 +21,7 @@ defined('ABSPATH') || exit;
 final class QuoteProducts implements HasHooks
 {
     /** Product meta flag set by the merchant in "selected" mode. */
-    public const META_ENABLED = '_estimate_quote_enabled';
+    public const META_ENABLED = QuoteList::META_ENABLED;
 
     private const OPTION = 'estimate_settings';
     private const NONCE  = 'estimate_quote';
@@ -52,11 +52,7 @@ final class QuoteProducts implements HasHooks
      */
     public function isQuoteProduct(\WC_Product $product): bool
     {
-        $mode = (string) ($this->settings()['mode'] ?? 'selected');
-
-        return 'all' === $mode
-            ? true
-            : 'yes' === $product->get_meta(self::META_ENABLED);
+        return $this->list->isQuoteProduct($product);
     }
 
     public function maybeHidePrice(mixed $price, mixed $product): mixed
@@ -166,7 +162,7 @@ final class QuoteProducts implements HasHooks
         $productId = absint(wp_unslash($_GET['estimate_add']));
         $product   = $productId > 0 ? wc_get_product($productId) : null;
 
-        if ($product instanceof \WC_Product && $this->isQuoteProduct($product)) {
+        if ($product instanceof \WC_Product && $this->list->accepts($product)) {
             $this->list->add($productId, 1);
         }
 
