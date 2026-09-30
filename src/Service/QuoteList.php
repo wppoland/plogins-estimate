@@ -86,7 +86,11 @@ final class QuoteList implements HasHooks
      */
     public function accepts(\WC_Product $product): bool
     {
-        return 'publish' === $product->get_status()
+        // The add link only ever sends a parent id. A variation id would be
+        // judged on its own status alone and could print the name of a draft,
+        // private or password-protected parent, so it is refused outright.
+        return ! $product->is_type('variation')
+            && 'publish' === $product->get_status()
             && '' === $product->get_post_password()
             && $this->isQuoteProduct($product);
     }
