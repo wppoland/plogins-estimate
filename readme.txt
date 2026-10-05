@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -113,6 +113,9 @@ This plugin does not connect to, send data to, or load anything from any externa
 Quotlet is fully translatable and ships the `quotlet.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.8 =
+* Security (low): quote requests are now shop manager data only. Any Editor could list, open, edit and delete every customer's quote request, with their name, email and company, by opening the quote screens directly; every quote request permission now requires the manage_woocommerce capability.
 
 = 1.1.7 =
 * Screenshots retaken under the Quotlet name; the fourth shows the list of stored quote requests.
