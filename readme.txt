@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,7 +102,7 @@ Yes. This plugin is compatible with WordPress Multisite. Network activate it or 
 1. The Add to quote button replacing add-to-cart on a product.
 2. The quote page: list, quantities and the request form.
 3. The Quotlet settings screen under WooCommerce.
-4. A saved quote request in wp-admin.
+4. Stored quote requests in wp-admin.
 
 == External Services ==
 
@@ -113,6 +113,9 @@ This plugin does not connect to, send data to, or load anything from any externa
 Quotlet is fully translatable and ships the `quotlet.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.7 =
+* Screenshots retaken under the Quotlet name; the fourth shows the list of stored quote requests.
 
 = 1.1.6 =
 * The quote list only keeps published, non password protected, quote-enabled products. A hand-edited list cookie could show the names of draft, private or password protected products on the quote page and in the request email.
