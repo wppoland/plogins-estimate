@@ -3,7 +3,7 @@
  * Plugin Name:       Quotlet - Request a Quote for WooCommerce
  * Plugin URI:        https://plogins.com/plogins-estimate/
  * Description:        Let customers request a quote instead of buying directly, ideal for B2B and made-to-order.
- * Version:           1.1.6
+ * Version:           1.1.7
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
