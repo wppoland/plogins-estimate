@@ -26,6 +26,8 @@ final class QuoteProducts implements HasHooks
     private const OPTION = 'estimate_settings';
     private const NONCE  = 'estimate_quote';
 
+    private ?string $quotePageUrl = null;
+
     public function __construct(private readonly QuoteList $list)
     {
     }
@@ -40,6 +42,14 @@ final class QuoteProducts implements HasHooks
         add_filter('woocommerce_get_price_html', [$this, 'maybeHidePrice'], 100, 2);
         add_action('woocommerce_single_product_summary', [$this, 'maybeReplaceSingle'], 1);
         add_filter('woocommerce_loop_add_to_cart_link', [$this, 'maybeReplaceLoopButton'], 100, 2);
+
+        // Block themes render the add-to-cart form as a block, not through the summary hook.
+        add_filter('render_block_woocommerce/add-to-cart-form', [$this, 'maybeReplaceBlock'], 100, 3);
+        add_filter('render_block_woocommerce/add-to-cart-with-options', [$this, 'maybeReplaceBlock'], 100, 3);
+
+        // Quote-only means no direct purchase, whatever the template shows.
+        add_filter('woocommerce_is_purchasable', [$this, 'maybeBlockPurchase'], 100, 2);
+        add_filter('woocommerce_variation_is_purchasable', [$this, 'maybeBlockPurchase'], 100, 2);
 
         add_action('wp_enqueue_scripts', [$this, 'enqueueAssets']);
 
@@ -84,6 +94,12 @@ final class QuoteProducts implements HasHooks
             return;
         }
 
+        // In a blockified template WooCommerce has already unhooked the form and
+        // renders it as a block, which maybeReplaceBlock() swaps instead.
+        if (! has_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart')) {
+            return;
+        }
+
         remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
         add_action('woocommerce_single_product_summary', [$this, 'renderSingleButton'], 30);
     }
@@ -97,6 +113,37 @@ final class QuoteProducts implements HasHooks
         }
 
         echo $this->buttonHtml($product, true); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- buttonHtml escapes internally.
+    }
+
+    /**
+     * Swap the add-to-cart form block for the "Add to quote" button.
+     */
+    public function maybeReplaceBlock(mixed $content, mixed $block = null, mixed $instance = null): mixed
+    {
+        $productId = $instance instanceof \WP_Block ? (int) ($instance->context['postId'] ?? 0) : 0;
+        $product   = wc_get_product($productId > 0 ? $productId : get_the_ID());
+
+        if (! $product instanceof \WC_Product || ! $this->isQuoteProduct($product)) {
+            return $content;
+        }
+
+        return $this->buttonHtml($product, true);
+    }
+
+    /**
+     * Quote products (and the variations of one) cannot be bought directly.
+     */
+    public function maybeBlockPurchase(mixed $purchasable, mixed $product): mixed
+    {
+        if (! $purchasable || ! $product instanceof \WC_Product) {
+            return $purchasable;
+        }
+
+        if ($product->is_type('variation')) {
+            $product = wc_get_product($product->get_parent_id());
+        }
+
+        return ! ($product instanceof \WC_Product && $this->isQuoteProduct($product));
     }
 
     /**
@@ -119,7 +166,7 @@ final class QuoteProducts implements HasHooks
         $label = $this->buttonLabel();
         $added = $this->list->has($product->get_id());
 
-        $classes = 'button estimate-add-to-quote';
+        $classes = 'button wp-element-button estimate-add-to-quote';
         if (! $single) {
             $classes .= ' add_to_cart_button';
         }
@@ -196,24 +243,58 @@ final class QuoteProducts implements HasHooks
     }
 
     /**
-     * URL of the page holding the [estimate_quote] shortcode. Falls back to the
-     * shop page (then home) so the no-JS flow always has somewhere to land.
+     * URL of the page holding the [estimate_quote] shortcode. Nothing asks the
+     * merchant for that page, so it is found by its shortcode and remembered.
+     * Falls back to the shop page (then home) so the no-JS flow always has
+     * somewhere to land.
      */
     private function quotePageUrl(): string
     {
+        if (null !== $this->quotePageUrl) {
+            return $this->quotePageUrl;
+        }
+
         $pageId = (int) get_option('estimate_quote_page_id', 0);
 
-        if ($pageId > 0 && 'publish' === get_post_status($pageId)) {
-            return (string) get_permalink($pageId);
+        if ($pageId <= 0 || 'publish' !== get_post_status($pageId)) {
+            $pageId = $this->findQuotePage();
+
+            if ($pageId > 0) {
+                update_option('estimate_quote_page_id', $pageId);
+            }
+        }
+
+        if ($pageId > 0) {
+            return $this->quotePageUrl = (string) get_permalink($pageId);
         }
 
         $shop = wc_get_page_id('shop');
 
-        if ($shop > 0) {
-            return (string) get_permalink($shop);
+        return $this->quotePageUrl = $shop > 0 ? (string) get_permalink($shop) : home_url('/');
+    }
+
+    /**
+     * First published page whose content carries the [estimate_quote] shortcode.
+     */
+    private function findQuotePage(): int
+    {
+        $ids = get_posts([
+            'post_type'        => 'page',
+            'post_status'      => 'publish',
+            's'                => '[estimate_quote',
+            'fields'           => 'ids',
+            'posts_per_page'   => 10,
+            'orderby'          => 'ID',
+            'order'            => 'ASC',
+        ]);
+
+        foreach ($ids as $id) {
+            if (has_shortcode((string) get_post_field('post_content', $id), 'estimate_quote')) {
+                return (int) $id;
+            }
         }
 
-        return home_url('/');
+        return 0;
     }
 
     private function isEnabled(): bool
