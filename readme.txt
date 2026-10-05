@@ -190,3 +190,8 @@ Quotlet is fully translatable and ships the `quotlet.pot` template. Translations
 
 = 0.1.0 =
 * Initial release: quote modes (selected/all), Add to quote button, price hiding, per-visitor quote list, `[estimate_quote]` page with request form, merchant email and a private quote-request record.
+
+== Upgrade Notice ==
+
+= 1.1.8 =
+Security release. Users with the Editor role could open customers' quote requests, including their contact details, by direct link. Only shop managers and administrators can now. Update, nothing else to do.
