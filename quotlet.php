@@ -25,7 +25,7 @@ namespace Estimate;
 
 defined('ABSPATH') || exit;
 
-const VERSION     = '1.1.6';
+const VERSION     = '1.1.7';
 const PLUGIN_FILE = __FILE__;
 
 define('ESTIMATE_DIR', plugin_dir_path(__FILE__));
