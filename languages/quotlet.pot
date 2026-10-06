@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Quotlet - Request a Quote for WooCommerce 1.1.7\n"
+"Project-Id-Version: Quotlet - Request a Quote for WooCommerce 1.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/quotlet\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-05T11:15:19+00:00\n"
+"POT-Creation-Date: 2026-10-06T17:19:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: quotlet\n"
@@ -107,6 +107,8 @@ msgid "Quotlet: request a quote"
 msgstr ""
 
 #: src/Admin/Settings.php:61
+#: src/Elementor/QuoteRequestWidget.php:42
+#: src/Elementor/QuoteRequestWidget.php:84
 msgid "Request a Quote"
 msgstr ""
 
@@ -177,7 +179,7 @@ msgid "Button text"
 msgstr ""
 
 #: src/Admin/Settings.php:186
-#: src/Service/QuoteProducts.php:195
+#: src/Service/QuoteProducts.php:242
 msgid "Add to quote"
 msgstr ""
 
@@ -231,59 +233,59 @@ msgid "No quote requests in Trash."
 msgstr ""
 
 #. translators: 1: customer name, 2: human-readable date
-#: src/PostType/QuoteRequest.php:101
+#: src/PostType/QuoteRequest.php:117
 #, php-format
 msgid "Quote from %1$s: %2$s"
 msgstr ""
 
-#: src/PostType/QuoteRequest.php:178
+#: src/PostType/QuoteRequest.php:194
 msgid "Yes"
 msgstr ""
 
-#: src/PostType/QuoteRequest.php:179
+#: src/PostType/QuoteRequest.php:195
 msgid "No"
 msgstr ""
 
-#: src/PostType/QuoteRequest.php:296
-#: src/PostType/QuoteRequest.php:358
+#: src/PostType/QuoteRequest.php:312
+#: src/PostType/QuoteRequest.php:374
 #: src/Service/QuotePage.php:330
 msgid "Email"
 msgstr ""
 
-#: src/PostType/QuoteRequest.php:297
-#: src/PostType/QuoteRequest.php:368
+#: src/PostType/QuoteRequest.php:313
+#: src/PostType/QuoteRequest.php:384
 #: src/Service/QuotePage.php:340
 msgid "Company"
 msgstr ""
 
-#: src/PostType/QuoteRequest.php:298
+#: src/PostType/QuoteRequest.php:314
 msgid "Items"
 msgstr ""
 
-#: src/PostType/QuoteRequest.php:334
+#: src/PostType/QuoteRequest.php:350
 msgid "Quote details"
 msgstr ""
 
-#: src/PostType/QuoteRequest.php:354
+#: src/PostType/QuoteRequest.php:370
 #: src/Service/QuotePage.php:320
 msgid "Name"
 msgstr ""
 
-#: src/PostType/QuoteRequest.php:380
+#: src/PostType/QuoteRequest.php:396
 msgid "Requested items"
 msgstr ""
 
-#: src/PostType/QuoteRequest.php:382
+#: src/PostType/QuoteRequest.php:398
 msgid "No items recorded."
 msgstr ""
 
-#: src/PostType/QuoteRequest.php:387
+#: src/PostType/QuoteRequest.php:403
 #: src/Service/QuotePage.php:259
 #: src/Service/QuotePage.php:267
 msgid "Product"
 msgstr ""
 
-#: src/PostType/QuoteRequest.php:388
+#: src/PostType/QuoteRequest.php:404
 #: src/Service/QuotePage.php:260
 #: src/Service/QuotePage.php:268
 #: src/Service/QuotePage.php:270
@@ -425,6 +427,6 @@ msgstr ""
 msgid "New quote request from %s"
 msgstr ""
 
-#: src/Service/QuoteProducts.php:142
+#: src/Service/QuoteProducts.php:189
 msgid "In your quote"
 msgstr ""
