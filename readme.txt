@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -112,6 +112,9 @@ This plugin does not connect to, send data to, or load anything from any externa
 Quotlet is fully translatable and ships the `quotlet.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.2.1 =
+* The Elementor widget has its own translatable title. It reused the settings menu label, so in Polish the widget was called "Ustawienia zapytań ofertowych" (quote request settings).
 
 = 1.2.0 =
 * Elementor widget "Request a Quote": place the quote list and request form with the Elementor editor. It renders the same [estimate_quote] output and only loads when Elementor is active.
