@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,8 +22,7 @@ emailed to you and saved as a private record you can open in wp-admin.
 It suits B2B stores, wholesale, bulk orders and made-to-order products where
 prices are negotiated rather than fixed.
 
-The plugin isn't on WordPress.org yet. The code, releases and issue tracker
-live on GitHub: [github.com/wppoland/plogins-estimate](https://github.com/wppoland/plogins-estimate); bug reports and pull
+The code, releases and issue tracker live on GitHub: [github.com/wppoland/plogins-estimate](https://github.com/wppoland/plogins-estimate); bug reports and pull
 requests are welcome there.
 
 = Documentation and links =
@@ -46,7 +45,7 @@ requests are welcome there.
 * On submit, emails the recipient you set and saves the request as a private custom post type.
 * Configurable recipient email and storefront button text.
 * The add-to-quote flow works without JavaScript; the markup uses labels and ARIA attributes and reflows on small screens.
-* Ships with a POT file for translation, plus a Polish (pl_PL) translation.
+* Ships with a POT file for translation; translations come from translate.wordpress.org language packs.
 * Declares HPOS and cart/checkout blocks compatibility.
 * On delete, removes its own options; saved quote requests are kept so a reinstall doesn't lose them.
 
@@ -113,6 +112,12 @@ This plugin does not connect to, send data to, or load anything from any externa
 Quotlet is fully translatable and ships the `quotlet.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.9 =
+* Add to quote now lands on the page that holds the [estimate_quote] shortcode. The page was never recorded, so every click ended on the shop page with no sign the product had been added.
+* Block themes: the add-to-cart form block on a quote product is replaced by the Add to quote button. The native Add to cart button used to stay, with the quote link printed as plain text next to the price.
+* Quote products can no longer be bought directly. A link such as ?add-to-cart= or a leftover cart item put them in the cart with their hidden price; WooCommerce now refuses them and drops them from an existing cart.
+* Readme: removed the false claims of a bundled Polish translation and that the plugin is not on WordPress.org. The PRO card no longer lists custom quote fields, which are not built.
 
 = 1.1.8 =
 * Security (low): quote requests are now shop manager data only. Any Editor could list, open, edit and delete every customer's quote request, with their name, email and company, by opening the quote screens directly; every quote request permission now requires the manage_woocommerce capability.

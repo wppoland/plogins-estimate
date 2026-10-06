@@ -16,8 +16,8 @@ return [
     'price_from' => 29,
     'currency'   => 'EUR',
     'lead'       => [
-        'en' => 'CSV export, PDF quote downloads, quote-to-order and customer quote accounts ship in the 0.4.0 release. Custom fields are planned.',
-        'pl' => 'Eksport CSV, wyceny PDF, zamiana na zamówienie i konta wycen klientów są dostępne w wydaniu 0.4.0. Własne pola są planowane.',
+        'en' => 'CSV export, PDF quote downloads, quote-to-order and customer quote accounts ship in the 0.4.0 release.',
+        'pl' => 'Eksport CSV, wyceny PDF, zamiana na zamówienie i konta wycen klientów są dostępne w wydaniu 0.4.0.',
     ],
     'features'   => [
         [
@@ -35,10 +35,6 @@ return [
         [
             'en' => ['title' => 'Customer quote accounts', 'desc' => 'Logged-in shoppers see past requests in My Account, open details and re-order from a quote (shipped).'],
             'pl' => ['title' => 'Konta wycen klientów', 'desc' => 'Zalogowani kupujący widzą wcześniejsze zapytania w Moim koncie, szczegóły i ponowne zamówienie z wyceny (wdrożone).'],
-        ],
-        [
-            'en' => ['title' => 'Custom quote fields (planned)', 'desc' => 'Extra fields on the request form and quote record.'],
-            'pl' => ['title' => 'Własne pola wyceny (planowane)', 'desc' => 'Dodatkowe pola w formularzu zapytania i rekordzie wyceny.'],
         ],
         [
             'en' => ['title' => 'Requires the free Quotlet', 'desc' => 'Quotlet Pro is an add-on to the free plugin, it boots only after the free plugin loads.'],
