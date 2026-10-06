@@ -14,6 +14,7 @@ declare(strict_types=1);
 use Estimate\Admin\ProductData;
 use Estimate\Admin\Settings;
 use Estimate\PostType\QuoteRequest;
+use Estimate\Service\ElementorWidgets;
 use Estimate\Service\QuoteList;
 use Estimate\Service\QuotePage;
 use Estimate\Service\QuoteProducts;
@@ -26,6 +27,7 @@ return is_admin()
         QuoteList::class,
         QuoteProducts::class,
         QuotePage::class,
+        ElementorWidgets::class,
         Settings::class,
         ProductData::class,
     ]
@@ -34,4 +36,5 @@ return is_admin()
         QuoteList::class,
         QuoteProducts::class,
         QuotePage::class,
+        ElementorWidgets::class,
     ];

@@ -52,11 +52,13 @@ namespace {
     ];
     $hooked   = ['woocommerce_template_single_add_to_cart' => false];
     $added    = [];
+    $contentPages   = [50, 77];
+    $elementorPages = [];
 
     function get_option(string $k, mixed $d = false): mixed { return $GLOBALS['options'][$k] ?? $d; }
     function update_option(string $k, mixed $v): bool { $GLOBALS['options'][$k] = $v; return true; }
     function get_post_status(int $id): string|false { return 77 === $id ? 'publish' : false; }
-    function get_posts(array $a): array { return 'page' === $a['post_type'] ? [50, 77] : []; }
+    function get_posts(array $a): array { if (isset($a['meta_query'])) { return $GLOBALS['elementorPages']; } return 'page' === $a['post_type'] ? $GLOBALS['contentPages'] : []; }
     function get_post_field(string $f, int $id): string { return 77 === $id ? '<!-- wp:shortcode -->[estimate_quote]<!-- /wp:shortcode -->' : 'mentions [estimate_quote_old'; }
     function has_shortcode(string $c, string $tag): bool { return 1 === preg_match('/\[' . $tag . '[\s\]]/', $c); }
     function get_permalink(int $id): string { return "http://x/?page_id=$id"; }
@@ -91,6 +93,17 @@ namespace {
     if (77 !== $options['estimate_quote_page_id']) {
         $failures[] = 'quote page id not stored';
     }
+
+    // QT-1b: a page built only with the Elementor widget is found through its page data.
+    $contentPages   = [50];
+    $elementorPages = [77];
+    $options['estimate_quote_page_id'] = 0;
+    $qp2 = new \Estimate\Service\QuoteProducts(new \Estimate\Service\QuoteList());
+    if (! str_contains($qp2->maybeReplaceLoopButton('<a>Add to cart</a>', $products[10]), 'page_id=77&')) {
+        $failures[] = 'Elementor-built quote page not found';
+    }
+    $contentPages   = [50, 77];
+    $elementorPages = [];
 
     // QT-2: the block is swapped, and a blockified summary hook adds no second button.
     $block                     = new WP_Block();
