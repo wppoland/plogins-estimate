@@ -19,12 +19,12 @@ msgstr ""
 #. Plugin Name of the plugin
 #: quotlet.php
 msgid "Quotlet - Request a Quote for WooCommerce"
-msgstr ""
+msgstr "Quotlet - Angebotsanfrage für WooCommerce"
 
 #. Plugin URI of the plugin
 #: quotlet.php
 msgid "https://plogins.com/plogins-estimate/"
-msgstr ""
+msgstr "https://plogins.com/plogins-estimate/"
 
 #. Description of the plugin
 #: quotlet.php
@@ -47,7 +47,7 @@ msgstr "https://wppoland.com"
 
 #: quotlet.php:48
 msgid "Quotlet requires WooCommerce to be installed and activated."
-msgstr ""
+msgstr "Quotlet benötigt ein installiertes und aktiviertes WooCommerce."
 
 #: src/Admin/ProductData.php:39 src/Admin/Settings.php:127
 msgid "Enable quote requests"
@@ -55,8 +55,8 @@ msgstr "Angebotsanfragen aktivieren"
 
 #: src/Admin/ProductData.php:41
 msgid ""
-"Quote mode is set to \"all products\", so every product already shows an Add "
-"to quote button."
+"Quote mode is set to \"all products\", so every product already shows an Add"
+" to quote button."
 msgstr ""
 "Der Angebotsmodus ist auf „Alle Produkte“ eingestellt, sodass für jedes "
 "Produkt bereits die Schaltfläche „Zum Angebot hinzufügen“ angezeigt wird."
@@ -117,11 +117,11 @@ msgstr "Was %s ergänzt"
 
 #: src/Admin/Settings.php:60
 msgid "Quotlet: request a quote"
-msgstr ""
+msgstr "Quotlet: Angebot anfragen"
 
 #: src/Admin/Settings.php:61
 msgid "Request a Quote"
-msgstr ""
+msgstr "Angebot anfragen"
 
 #: src/Admin/Settings.php:100
 msgid "Let customers request a quote"
@@ -133,15 +133,16 @@ msgid ""
 "B2B, bulk or made-to-order items. Customers build a quote list and send you "
 "their details; each request is emailed to you and saved for review."
 msgstr ""
-"Verwandle Produkte in Angebotsanfragen statt in Direktkäufe, ideal für B2B-, "
-"Großmengen- oder Auftragsartikel. Kunden erstellen eine Angebotsliste und "
+"Verwandle Produkte in Angebotsanfragen statt in Direktkäufe, ideal für B2B-,"
+" Großmengen- oder Auftragsartikel. Kunden erstellen eine Angebotsliste und "
 "senden dir ihre Daten; jede Anfrage wird dir per E-Mail zugestellt und zur "
 "Überprüfung gespeichert."
 
 #. translators: %s: shortcode wrapped in <code>.
 #: src/Admin/Settings.php:108
 #, php-format
-msgid "Add the %s shortcode to a page to show the quote list and request form."
+msgid ""
+"Add the %s shortcode to a page to show the quote list and request form."
 msgstr ""
 "Füge den Shortcode %s zu einer Seite hinzu, um die Angebotsliste und das "
 "Anfrageformular anzuzeigen."
@@ -155,8 +156,8 @@ msgid ""
 "Control whether quote requests appear on your store and which products use "
 "them."
 msgstr ""
-"Kontrolliere, ob Angebotsanfragen in deinem Shop angezeigt werden und welche "
-"Produkte sie verwenden."
+"Kontrolliere, ob Angebotsanfragen in deinem Shop angezeigt werden und welche"
+" Produkte sie verwenden."
 
 #: src/Admin/Settings.php:134
 msgid "Show quote requests on the storefront."
@@ -190,17 +191,17 @@ msgid ""
 "every product in the store becomes quote-only and cannot be bought directly."
 msgstr ""
 "Nur ausgewählte Produkte: Jedes Produkt bleibt ein normaler Verkauf, bis du "
-"dort „Angebotsanfragen aktivieren“ ankreuzt (Produktdaten > Allgemein). Alle "
-"Produkte: Jedes Produkt im Shop wird zu einem reinen Angebotsartikel und "
+"dort „Angebotsanfragen aktivieren“ ankreuzt (Produktdaten > Allgemein). Alle"
+" Produkte: Jedes Produkt im Shop wird zu einem reinen Angebotsartikel und "
 "kann nicht direkt gekauft werden."
 
 #: src/Admin/Settings.php:158
 msgid ""
-"Default: Selected products only, so nothing changes on your storefront until "
-"you choose the products."
+"Default: Selected products only, so nothing changes on your storefront until"
+" you choose the products."
 msgstr ""
-"Standard: Nur ausgewählte Produkte, daher ändert sich in deinem Shop nichts, "
-"bis du die Produkte auswählst."
+"Standard: Nur ausgewählte Produkte, daher ändert sich in deinem Shop nichts,"
+" bis du die Produkte auswählst."
 
 #: src/Admin/Settings.php:164
 msgid "Hide price"
@@ -212,8 +213,8 @@ msgstr "Blende den Preis für angebotsfähige Produkte aus."
 
 #: src/Admin/Settings.php:174
 msgid ""
-"Leave on when pricing depends on quantity or specification, so customers ask "
-"rather than assume. Turn off to keep the list price visible next to the "
+"Leave on when pricing depends on quantity or specification, so customers ask"
+" rather than assume. Turn off to keep the list price visible next to the "
 "quote button."
 msgstr ""
 "Lass die Option aktiviert, wenn die Preisgestaltung von der Menge oder "
@@ -234,8 +235,8 @@ msgid ""
 "Replaces \"Add to cart\" on quote-enabled products. Leave blank to use the "
 "default, \"Add to quote\"."
 msgstr ""
-"Ersetzt „In den Warenkorb“ bei Produkten, für die ein Angebot aktiviert ist. "
-"Lass das Feld leer, um die Standardeinstellung „Zum Angebot hinzufügen“ zu "
+"Ersetzt „In den Warenkorb“ bei Produkten, für die ein Angebot aktiviert ist."
+" Lass das Feld leer, um die Standardeinstellung „Zum Angebot hinzufügen“ zu "
 "verwenden."
 
 #: src/Admin/Settings.php:197
@@ -257,8 +258,8 @@ msgid ""
 "Each new request is emailed here and also saved under WooCommerce > Quote "
 "Requests. Leave blank to use the site admin email (%s)."
 msgstr ""
-"Jede neue Anfrage wird hier per E-Mail verschickt und auch unter WooCommerce "
-"> Angebotsanfragen gespeichert. Lass das Feld leer, um die E-Mail-Adresse "
+"Jede neue Anfrage wird hier per E-Mail verschickt und auch unter WooCommerce"
+" > Angebotsanfragen gespeichert. Lass das Feld leer, um die E-Mail-Adresse "
 "des Website-Administrators (%s) zu verwenden."
 
 #: src/PostType/QuoteRequest.php:55 src/PostType/QuoteRequest.php:57
@@ -294,11 +295,11 @@ msgstr "Angebot von %1$s: %2$s"
 
 #: src/PostType/QuoteRequest.php:178
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: src/PostType/QuoteRequest.php:179
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
 #: src/PostType/QuoteRequest.php:296 src/PostType/QuoteRequest.php:358
 #: src/Service/QuotePage.php:330
@@ -344,23 +345,23 @@ msgstr "Menge"
 #: src/Service/QuoteFields.php:266
 #, php-format
 msgid "Please confirm \"%s\"."
-msgstr ""
+msgstr "Bitte bestätigen Sie „%s“."
 
 #. translators: %s: field label
 #: src/Service/QuoteFields.php:271
 #, php-format
 msgid "Please choose an option for \"%s\"."
-msgstr ""
+msgstr "Bitte wählen Sie eine Option für „%s“."
 
 #. translators: %s: field label
 #: src/Service/QuoteFields.php:276
 #, php-format
 msgid "Please fill in \"%s\"."
-msgstr ""
+msgstr "Bitte füllen Sie „%s“ aus."
 
 #: src/Service/QuoteFields.php:363
 msgid "Select an option"
-msgstr ""
+msgstr "Option auswählen"
 
 #: src/Service/QuotePage.php:66 src/Service/QuotePage.php:76
 #: src/Service/QuotePage.php:88 src/Service/QuotePage.php:119
@@ -404,7 +405,7 @@ msgstr "Produkte durchsuchen"
 
 #: src/Service/QuotePage.php:243
 msgid "Quote worksheet"
-msgstr ""
+msgstr "Angebotsblatt"
 
 #. translators: %d: number of line items on the quote worksheet
 #: src/Service/QuotePage.php:249

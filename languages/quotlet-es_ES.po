@@ -19,12 +19,12 @@ msgstr ""
 #. Plugin Name of the plugin
 #: quotlet.php
 msgid "Quotlet - Request a Quote for WooCommerce"
-msgstr ""
+msgstr "Quotlet - Solicitar presupuesto para WooCommerce"
 
 #. Plugin URI of the plugin
 #: quotlet.php
 msgid "https://plogins.com/plogins-estimate/"
-msgstr ""
+msgstr "https://plogins.com/plogins-estimate/"
 
 #. Description of the plugin
 #: quotlet.php
@@ -47,7 +47,7 @@ msgstr "https://wppoland.com"
 
 #: quotlet.php:48
 msgid "Quotlet requires WooCommerce to be installed and activated."
-msgstr ""
+msgstr "Quotlet necesita WooCommerce instalado y activado."
 
 #: src/Admin/ProductData.php:39 src/Admin/Settings.php:127
 msgid "Enable quote requests"
@@ -55,8 +55,8 @@ msgstr "Habilitar solicitudes de presupuesto"
 
 #: src/Admin/ProductData.php:41
 msgid ""
-"Quote mode is set to \"all products\", so every product already shows an Add "
-"to quote button."
+"Quote mode is set to \"all products\", so every product already shows an Add"
+" to quote button."
 msgstr ""
 "El modo de presupuesto está configurado en \"todos los productos\", por lo "
 "que cada producto ya muestra un botón Añadir al presupuesto."
@@ -117,11 +117,11 @@ msgstr "Lo que añade %s"
 
 #: src/Admin/Settings.php:60
 msgid "Quotlet: request a quote"
-msgstr ""
+msgstr "Quotlet: solicitar presupuesto"
 
 #: src/Admin/Settings.php:61
 msgid "Request a Quote"
-msgstr ""
+msgstr "Solicitar presupuesto"
 
 #: src/Admin/Settings.php:100
 msgid "Let customers request a quote"
@@ -134,17 +134,18 @@ msgid ""
 "their details; each request is emailed to you and saved for review."
 msgstr ""
 "Convierte los productos en solicitudes de presupuesto en lugar de compras "
-"directas, ideal para artículos B2B, al por mayor o por encargo. Los clientes "
-"crean una lista de presupuesto y te envían sus datos; cada solicitud se te "
+"directas, ideal para artículos B2B, al por mayor o por encargo. Los clientes"
+" crean una lista de presupuesto y te envían sus datos; cada solicitud se te "
 "envía por correo electrónico y se guarda para que la revises."
 
 #. translators: %s: shortcode wrapped in <code>.
 #: src/Admin/Settings.php:108
 #, php-format
-msgid "Add the %s shortcode to a page to show the quote list and request form."
+msgid ""
+"Add the %s shortcode to a page to show the quote list and request form."
 msgstr ""
-"Añade el shortcode %s a una página para mostrar la lista de presupuesto y el "
-"formulario de solicitud."
+"Añade el shortcode %s a una página para mostrar la lista de presupuesto y el"
+" formulario de solicitud."
 
 #: src/Admin/Settings.php:119
 msgid "General"
@@ -167,8 +168,8 @@ msgid ""
 "The master switch. When off, every product keeps its normal Add to cart "
 "button and the quote list is hidden, your store behaves as a standard shop."
 msgstr ""
-"El interruptor principal. Cuando está desactivado, cada producto mantiene su "
-"botón Añadir al carrito normal y la lista de presupuesto queda oculta, tu "
+"El interruptor principal. Cuando está desactivado, cada producto mantiene su"
+" botón Añadir al carrito normal y la lista de presupuesto queda oculta, tu "
 "tienda se comporta como una tienda estándar."
 
 #: src/Admin/Settings.php:143
@@ -196,8 +197,8 @@ msgstr ""
 
 #: src/Admin/Settings.php:158
 msgid ""
-"Default: Selected products only, so nothing changes on your storefront until "
-"you choose the products."
+"Default: Selected products only, so nothing changes on your storefront until"
+" you choose the products."
 msgstr ""
 "Predeterminado: solo productos seleccionados, por lo que nada cambia en tu "
 "tienda hasta que elijas los productos."
@@ -212,12 +213,12 @@ msgstr "Ocultar el precio en los productos con presupuesto activado."
 
 #: src/Admin/Settings.php:174
 msgid ""
-"Leave on when pricing depends on quantity or specification, so customers ask "
-"rather than assume. Turn off to keep the list price visible next to the "
+"Leave on when pricing depends on quantity or specification, so customers ask"
+" rather than assume. Turn off to keep the list price visible next to the "
 "quote button."
 msgstr ""
-"Déjalo activado cuando el precio dependa de la cantidad o la especificación, "
-"para que los clientes pregunten en lugar de suponerlo. Desactívalo para "
+"Déjalo activado cuando el precio dependa de la cantidad o la especificación,"
+" para que los clientes pregunten en lugar de suponerlo. Desactívalo para "
 "mantener el precio de lista visible junto al botón de presupuesto."
 
 #: src/Admin/Settings.php:180
@@ -233,8 +234,8 @@ msgid ""
 "Replaces \"Add to cart\" on quote-enabled products. Leave blank to use the "
 "default, \"Add to quote\"."
 msgstr ""
-"Sustituye a \"Añadir al carrito\" en los productos con presupuesto activado. "
-"Déjalo en blanco para usar el valor predeterminado, \"Añadir al "
+"Sustituye a \"Añadir al carrito\" en los productos con presupuesto activado."
+" Déjalo en blanco para usar el valor predeterminado, \"Añadir al "
 "presupuesto\"."
 
 #: src/Admin/Settings.php:197
@@ -295,11 +296,11 @@ msgstr "Presupuesto de %1$s: %2$s"
 
 #: src/PostType/QuoteRequest.php:178
 msgid "Yes"
-msgstr ""
+msgstr "Sí"
 
 #: src/PostType/QuoteRequest.php:179
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: src/PostType/QuoteRequest.php:296 src/PostType/QuoteRequest.php:358
 #: src/Service/QuotePage.php:330
@@ -345,23 +346,23 @@ msgstr "Cantidad"
 #: src/Service/QuoteFields.php:266
 #, php-format
 msgid "Please confirm \"%s\"."
-msgstr ""
+msgstr "Confirma «%s»."
 
 #. translators: %s: field label
 #: src/Service/QuoteFields.php:271
 #, php-format
 msgid "Please choose an option for \"%s\"."
-msgstr ""
+msgstr "Elige una opción para «%s»."
 
 #. translators: %s: field label
 #: src/Service/QuoteFields.php:276
 #, php-format
 msgid "Please fill in \"%s\"."
-msgstr ""
+msgstr "Rellena «%s»."
 
 #: src/Service/QuoteFields.php:363
 msgid "Select an option"
-msgstr ""
+msgstr "Selecciona una opción"
 
 #: src/Service/QuotePage.php:66 src/Service/QuotePage.php:76
 #: src/Service/QuotePage.php:88 src/Service/QuotePage.php:119
@@ -405,7 +406,7 @@ msgstr "Explorar productos"
 
 #: src/Service/QuotePage.php:243
 msgid "Quote worksheet"
-msgstr ""
+msgstr "Hoja de presupuesto"
 
 #. translators: %d: number of line items on the quote worksheet
 #: src/Service/QuotePage.php:249
