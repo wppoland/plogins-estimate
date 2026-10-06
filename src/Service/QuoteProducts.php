@@ -274,7 +274,8 @@ final class QuoteProducts implements HasHooks
     }
 
     /**
-     * First published page whose content carries the [estimate_quote] shortcode.
+     * First published page that carries the [estimate_quote] shortcode, in its
+     * content or as the Elementor widget.
      */
     private function findQuotePage(): int
     {
@@ -294,7 +295,23 @@ final class QuoteProducts implements HasHooks
             }
         }
 
-        return 0;
+        // A page built with the Elementor widget keeps the shortcode out of
+        // post_content; Elementor stores the widget in its own page data.
+        $ids = get_posts([
+            'post_type'      => 'page',
+            'post_status'    => 'publish',
+            'fields'         => 'ids',
+            'posts_per_page' => 1,
+            'orderby'        => 'ID',
+            'order'          => 'ASC',
+            'meta_query'     => [[ // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- one-off lookup, cached in an option.
+                'key'     => '_elementor_data',
+                'value'   => '"widgetType":"estimate_quote"',
+                'compare' => 'LIKE',
+            ]],
+        ]);
+
+        return (int) ($ids[0] ?? 0);
     }
 
     private function isEnabled(): bool
