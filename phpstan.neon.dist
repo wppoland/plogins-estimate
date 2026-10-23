@@ -4,7 +4,7 @@ includes:
 parameters:
     level: 6
     paths:
-        - plogins-estimate.php
+        - quotlet.php
         - src
         - config
     excludePaths:

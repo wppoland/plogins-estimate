@@ -182,12 +182,60 @@ final class QuoteProducts implements HasHooks
             $this->quotePageUrl(),
         );
 
+        if ($single && $product instanceof \WC_Product_Variable) {
+            return $this->variationFormHtml($product, $href, $classes, $label);
+        }
+
         return sprintf(
             '<a href="%1$s" class="%2$s">%3$s</a>',
             esc_url($href),
             esc_attr($classes),
             esc_html($added ? __('In your quote', 'quotlet') : $label),
         );
+    }
+
+    /**
+     * On a variable product page: one select per variation attribute and the
+     * add button. Posts to the same add URL; handleAddLink() resolves the
+     * variation. Works without JavaScript.
+     */
+    private function variationFormHtml(\WC_Product_Variable $product, string $href, string $classes, string $label): string
+    {
+        ob_start();
+
+        echo '<form method="post" class="estimate-variation-form" action="' . esc_url($href) . '">';
+
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only notice flag, compared against '1'.
+        if (isset($_GET['estimate_unavailable']) && '1' === sanitize_text_field(wp_unslash($_GET['estimate_unavailable']))) {
+            echo '<p class="estimate-variation-form__notice" role="alert">' . esc_html__('That combination is not available. Please choose different options.', 'quotlet') . '</p>';
+        }
+
+        foreach ($product->get_variation_attributes() as $name => $options) {
+            $name = (string) $name;
+            $id   = 'estimate-' . $product->get_id() . '-' . sanitize_title($name);
+
+            echo '<p class="estimate-variation-form__field"><label for="' . esc_attr($id) . '">' . esc_html(wc_attribute_label($name, $product)) . '</label>';
+
+            ob_start();
+            wc_dropdown_variation_attribute_options([
+                'options'   => $options,
+                'attribute' => $name,
+                'product'   => $product,
+                'id'        => $id,
+            ]);
+            // Every option must be chosen before the form can be sent.
+            echo str_replace('<select ', '<select required ', (string) ob_get_clean()); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- WooCommerce escapes the dropdown markup.
+
+            echo '</p>';
+        }
+
+        printf(
+            '<button type="submit" class="%1$s">%2$s</button></form>',
+            esc_attr($classes),
+            esc_html($label),
+        );
+
+        return (string) ob_get_clean();
     }
 
     /**
@@ -209,12 +257,71 @@ final class QuoteProducts implements HasHooks
         $productId = absint(wp_unslash($_GET['estimate_add']));
         $product   = $productId > 0 ? wc_get_product($productId) : null;
 
-        if ($product instanceof \WC_Product && $this->list->accepts($product)) {
+        if (! $product instanceof \WC_Product || ! $this->list->accepts($product)) {
+            wp_safe_redirect($this->quotePageUrl());
+            exit;
+        }
+
+        $chosen = $product instanceof \WC_Product_Variable ? $this->postedAttributes($product) : [];
+
+        if (! $product instanceof \WC_Product_Variable || [] === $chosen) {
+            // A product, or a variable product added from a listing.
             $this->list->add($productId, 1);
+        } elseif ($this->list->add($this->postedVariationId($product, $chosen), 1, $chosen) < 1) {
+            wp_safe_redirect(add_query_arg('estimate_unavailable', '1', (string) get_permalink($productId)));
+            exit;
         }
 
         wp_safe_redirect($this->quotePageUrl());
         exit;
+    }
+
+    /**
+     * Attribute choices posted by the variation form, attribute_* => value,
+     * limited to the parent's variation attributes. Called after the nonce
+     * check in handleAddLink().
+     *
+     * @return array<string, string>
+     */
+    private function postedAttributes(\WC_Product_Variable $product): array
+    {
+        $chosen = [];
+
+        foreach (array_keys($product->get_variation_attributes()) as $name) {
+            $field = 'attribute_' . sanitize_title((string) $name);
+
+            // phpcs:ignore WordPress.Security.NonceVerification.Missing -- verified in handleAddLink().
+            if (isset($_POST[$field]) && is_string($_POST[$field])) {
+                // wc_clean() is sanitize_text_field(), as WooCommerce's own add-to-cart reads attributes.
+                $chosen[$field] = wc_clean(wp_unslash($_POST[$field])); // phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+            }
+        }
+
+        return $chosen;
+    }
+
+    /**
+     * The variation the shopper picked: the posted variation_id when it
+     * belongs to this parent, otherwise the one matching the attributes.
+     * QuoteList::add() then checks the variation is enabled, in stock and
+     * that its attributes are valid for the parent. 0 when nothing matches.
+     *
+     * @param array<string, string> $chosen
+     */
+    private function postedVariationId(\WC_Product_Variable $product, array $chosen): int
+    {
+        $posted = isset($_POST['variation_id']) ? absint(wp_unslash($_POST['variation_id'])) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Missing -- verified in handleAddLink().
+
+        if ($posted > 0) {
+            $variation = wc_get_product($posted);
+
+            return $variation instanceof \WC_Product_Variation && $variation->get_parent_id() === $product->get_id() ? $posted : 0;
+        }
+
+        /** @var \WC_Product_Data_Store_CPT $store */
+        $store = \WC_Data_Store::load('product');
+
+        return (int) $store->find_matching_product_variation($product, $chosen);
     }
 
     public function enqueueAssets(): void

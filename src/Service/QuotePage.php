@@ -93,15 +93,15 @@ final class QuotePage implements HasHooks
             ? sanitize_key(wp_unslash($_POST['estimate_list_action']))
             : '';
 
+        // Line keys are only ever matched against the keys already on the
+        // list, so an unknown key changes nothing.
         if (isset($_POST['estimate_remove'])) {
-            $productId = absint(wp_unslash($_POST['estimate_remove']));
-            if ($productId > 0) {
-                $this->list->remove($productId);
-            }
+            // Not sanitize_text_field(): it strips the %XX octets of a variation key.
+            $this->list->remove((string) wp_unslash($_POST['estimate_remove'])); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- only matched against existing list keys.
         } elseif ('update' === $action && isset($_POST['qty']) && is_array($_POST['qty'])) {
             $qtys = map_deep(wp_unslash($_POST['qty']), 'absint');
-            foreach ($qtys as $productId => $qty) {
-                $this->list->setQuantity(absint($productId), absint($qty));
+            foreach ($qtys as $key => $qty) {
+                $this->list->setQuantity((string) $key, absint($qty));
             }
         }
 
@@ -146,7 +146,7 @@ final class QuotePage implements HasHooks
             $this->errors['email'] = __('Please enter a valid email address.', 'quotlet');
         }
 
-        $items = $this->lineItems();
+        $items = $this->list->lines();
 
         if ([] === $items) {
             $this->errors['_form'] = __('Your quote list is empty.', 'quotlet');
@@ -162,6 +162,7 @@ final class QuotePage implements HasHooks
 
         if ($postId > 0) {
             $this->notifyMerchant($postId, $this->values, $items, $answers);
+            $this->notifyCustomer($this->values, $items);
             $this->list->clear();
         }
 
@@ -190,7 +191,7 @@ final class QuotePage implements HasHooks
             return (string) ob_get_clean();
         }
 
-        $items = $this->lineItems();
+        $items = $this->list->lines();
 
         if ([] === $items) {
             $this->renderEmpty();
@@ -230,7 +231,7 @@ final class QuotePage implements HasHooks
     }
 
     /**
-     * @param array<int, array{product_id: int, name: string, qty: int}> $items
+     * @param list<array{key: string, product_id: int, variation_id: int, attributes: array<string, string>, name: string, qty: int}> $items
      */
     private function renderList(array $items): void
     {
@@ -262,19 +263,19 @@ final class QuotePage implements HasHooks
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($items as $item) : ?>
+                    <?php foreach ($items as $index => $item) : ?>
                         <tr>
                             <td data-label="<?php esc_attr_e('Product', 'quotlet'); ?>"><?php echo esc_html($item['name']); ?></td>
                             <td data-label="<?php esc_attr_e('Quantity', 'quotlet'); ?>">
-                                <label class="screen-reader-text" for="estimate-qty-<?php echo esc_attr((string) $item['product_id']); ?>">
+                                <label class="screen-reader-text" for="estimate-qty-<?php echo esc_attr((string) $index); ?>">
                                     <?php esc_html_e('Quantity', 'quotlet'); ?>
                                 </label>
                                 <input
                                     type="number"
                                     min="1"
                                     step="1"
-                                    id="estimate-qty-<?php echo esc_attr((string) $item['product_id']); ?>"
-                                    name="qty[<?php echo esc_attr((string) $item['product_id']); ?>]"
+                                    id="estimate-qty-<?php echo esc_attr((string) $index); ?>"
+                                    name="qty[<?php echo esc_attr($item['key']); ?>]"
                                     value="<?php echo esc_attr((string) $item['qty']); ?>"
                                     class="estimate-quote__qty"
                                 />
@@ -283,7 +284,7 @@ final class QuotePage implements HasHooks
                                 <button
                                     type="submit"
                                     name="estimate_remove"
-                                    value="<?php echo esc_attr((string) $item['product_id']); ?>"
+                                    value="<?php echo esc_attr($item['key']); ?>"
                                     class="estimate-quote__remove"
                                     aria-label="<?php
                                     /* translators: %s: product name */
@@ -349,6 +350,11 @@ final class QuotePage implements HasHooks
 
             <?php $this->fields->render($this->answers, $this->fieldErrors); ?>
 
+            <?php
+            // Empty when the site has no published privacy policy page.
+            echo wp_kses_post(get_the_privacy_policy_link('<p class="estimate-quote__privacy">', '</p>'));
+            ?>
+
             <p class="estimate-quote__submit">
                 <button type="submit" name="estimate_submit" value="1" class="button alt"><?php esc_html_e('Send quote request', 'quotlet'); ?></button>
             </p>
@@ -357,45 +363,15 @@ final class QuotePage implements HasHooks
     }
 
     /**
-     * Build line items from the current quote list, resolving live product data.
-     *
-     * @return array<int, array{product_id: int, name: string, qty: int}>
-     */
-    private function lineItems(): array
-    {
-        $items = [];
-
-        foreach ($this->list->items() as $productId => $qty) {
-            $product = wc_get_product($productId);
-
-            if (! $product instanceof \WC_Product) {
-                continue;
-            }
-
-            $items[] = [
-                'product_id' => (int) $productId,
-                'name'       => $product->get_name(),
-                'qty'        => (int) $qty,
-            ];
-        }
-
-        return $items;
-    }
-
-    /**
      * Email the merchant about a new quote request.
      *
      * @param array{name: string, email: string, company: string, message: string}             $contact
-     * @param array<int, array{product_id: int, name: string, qty: int}>                        $items
+     * @param list<array{key: string, product_id: int, variation_id: int, attributes: array<string, string>, name: string, qty: int}> $items
      * @param array<string, array{label: string, type: string, value: string, display: string}> $answers
      */
     private function notifyMerchant(int $postId, array $contact, array $items, array $answers = []): void
     {
-        $recipient = trim((string) ($this->settings()['recipient'] ?? ''));
-
-        if ('' === $recipient || ! is_email($recipient)) {
-            $recipient = (string) get_option('admin_email');
-        }
+        $recipient = $this->recipient();
 
         $lines   = [];
         $lines[] = sprintf(
@@ -461,6 +437,56 @@ final class QuotePage implements HasHooks
             implode("\n", $lines),
             ['Reply-To: ' . $contact['name'] . ' <' . $contact['email'] . '>'],
         );
+    }
+
+    /**
+     * Confirm the request to the customer, listing the requested products.
+     *
+     * Plain text, like the merchant email. It carries only store data (site
+     * name and product names), never the name or message the visitor typed:
+     * the form accepts any address, so free text here would let anyone send
+     * their own words to a stranger from this site. Replies go to the
+     * merchant recipient.
+     *
+     * @param array{name: string, email: string, company: string, message: string} $contact
+     * @param list<array{key: string, product_id: int, variation_id: int, attributes: array<string, string>, name: string, qty: int}> $items
+     */
+    private function notifyCustomer(array $contact, array $items): void
+    {
+        $site = wp_specialchars_decode((string) get_bloginfo('name'), ENT_QUOTES);
+
+        $lines   = [];
+        $lines[] = sprintf(
+            /* translators: %s: site name */
+            __('Thank you for your quote request on %s. We will get back to you shortly.', 'quotlet'),
+            $site,
+        );
+        $lines[] = '';
+        $lines[] = __('Requested items:', 'quotlet');
+
+        foreach ($items as $item) {
+            $lines[] = sprintf('- %1$s x %2$d', $item['name'], $item['qty']);
+        }
+
+        $subject = sprintf(
+            /* translators: %s: site name */
+            __('We received your quote request at %s', 'quotlet'),
+            $site,
+        );
+
+        wp_mail(
+            $contact['email'],
+            $subject,
+            implode("\n", $lines),
+            ['Reply-To: ' . $this->recipient()],
+        );
+    }
+
+    private function recipient(): string
+    {
+        $recipient = trim((string) ($this->settings()['recipient'] ?? ''));
+
+        return '' !== $recipient && is_email($recipient) ? $recipient : (string) get_option('admin_email');
     }
 
     private function currentUrl(): string

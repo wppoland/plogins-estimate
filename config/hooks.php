@@ -17,6 +17,7 @@ use Estimate\PostType\QuoteRequest;
 use Estimate\Service\ElementorWidgets;
 use Estimate\Service\QuoteList;
 use Estimate\Service\QuotePage;
+use Estimate\Service\QuotePrivacy;
 use Estimate\Service\QuoteProducts;
 
 defined('ABSPATH') || exit;
@@ -27,6 +28,7 @@ return is_admin()
         QuoteList::class,
         QuoteProducts::class,
         QuotePage::class,
+        QuotePrivacy::class,
         ElementorWidgets::class,
         Settings::class,
         ProductData::class,
@@ -36,5 +38,6 @@ return is_admin()
         QuoteList::class,
         QuoteProducts::class,
         QuotePage::class,
+        QuotePrivacy::class,
         ElementorWidgets::class,
     ];
