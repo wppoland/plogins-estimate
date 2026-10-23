@@ -107,7 +107,7 @@ final class QuoteRequest implements HasHooks
      * is optional so existing callers keep working unchanged.
      *
      * @param array{name: string, email: string, company: string, message: string}             $contact
-     * @param array<int, array{product_id: int, name: string, qty: int}>                        $items
+     * @param list<array{product_id: int, name: string, qty: int, variation_id?: int, attributes?: array<string, string>}> $items
      * @param array<string, array{label: string, type: string, value: string, display: string}> $answers
      */
     public function create(array $contact, array $items, array $answers = []): int
@@ -409,7 +409,9 @@ final class QuoteRequest implements HasHooks
                         $productId = isset($item['product_id']) ? absint($item['product_id']) : 0;
                         $itemName  = isset($item['name']) ? (string) $item['name'] : '';
                         $qty       = isset($item['qty']) ? absint($item['qty']) : 1;
-                        $editLink  = $productId > 0 ? get_edit_post_link($productId) : '';
+                        // A variation has no edit screen of its own: link its parent.
+                        $linkId    = ! empty($item['variation_id']) ? wp_get_post_parent_id($productId) : $productId;
+                        $editLink  = $linkId > 0 ? get_edit_post_link($linkId) : '';
                         ?>
                         <tr>
                             <td>

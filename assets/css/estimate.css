@@ -281,6 +281,23 @@
     opacity: 0.75;
 }
 
+/* Option picker on a variable product page. */
+.estimate-variation-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+.estimate-variation-form__field select {
+    max-width: 320px;
+}
+
+.estimate-variation-form__notice,
+.estimate-quote__privacy {
+    font-size: 0.9em;
+}
+
 @media (max-width: 600px) {
     .estimate-quote__table thead {
         display: none;
