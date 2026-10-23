@@ -18,6 +18,7 @@ use Estimate\Service\ElementorWidgets;
 use Estimate\Service\QuoteFields;
 use Estimate\Service\QuoteList;
 use Estimate\Service\QuotePage;
+use Estimate\Service\QuotePrivacy;
 use Estimate\Service\QuoteProducts;
 
 defined('ABSPATH') || exit;
@@ -44,6 +45,11 @@ return static function (Container $c): void {
         $c->get(QuoteList::class),
         $c->get(QuoteRequest::class),
         $c->get(QuoteFields::class),
+    ));
+
+    // Personal data exporter and eraser for stored quote requests.
+    $c->singleton(QuotePrivacy::class, static fn (): QuotePrivacy => new QuotePrivacy(
+        $c->get(QuoteRequest::class),
     ));
 
     // Elementor integration (self-guards on the elementor/widgets/register hook).

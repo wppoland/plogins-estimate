@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.2.1
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,11 +38,14 @@ requests are welcome there.
 * Two quote modes: enable quotes for **selected products** or for **all products**.
 * Per-product toggle in the product editor (selected mode).
 * Replaces the add-to-cart button with an **Add to quote** button on product pages and listings.
+* Variable products: on the product page the shopper picks the options (colour, size and so on) and the chosen variation goes on the quote list, the request email and the stored request.
 * Optionally hides the price on quote-enabled products.
 * Per-visitor quote list stored in a cookie, so logged-out shoppers can use it without an account.
 * A `[estimate_quote]` shortcode that shows the quote list and a request form (name, email, company, message).
 * Quantity editing and per-item removal on the quote page.
 * On submit, emails the recipient you set and saves the request as a private custom post type.
+* Sends the customer a confirmation email listing the requested products.
+* Links your privacy policy page under the request form, and adds stored quote requests to the WordPress personal data export and erase tools.
 * Configurable recipient email and storefront button text.
 * The add-to-quote flow works without JavaScript; the markup uses labels and ARIA attributes and reflows on small screens.
 * Ships with a POT file for translation; translations come from translate.wordpress.org language packs.
@@ -92,6 +95,18 @@ Yes. The list is stored in a cookie per visitor, so no account is required.
 Yes. Quotlet can hide product prices while shoppers build a quote list and submit a request.
 
 
+= Can customers request a quote for a specific variation? =
+
+Yes. On a variable product page the Add to quote button comes with a choice for each option. The chosen variation and its options are saved on the request. Only enabled, in-stock variations of a quote-enabled product can be added. From a shop listing, Add to quote adds the product without a variation.
+
+= Does the customer get an email? =
+
+Yes. After sending the form the customer gets a confirmation listing the requested products. Replies to it go to the recipient you set.
+
+= How does it handle personal data requests? =
+
+Quote requests are included in **Tools > Export Personal Data** and **Tools > Erase Personal Data**, matched by the request email or the account that sent it. Erasing anonymises the name, email, company, message and extra answers; the request and its product lines stay for your records. The request form shows a link to your privacy policy page when you have set one under **Settings > Privacy**.
+
 = Does this plugin work on WordPress Multisite? =
 
 Yes. This plugin is compatible with WordPress Multisite. Network activate it or activate it on individual sites; each site keeps its own settings and data.
@@ -105,13 +120,20 @@ Yes. This plugin is compatible with WordPress Multisite. Network activate it or 
 
 == External Services ==
 
-This plugin does not connect to, send data to, or load anything from any external service. Everything runs on your own site. Quote requests are saved locally as private `estimate_quote` posts with the customer's details (name, email, company and chosen items) kept in `_estimate_*` post meta, the per-product opt-in lives in the `_estimate_quote_enabled` meta key, and settings are stored in the `estimate_settings` option. Shoppers' in-progress quote lists are held in a first-party cookie on your domain, not on any third-party server. When a quote is submitted, the notification email is sent through WordPress's own `wp_mail()` to the recipient you configure (the site admin email by default); no other delivery service is involved. The bundled CSS and JavaScript are served from the plugin folder, with no remote CDN, fonts, maps or analytics.
+This plugin does not connect to, send data to, or load anything from any external service. Everything runs on your own site. Quote requests are saved locally as private `estimate_quote` posts with the customer's details (name, email, company and chosen items) kept in `_estimate_*` post meta, the per-product opt-in lives in the `_estimate_quote_enabled` meta key, and settings are stored in the `estimate_settings` option. Shoppers' in-progress quote lists are held in a first-party cookie on your domain, not on any third-party server. When a quote is submitted, the notification email is sent through WordPress's own `wp_mail()` to the recipient you configure (the site admin email by default), and a confirmation goes to the email address the customer entered; no other delivery service is involved. The bundled CSS and JavaScript are served from the plugin folder, with no remote CDN, fonts, maps or analytics.
 
 == Translations ==
 
 Quotlet is fully translatable and ships the `quotlet.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.3.0 =
+* Variable products can be quoted. The product page shows a choice for each option next to Add to quote; the variation and its options are stored on the list line, shown on the quote page, in the merchant email and on the request in wp-admin. A variation must be enabled, in stock and belong to the product, and an "any" option must be one the product offers.
+* The customer gets a confirmation email listing the requested products. It carries only the store name and the product names, not text typed into the form, and replies go to the quote recipient.
+* The request form links the site privacy policy page when one is set.
+* Quote requests are part of the WordPress personal data export and erase tools. Erasing anonymises the contact details, message and extra answers and keeps the product lines.
+* Development: the coding standards and static analysis configs pointed at the old main file name and text domain, so neither check ran.
 
 = 1.2.1 =
 * The Elementor widget has its own translatable title. It reused the settings menu label, so in Polish the widget was called "Ustawienia zapytań ofertowych" (quote request settings).

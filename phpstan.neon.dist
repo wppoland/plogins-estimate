@@ -4,13 +4,14 @@ includes:
 parameters:
     level: 6
     paths:
-        - plogins-estimate.php
+        - quotlet.php
         - src
         - config
     excludePaths:
         - vendor/
     bootstrapFiles:
         - tests/phpstan/constants.php
+        - tests/phpstan/elementor-stubs.php
         - vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
     treatPhpDocTypesAsCertain: false
     reportUnmatchedIgnoredErrors: false
