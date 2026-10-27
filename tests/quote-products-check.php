@@ -78,6 +78,7 @@ namespace {
     function absint(mixed $v): int { return abs((int) $v); }
     function sanitize_text_field(string $s): string { return $s; }
     function wp_unslash(mixed $v): mixed { return $v; }
+    function apply_filters(string $t, mixed $v, mixed ...$args): mixed { return $v; }
 
     require __DIR__ . '/../src/Service/QuoteList.php';
     require __DIR__ . '/../src/Service/QuoteProducts.php';

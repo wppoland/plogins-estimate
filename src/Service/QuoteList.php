@@ -79,7 +79,9 @@ final class QuoteList implements HasHooks
         $stored = get_option('estimate_settings', []);
         $mode   = is_array($stored) ? (string) ($stored['mode'] ?? 'selected') : 'selected';
 
-        return 'all' === $mode || 'yes' === $product->get_meta(self::META_ENABLED);
+        $enabled = 'all' === $mode || 'yes' === $product->get_meta(self::META_ENABLED);
+
+        return (bool) apply_filters('estimate/is_quote_product', $enabled, $product);
     }
 
     /**
