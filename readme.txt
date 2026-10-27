@@ -64,19 +64,26 @@ empty it shows a short message with a link back to the shop instead.
 
 == Quotlet Pro ==
 
-Quotlet Pro is a separate paid plugin that works on top of Quotlet. It adds:
+Quotlet Pro is a separate paid plugin that extends Quotlet:
 
-* Ask about this product
-* File attachments on enquiries
-* Counter-offers with Accept and pay
-* Quote on out of stock
-* Quote mode by role and category
-* CSV export
-* PDF quotes
-* Quote-to-order
-* Customer quote accounts
-* CRM webhooks
-* Qualification questions
+| Feature | Free | Pro |
+|:--- |:---:|:---:|
+| Two quote modes | Yes | Yes |
+| Per-product toggle | Yes | Yes |
+| Add to quote button | Yes | Yes |
+| Price hiding | Yes | Yes |
+| Guest quote list | Yes | Yes |
+| Ask about this product | - | Yes |
+| File attachments on enquiries | - | Yes |
+| Counter-offers with Accept and pay | - | Yes |
+| Quote on out of stock | - | Yes |
+| Quote mode by role and category | - | Yes |
+| CSV export | - | Yes |
+| PDF quotes | - | Yes |
+| Quote-to-order | - | Yes |
+| Customer quote accounts | - | Yes |
+| CRM webhooks | - | Yes |
+| Qualification questions | - | Yes |
 
 The free edition is not a trial and its features stay available without a time limit.
 
