@@ -102,7 +102,8 @@ final class QuoteList implements HasHooks
     /**
      * The full attribute set of a variation a visitor may request, or null.
      *
-     * The variation must be enabled and in stock, and belong to a variable
+     * The variation must be enabled and in stock (unless the
+     * estimate/variation_requires_stock filter returns false), and belong to a variable
      * parent that accepts() allows. Attributes the variation fixes are taken
      * from the variation; "any" attributes come from $chosen and must be one
      * of the parent's options. ("Purchasable" is not asked: quote products
@@ -115,7 +116,7 @@ final class QuoteList implements HasHooks
     {
         if (! $variation instanceof \WC_Product_Variation
             || 'publish' !== $variation->get_status()
-            || ! $variation->is_in_stock()
+            || (! $variation->is_in_stock() && (bool) apply_filters('estimate/variation_requires_stock', true, $variation))
         ) {
             return null;
         }
