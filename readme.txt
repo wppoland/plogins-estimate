@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -128,10 +128,12 @@ Quotlet is fully translatable and ships the `quotlet.pot` template. Translations
 
 == Changelog ==
 
+= 1.3.2 =
+* The Quotlet Pro card on the settings screen lists the current Pro features.
+
 = 1.3.1 =
 * Developer: new filter `estimate/is_quote_product` (bool, WC_Product) decides whether a product can be added to the quote list. Nothing changes unless code uses it.
 * Developer: new filter `estimate/variation_requires_stock` (bool, WC_Product_Variation) lets other code accept an out-of-stock variation on the quote list. Default unchanged: out-of-stock variations are refused.
-* The Quotlet Pro card on the settings screen lists the current Pro features.
 
 = 1.3.0 =
 * Variable products can be quoted. The product page shows a choice for each option next to Add to quote; the variation and its options are stored on the list line, shown on the quote page, in the merchant email and on the request in wp-admin. A variation must be enabled, in stock and belong to the product, and an "any" option must be one the product offers.
