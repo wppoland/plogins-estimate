@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,26 +64,29 @@ empty it shows a short message with a link back to the shop instead.
 
 == Quotlet Pro ==
 
-Quotlet Pro is a separate paid plugin that extends Quotlet:
+Quotlet Pro is a separate paid plugin that extends Quotlet.
 
-| Feature | Free | Pro |
-|:--- |:---:|:---:|
-| Two quote modes | Yes | Yes |
-| Per-product toggle | Yes | Yes |
-| Add to quote button | Yes | Yes |
-| Price hiding | Yes | Yes |
-| Guest quote list | Yes | Yes |
-| Ask about this product | - | Yes |
-| File attachments on enquiries | - | Yes |
-| Counter-offers with Accept and pay | - | Yes |
-| Quote on out of stock | - | Yes |
-| Quote mode by role and category | - | Yes |
-| CSV export | - | Yes |
-| PDF quotes | - | Yes |
-| Quote-to-order | - | Yes |
-| Customer quote accounts | - | Yes |
-| CRM webhooks | - | Yes |
-| Qualification questions | - | Yes |
+Included in Quotlet:
+
+* Two quote modes
+* Per-product toggle
+* Add to quote button
+* Price hiding
+* Guest quote list
+
+Quotlet Pro adds:
+
+* Ask about this product
+* File attachments on enquiries
+* Counter-offers with Accept and pay
+* Quote on out of stock
+* Quote mode by role and category
+* CSV export
+* PDF quotes
+* Quote-to-order
+* Customer quote accounts
+* CRM webhooks
+* Qualification questions
 
 The free edition is not a trial and its features stay available without a time limit.
 
@@ -157,6 +160,10 @@ This plugin does not connect to, send data to, or load anything from any externa
 Quotlet is fully translatable and ships the `quotlet.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.3.4 =
+* The Upgrade to PRO links open the pricing page in the admin's language where plogins.com has one, and tell plogins.com which plugin the visit came from (utm_source, utm_medium and utm_campaign in the link). Nothing is sent from your site.
+* Readme: the PRO section lists what the free plugin includes and what the paid edition adds as two lists, which WordPress.org can display (it does not display tables).
 
 = 1.3.3 =
 * Readme only: a PRO section with links to the paid edition.
