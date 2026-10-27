@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,7 @@ requests are welcome there.
 * **Plugin page**: [plogins.com/plogins-estimate/](https://plogins.com/plogins-estimate/)
 * **Source code**: [github.com/wppoland/plogins-estimate](https://github.com/wppoland/plogins-estimate)
 * **Bug reports and feature requests**: [github.com/wppoland/plogins-estimate/issues](https://github.com/wppoland/plogins-estimate/issues)
+* **Quotlet Pro**: [plogins.com/plogins-estimate-pro/](https://plogins.com/plogins-estimate-pro/)
 
 
 = Features =
@@ -60,6 +61,28 @@ Create a page (e.g. "Request a Quote") and add the shortcode:
 
 The page shows the current quote list and the request form. When the list is
 empty it shows a short message with a link back to the shop instead.
+
+== Quotlet Pro ==
+
+Quotlet Pro is a separate paid plugin that works on top of Quotlet. It adds:
+
+* Ask about this product
+* File attachments on enquiries
+* Counter-offers with Accept and pay
+* Quote on out of stock
+* Quote mode by role and category
+* CSV export
+* PDF quotes
+* Quote-to-order
+* Customer quote accounts
+* CRM webhooks
+* Qualification questions
+
+The free edition is not a trial and its features stay available without a time limit.
+
+* **Quotlet Pro** - [plogins.com/plogins-estimate-pro/](https://plogins.com/plogins-estimate-pro/)
+* **Compare editions and pricing** - [plogins.com/plogins-estimate-pro/pricing/](https://plogins.com/plogins-estimate-pro/pricing/)
+* **PRO documentation** - [plogins.com/plogins-estimate-pro/docs/](https://plogins.com/plogins-estimate-pro/docs/)
 
 == Installation ==
 
@@ -127,6 +150,9 @@ This plugin does not connect to, send data to, or load anything from any externa
 Quotlet is fully translatable and ships the `quotlet.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.3.3 =
+* Readme only: a PRO section with links to the paid edition.
 
 = 1.3.2 =
 * The Quotlet Pro card on the settings screen lists the current Pro features.
