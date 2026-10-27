@@ -67,6 +67,7 @@ namespace {
     function wp_unslash(mixed $v): mixed { return $v; }
     function wp_json_encode(mixed $v): string { return (string) json_encode($v); }
     function is_ssl(): bool { return false; }
+    function apply_filters(string $t, mixed $v, mixed ...$args): mixed { return $v; }
 
     require __DIR__ . '/../src/Service/QuoteList.php';
 
