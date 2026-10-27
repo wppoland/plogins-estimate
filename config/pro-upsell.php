@@ -12,6 +12,8 @@ defined('ABSPATH') || exit;
 return [
     'name'       => 'Quotlet Pro',
     'url'        => 'https://plogins.com/plogins-estimate-pro/pricing/',
+    'campaign'   => 'plogins-estimate',
+    'locales'    => ['pl', 'de', 'es'],
     'sellable'   => true,
     'price_from' => 29,
     'currency'   => 'EUR',
