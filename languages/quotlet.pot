@@ -21,7 +21,7 @@ msgstr ""
 
 #. Plugin URI of the plugin
 #: quotlet.php
-msgid "https://plogins.com/plogins-estimate/"
+msgid "https://plogins.com/quotlet/"
 msgstr ""
 
 #. Description of the plugin

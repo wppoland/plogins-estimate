@@ -4,15 +4,15 @@
  * scripts/gen-pro-upsell.mjs. The admin upsell renders this; curate the
  * feature list to fit this plugin's settings screen (do not invent features).
  *
- * @package plogins-estimate-pro
+ * @package quotlet-pro
  */
 
 defined('ABSPATH') || exit;
 
 return [
     'name'       => 'Quotlet Pro',
-    'url'        => 'https://plogins.com/plogins-estimate-pro/pricing/',
-    'campaign'   => 'plogins-estimate',
+    'url'        => 'https://plogins.com/quotlet-pro/pricing/',
+    'campaign'   => 'quotlet',
     'locales'    => ['pl', 'de', 'es'],
     'sellable'   => true,
     'price_from' => 29,

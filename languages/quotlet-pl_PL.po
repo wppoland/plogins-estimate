@@ -24,8 +24,8 @@ msgstr "Quotlet - zapytanie ofertowe dla WooCommerce"
 
 #. Plugin URI of the plugin
 #: quotlet.php
-msgid "https://plogins.com/plogins-estimate/"
-msgstr "https://plogins.com/plogins-estimate/"
+msgid "https://plogins.com/quotlet/"
+msgstr "https://plogins.com/quotlet/"
 
 #. Description of the plugin
 #: quotlet.php
