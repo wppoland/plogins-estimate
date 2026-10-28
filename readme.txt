@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.3.4
+Stable tag: 1.3.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,16 +22,16 @@ emailed to you and saved as a private record you can open in wp-admin.
 It suits B2B stores, wholesale, bulk orders and made-to-order products where
 prices are negotiated rather than fixed.
 
-The code, releases and issue tracker live on GitHub: [github.com/wppoland/plogins-estimate](https://github.com/wppoland/plogins-estimate); bug reports and pull
+The code, releases and issue tracker live on GitHub: [github.com/wppoland/quotlet](https://github.com/wppoland/quotlet); bug reports and pull
 requests are welcome there.
 
 = Documentation and links =
 
-* **Documentation**: [plogins.com/plogins-estimate/docs/](https://plogins.com/plogins-estimate/docs/)
-* **Plugin page**: [plogins.com/plogins-estimate/](https://plogins.com/plogins-estimate/)
-* **Source code**: [github.com/wppoland/plogins-estimate](https://github.com/wppoland/plogins-estimate)
-* **Bug reports and feature requests**: [github.com/wppoland/plogins-estimate/issues](https://github.com/wppoland/plogins-estimate/issues)
-* **Quotlet Pro**: [plogins.com/plogins-estimate-pro/](https://plogins.com/plogins-estimate-pro/)
+* **Documentation**: [plogins.com/quotlet/docs/](https://plogins.com/quotlet/docs/)
+* **Plugin page**: [plogins.com/quotlet/](https://plogins.com/quotlet/)
+* **Source code**: [github.com/wppoland/quotlet](https://github.com/wppoland/quotlet)
+* **Bug reports and feature requests**: [github.com/wppoland/quotlet/issues](https://github.com/wppoland/quotlet/issues)
+* **Quotlet Pro**: [plogins.com/quotlet-pro/](https://plogins.com/quotlet-pro/)
 
 
 = Features =
@@ -90,9 +90,9 @@ Quotlet Pro adds:
 
 The free edition is not a trial and its features stay available without a time limit.
 
-* **Quotlet Pro** - [plogins.com/plogins-estimate-pro/](https://plogins.com/plogins-estimate-pro/)
-* **Compare editions and pricing** - [plogins.com/plogins-estimate-pro/pricing/](https://plogins.com/plogins-estimate-pro/pricing/)
-* **PRO documentation** - [plogins.com/plogins-estimate-pro/docs/](https://plogins.com/plogins-estimate-pro/docs/)
+* **Quotlet Pro** - [plogins.com/quotlet-pro/](https://plogins.com/quotlet-pro/)
+* **Compare editions and pricing** - [plogins.com/quotlet-pro/pricing/](https://plogins.com/quotlet-pro/pricing/)
+* **PRO documentation** - [plogins.com/quotlet-pro/docs/](https://plogins.com/quotlet-pro/docs/)
 
 == Installation ==
 
@@ -160,6 +160,9 @@ This plugin does not connect to, send data to, or load anything from any externa
 Quotlet is fully translatable and ships the `quotlet.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.3.5 =
+* Links point at the new plogins.com address and the renamed GitHub repository.
 
 = 1.3.4 =
 * The Upgrade to PRO links open the pricing page in the admin's language where plogins.com has one, and tell plogins.com which plugin the visit came from (utm_source, utm_medium and utm_campaign in the link). Nothing is sent from your site.
