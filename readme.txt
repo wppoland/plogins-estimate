@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.3.5
+Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -161,6 +161,10 @@ Quotlet is fully translatable and ships the `quotlet.pot` template. Translations
 
 == Changelog ==
 
+= 1.3.6 =
+* Security (low): the quote request form had no limit on how often it could be sent, so a script could use it to send the store's confirmation email to any address over and over. One visitor can now send one request every 30 seconds.
+* Settings: a new Ecosystem integrations card shows whether Shortlist is active, and two new hooks (estimate_quote_thank_you, estimate_quote_list_actions) let companion plugins add to the quote page.
+
 = 1.3.5 =
 * Links point at the new plogins.com address and the renamed GitHub repository.
 
@@ -276,6 +280,9 @@ Quotlet is fully translatable and ships the `quotlet.pot` template. Translations
 * Initial release: quote modes (selected/all), Add to quote button, price hiding, per-visitor quote list, `[estimate_quote]` page with request form, merchant email and a private quote-request record.
 
 == Upgrade Notice ==
+
+= 1.3.6 =
+Security release. The quote request form could be used to send repeated emails to any address. Update, nothing else to do.
 
 = 1.1.8 =
 Security release. Users with the Editor role could open customers' quote requests, including their contact details, by direct link. Only shop managers and administrators can now. Update, nothing else to do.
