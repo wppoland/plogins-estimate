@@ -213,6 +213,7 @@ final class QuotePage implements HasHooks
         <div class="estimate-quote__notice estimate-quote__notice--success" role="status">
             <h2><?php esc_html_e('Thank you: your request is on its way', 'quotlet'); ?></h2>
             <p><?php esc_html_e('We have received your quote request and will get back to you shortly.', 'quotlet'); ?></p>
+            <?php do_action('estimate_quote_thank_you'); ?>
         </div>
         <?php
     }
@@ -299,6 +300,7 @@ final class QuotePage implements HasHooks
             </table>
             <p class="estimate-quote__list-actions">
                 <button type="submit" class="button"><?php esc_html_e('Update quantities', 'quotlet'); ?></button>
+                <?php do_action('estimate_quote_list_actions', $items); ?>
             </p>
         </form>
         <?php

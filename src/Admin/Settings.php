@@ -224,6 +224,33 @@ final class Settings implements HasHooks
                     </table>
                 </div>
 
+                <div class="estimate-card">
+                    <h2><?php esc_html_e('Ecosystem integrations', 'quotlet'); ?></h2>
+                    <p class="estimate-card-intro">
+                        <?php esc_html_e('Connect companion plugins from the Plogins family.', 'quotlet'); ?>
+                    </p>
+                    <table class="form-table" role="presentation">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <?php esc_html_e('Shortlist (Wishlist)', 'quotlet'); ?>
+                                </th>
+                                <td>
+                                    <?php if (class_exists('\Shortlist\Plugin')) : ?>
+                                        <p class="description" style="color:#007017;font-weight:600;">
+                                            <?php esc_html_e('Shortlist is active. Customers can submit quote requests directly from their wishlists.', 'quotlet'); ?>
+                                        </p>
+                                    <?php else : ?>
+                                        <p class="description">
+                                            <?php esc_html_e('Install Shortlist (Wishlist for WooCommerce) to let customers build a wishlist and request a quote for all saved items with 1 click.', 'quotlet'); ?>
+                                        </p>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 <?php submit_button(); ?>
             </form>
 
