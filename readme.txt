@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.3.6
+Stable tag: 1.3.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -160,6 +160,9 @@ This plugin does not connect to, send data to, or load anything from any externa
 Quotlet is fully translatable and ships the `quotlet.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.3.7 =
+* Added: with Shortlist - Wishlist for WooCommerce active, the wishlist shows a Request a quote button that adds the saved quote products to the quote request and lands on the quote page. A note counts the saved items that are sold the usual way and are left out. The Shortlist line under Ecosystem integrations links to the plugin search on the Add Plugins screen when Shortlist is not installed.
 
 = 1.3.6 =
 * Security (medium): customer quote lists (shown by Quotlet PRO in My Account) match quote requests by the customer's user account only, not by email. WooCommerce does not verify an email change, so setting a guest's address on another account showed that guest's quotes. Quotes sent as a guest are no longer listed under an account created later with the same email; the estimate/customer_quotes filter can add them back.

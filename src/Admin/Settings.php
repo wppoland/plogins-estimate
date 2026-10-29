@@ -238,11 +238,17 @@ final class Settings implements HasHooks
                                 <td>
                                     <?php if (class_exists('\Shortlist\Plugin')) : ?>
                                         <p class="description" style="color:#007017;font-weight:600;">
-                                            <?php esc_html_e('Shortlist is active. Customers can submit quote requests directly from their wishlists.', 'quotlet'); ?>
+                                            <?php esc_html_e('Shortlist is active. Its wishlist shows a Request a quote button that adds the saved quote products to the quote request; other saved items stay on the wishlist.', 'quotlet'); ?>
                                         </p>
                                     <?php else : ?>
                                         <p class="description">
-                                            <?php esc_html_e('Install Shortlist (Wishlist for WooCommerce) to let customers build a wishlist and request a quote for all saved items with 1 click.', 'quotlet'); ?>
+                                            <?php
+                                            printf(
+                                                /* translators: %s: partner plugin name, linked to its search on the Add Plugins screen. */
+                                                esc_html__('Install %s to let customers save products to a wishlist and add the quotable ones to a quote request from there.', 'quotlet'),
+                                                '<a href="' . esc_url(admin_url('plugin-install.php?s=' . rawurlencode('Shortlist - Wishlist for WooCommerce') . '&tab=search&type=term')) . '">' . esc_html('Shortlist - Wishlist for WooCommerce') . '</a>'
+                                            );
+                                            ?>
                                         </p>
                                     <?php endif; ?>
                                 </td>
