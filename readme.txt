@@ -62,6 +62,11 @@ Create a page (e.g. "Request a Quote") and add the shortcode:
 The page shows the current quote list and the request form. When the list is
 empty it shows a short message with a link back to the shop instead.
 
+= Works with other Plogins plugins =
+
+* [Shortlist - Wishlist for WooCommerce](https://plogins.com/plogins-shortlist/) - the wishlist gets a "Request a quote for these items" button that adds the saved quote products to the quote, each once, and opens the quote page. Saved items that are not quote products are left out, and a note says how many.
+* [Shelfora - Catalog Mode for WooCommerce](https://plogins.com/shelfora/) - when catalog mode hides add to cart, quote products show one Add to quote button in its place, on product pages and in shop loops. Needs Shelfora 1.1.7 or later.
+
 == Quotlet Pro ==
 
 Quotlet Pro is a separate paid plugin that extends Quotlet.
@@ -139,6 +144,10 @@ Yes. After sending the form the customer gets a confirmation listing the request
 = How does it handle personal data requests? =
 
 Quote requests are included in **Tools > Export Personal Data** and **Tools > Erase Personal Data**, matched by the request email or the account that sent it. Erasing anonymises the name, email, company, message and extra answers; the request and its product lines stay for your records. The request form shows a link to your privacy policy page when you have set one under **Settings > Privacy**.
+
+= Does it work with Shortlist and Shelfora? =
+
+Yes, with no setting. With Shortlist active and quote requests on, the wishlist shows a "Request a quote for these items" button whenever it holds at least one quote product. With Shelfora catalog mode on, quote products show Add to quote where add to cart was, as one button.
 
 = Does this plugin work on WordPress Multisite? =
 
