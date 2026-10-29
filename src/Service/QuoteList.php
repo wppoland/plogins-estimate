@@ -152,9 +152,12 @@ final class QuoteList implements HasHooks
         return $attributes;
     }
 
-    public function has(int $productId): bool
+    /**
+     * @param int|string $key A product id, or a variationKey() line key.
+     */
+    public function has(int|string $key): bool
     {
-        return isset($this->raw()[$productId]);
+        return isset($this->raw()[$key]);
     }
 
     /**

@@ -312,8 +312,11 @@ final class QuoteProducts implements HasHooks
         $ids     = [];
         $skipped = 0;
 
-        foreach (is_array($products) ? $products : [] as $product) {
-            if ($product instanceof \WC_Product && $this->list->accepts($product)) {
+        // do_action() hands a one-item list over as the bare product.
+        $products = $products instanceof \WC_Product ? [$products] : (is_array($products) ? $products : []);
+
+        foreach ($products as $product) {
+            if ($product instanceof \WC_Product && null !== $this->wishlistKey($product)) {
                 $ids[] = $product->get_id();
             } else {
                 ++$skipped;
@@ -370,13 +373,33 @@ final class QuoteProducts implements HasHooks
         $ids = array_map('absint', (array) wp_unslash($_POST['estimate_wishlist']));
 
         foreach (array_unique($ids) as $id) {
-            if ($id > 0 && ! $this->list->has($id)) {
+            $product = $id > 0 ? wc_get_product($id) : null;
+            $key     = $product instanceof \WC_Product ? $this->wishlistKey($product) : null;
+
+            if (null !== $key && ! $this->list->has($key)) {
                 $this->list->add($id, 1);
             }
         }
 
         wp_safe_redirect($this->quotePageUrl());
         exit;
+    }
+
+    /**
+     * The quote line key a saved wishlist item would take, or null when it
+     * cannot go on the quote. Shortlist saves the variation a shopper picked;
+     * one that fixes every attribute can go on the quote as it is, one with an
+     * "any" attribute needs a choice the wishlist does not hold.
+     */
+    private function wishlistKey(\WC_Product $product): int|string|null
+    {
+        if ($product->is_type('variation')) {
+            $attributes = $this->list->variationAttributes($product, []);
+
+            return null === $attributes ? null : QuoteList::variationKey($product->get_id(), $attributes);
+        }
+
+        return $this->list->accepts($product) ? $product->get_id() : null;
     }
 
     /**
