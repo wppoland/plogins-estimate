@@ -25,6 +25,7 @@ final class QuoteProducts implements HasHooks
 
     private const OPTION = 'estimate_settings';
     private const NONCE  = 'estimate_quote';
+    private const WISHLIST_NONCE = 'estimate_wishlist_quote';
 
     private ?string $quotePageUrl = null;
 
@@ -55,6 +56,10 @@ final class QuoteProducts implements HasHooks
 
         // Handle the add-to-quote link.
         add_action('template_redirect', [$this, 'handleAddLink']);
+
+        // Shortlist (wishlist), when active: quote the saved quote products in one go.
+        add_action('shortlist_after_wishlist_items', [$this, 'renderWishlistButton']);
+        add_action('template_redirect', [$this, 'handleWishlistQuote']);
     }
 
     /**
@@ -270,6 +275,84 @@ final class QuoteProducts implements HasHooks
         } elseif ($this->list->add($this->postedVariationId($product, $chosen), 1, $chosen) < 1) {
             wp_safe_redirect(add_query_arg('estimate_unavailable', '1', (string) get_permalink($productId)));
             exit;
+        }
+
+        wp_safe_redirect($this->quotePageUrl());
+        exit;
+    }
+
+    /**
+     * Under the Shortlist wishlist: a button that adds the saved quote products
+     * to the quote list, and a note naming how many saved items it leaves out.
+     *
+     * @param mixed $products Shortlist passes list<\WC_Product>.
+     */
+    public function renderWishlistButton(mixed $products): void
+    {
+        $ids     = [];
+        $skipped = 0;
+
+        foreach (is_array($products) ? $products : [] as $product) {
+            if ($product instanceof \WC_Product && $this->list->accepts($product)) {
+                $ids[] = $product->get_id();
+            } else {
+                ++$skipped;
+            }
+        }
+
+        if ([] === $ids) {
+            return;
+        }
+        ?>
+        <form class="estimate-wishlist-quote" method="post" action="<?php echo esc_url($this->quotePageUrl()); ?>">
+            <?php wp_nonce_field(self::WISHLIST_NONCE, 'estimate_wishlist_nonce'); ?>
+            <?php foreach ($ids as $id) : ?>
+                <input type="hidden" name="estimate_wishlist[]" value="<?php echo esc_attr((string) $id); ?>" />
+            <?php endforeach; ?>
+            <button type="submit" class="button alt"><?php esc_html_e('Request a quote for these items', 'quotlet'); ?></button>
+            <?php if ($skipped > 0) : ?>
+                <p class="estimate-wishlist-quote__note">
+                    <?php
+                    echo esc_html(sprintf(
+                        /* translators: %d: number of saved wishlist items that are not quote products. */
+                        _n(
+                            '%d saved item is sold the usual way and is not added to the quote.',
+                            '%d saved items are sold the usual way and are not added to the quote.',
+                            $skipped,
+                            'quotlet'
+                        ),
+                        $skipped
+                    ));
+                    ?>
+                </p>
+            <?php endif; ?>
+        </form>
+        <?php
+    }
+
+    /**
+     * Add the products posted from the wishlist button, then land on the quote
+     * page. add() refuses anything that is not a quote product, so a tampered
+     * id list adds nothing the shopper could not add with the button itself.
+     */
+    public function handleWishlistQuote(): void
+    {
+        if (! isset($_POST['estimate_wishlist'], $_POST['estimate_wishlist_nonce'])) {
+            return;
+        }
+
+        $nonce = sanitize_text_field(wp_unslash($_POST['estimate_wishlist_nonce']));
+
+        if (! wp_verify_nonce($nonce, self::WISHLIST_NONCE)) {
+            return;
+        }
+
+        $ids = array_map('absint', (array) wp_unslash($_POST['estimate_wishlist']));
+
+        foreach (array_unique($ids) as $id) {
+            if ($id > 0 && ! $this->list->has($id)) {
+                $this->list->add($id, 1);
+            }
         }
 
         wp_safe_redirect($this->quotePageUrl());
