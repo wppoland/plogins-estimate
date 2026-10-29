@@ -25,6 +25,9 @@ final class QuotePage implements HasHooks
     /** Quantity-update / removal nonce for the list controls. */
     private const LIST_NONCE = 'estimate_update_quote';
 
+    /** Seconds one visitor waits between two quote requests. */
+    private const SUBMIT_INTERVAL = 30;
+
     /** @var array<string, string> Validation errors keyed by field. */
     private array $errors = [];
 
@@ -156,6 +159,16 @@ final class QuotePage implements HasHooks
             return;
         }
 
+        // Each request emails the merchant and the address typed in the form,
+        // so without a pause the form relays mail to anyone, as fast as a
+        // script can post it.
+        $throttle = $this->throttleKey();
+        if (false !== get_transient($throttle)) {
+            $this->errors['_form'] = __('Please wait a moment before sending another request.', 'quotlet');
+            return;
+        }
+        set_transient($throttle, 1, self::SUBMIT_INTERVAL);
+
         $answers = $this->fields->rows($this->answers);
 
         $postId = $this->requests->create($this->values, $items, $answers);
@@ -213,6 +226,7 @@ final class QuotePage implements HasHooks
         <div class="estimate-quote__notice estimate-quote__notice--success" role="status">
             <h2><?php esc_html_e('Thank you: your request is on its way', 'quotlet'); ?></h2>
             <p><?php esc_html_e('We have received your quote request and will get back to you shortly.', 'quotlet'); ?></p>
+            <?php do_action('estimate_quote_thank_you'); ?>
         </div>
         <?php
     }
@@ -299,6 +313,7 @@ final class QuotePage implements HasHooks
             </table>
             <p class="estimate-quote__list-actions">
                 <button type="submit" class="button"><?php esc_html_e('Update quantities', 'quotlet'); ?></button>
+                <?php do_action('estimate_quote_list_actions', $items); ?>
             </p>
         </form>
         <?php
@@ -480,6 +495,14 @@ final class QuotePage implements HasHooks
             implode("\n", $lines),
             ['Reply-To: ' . $this->recipient()],
         );
+    }
+
+    private function throttleKey(): string
+    {
+        $userId = get_current_user_id();
+        $ip     = isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field(wp_unslash((string) $_SERVER['REMOTE_ADDR'])) : '';
+
+        return 'estimate_rl_' . ($userId > 0 ? 'u' . $userId : md5($ip));
     }
 
     private function recipient(): string
