@@ -162,6 +162,7 @@ Quotlet is fully translatable and ships the `quotlet.pot` template. Translations
 == Changelog ==
 
 = 1.3.6 =
+* Security (medium): customer quote lists (shown by Quotlet PRO in My Account) match quote requests by the customer's user account only, not by email. WooCommerce does not verify an email change, so setting a guest's address on another account showed that guest's quotes. Quotes sent as a guest are no longer listed under an account created later with the same email; the estimate/customer_quotes filter can add them back.
 * Security (low): the quote request form had no limit on how often it could be sent, so a script could use it to send the store's confirmation email to any address over and over. One visitor can now send one request every 30 seconds.
 * Settings: a new Ecosystem integrations card shows whether Shortlist is active, and two new hooks (estimate_quote_thank_you, estimate_quote_list_actions) let companion plugins add to the quote page.
 
@@ -282,7 +283,7 @@ Quotlet is fully translatable and ships the `quotlet.pot` template. Translations
 == Upgrade Notice ==
 
 = 1.3.6 =
-Security release. The quote request form could be used to send repeated emails to any address. Update, nothing else to do.
+Security release. Another account could read a guest's quotes by using the guest's email, and the quote request form could be used to send repeated emails to any address. Update, nothing else to do.
 
 = 1.1.8 =
 Security release. Users with the Editor role could open customers' quote requests, including their contact details, by direct link. Only shop managers and administrators can now. Update, nothing else to do.

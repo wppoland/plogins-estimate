@@ -234,33 +234,21 @@ final class QuoteRequest implements HasHooks
     }
 
     /**
-     * Quote request post IDs owned by or associated with a customer account.
+     * Quote request post IDs owned by a customer account.
      *
-     * Matches stored user ID and/or the account email so guest submissions
-     * appear after the shopper registers with the same address.
+     * Matched on the stored user ID only. Matching the account email too let
+     * anyone read a guest's quotes (name, phone, message, items) by setting
+     * that address on their own account: WooCommerce never verifies an email
+     * change in My Account. Guest quotes stay with the guest, as WooCommerce
+     * keeps guest orders. A site that wants email matching can add the ids
+     * through the estimate/customer_quotes filter, which receives the email.
      *
      * @return list<int>
      */
     public function customerIds(int $userId, string $email): array
     {
-        if ($userId < 1 && '' === $email) {
+        if ($userId < 1) {
             return [];
-        }
-
-        $metaQuery = ['relation' => 'OR'];
-
-        if ($userId > 0) {
-            $metaQuery[] = [
-                'key'   => self::META_USER_ID,
-                'value' => (string) $userId,
-            ];
-        }
-
-        if ('' !== $email) {
-            $metaQuery[] = [
-                'key'   => self::META_EMAIL,
-                'value' => sanitize_email($email),
-            ];
         }
 
         $posts = get_posts([
@@ -270,7 +258,8 @@ final class QuoteRequest implements HasHooks
             'orderby'        => 'date',
             'order'          => 'DESC',
             'fields'         => 'ids',
-            'meta_query'     => $metaQuery, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+            'meta_key'       => self::META_USER_ID, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+            'meta_value'     => (string) $userId, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
         ]);
 
         $ids = array_map('intval', $posts);
