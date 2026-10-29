@@ -41,8 +41,14 @@ final class QuoteProducts implements HasHooks
 
         // Replace price + add-to-cart on quote-enabled products.
         add_filter('woocommerce_get_price_html', [$this, 'maybeHidePrice'], 100, 2);
-        add_action('woocommerce_single_product_summary', [$this, 'maybeReplaceSingle'], 1);
+        // Priority 2: after Shelfora's catalog mode (1), so when it has already
+        // taken the add-to-cart slot Quotlet stays out and fills that slot through
+        // catalog/add_to_cart_replacement below, giving one button, not two.
+        add_action('woocommerce_single_product_summary', [$this, 'maybeReplaceSingle'], 2);
         add_filter('woocommerce_loop_add_to_cart_link', [$this, 'maybeReplaceLoopButton'], 100, 2);
+
+        // Shelfora catalog mode: show "Add to quote" where it removes add to cart.
+        add_filter('catalog/add_to_cart_replacement', [$this, 'catalogReplacement'], 20, 3);
 
         // Block themes render the add-to-cart form as a block, not through the summary hook.
         add_filter('render_block_woocommerce/add-to-cart-form', [$this, 'maybeReplaceBlock'], 100, 3);
@@ -133,6 +139,20 @@ final class QuoteProducts implements HasHooks
         }
 
         return $this->buttonHtml($product, true);
+    }
+
+    /**
+     * Shelfora catalog mode removed add to cart: on a quote product the
+     * "Add to quote" button takes its place, so the shopper still has a way
+     * to ask for the product. Other products keep Shelfora's own replacement.
+     */
+    public function catalogReplacement(mixed $html, mixed $product = null, mixed $context = 'single'): mixed
+    {
+        if (! $product instanceof \WC_Product || ! $this->isQuoteProduct($product)) {
+            return $html;
+        }
+
+        return $this->buttonHtml($product, 'loop' !== $context);
     }
 
     /**

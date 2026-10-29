@@ -4,6 +4,7 @@
  * Storefront behaviour of quote products, against stubbed WordPress:
  * - Add to quote lands on the page holding [estimate_quote] and remembers it.
  * - The add-to-cart form block is replaced; the summary hook stays out of block templates.
+ * - In Shelfora catalog mode the add-to-cart slot shows Add to quote on quote products.
  * - Quote products and their variations are not purchasable.
  * - The readme and PRO card make no false claims.
  *
@@ -126,6 +127,20 @@ namespace {
     $qp->maybeReplaceSingle();
     if (['woocommerce_single_product_summary'] !== $added) {
         $failures[] = 'classic template lost its quote button';
+    }
+
+    // QT-2b: Shelfora catalog mode removed add to cart: a quote product gets the
+    // quote button in that slot, any other product keeps Shelfora's replacement.
+    $single = $qp->catalogReplacement('', $products[10], 'single');
+    $loop   = $qp->catalogReplacement('', $products[10], 'loop');
+    if (! str_contains($single, 'estimate-add-to-quote') || str_contains($single, 'add_to_cart_button')) {
+        $failures[] = "catalog mode single slot has no quote button: $single";
+    }
+    if (! str_contains($loop, 'add_to_cart_button')) {
+        $failures[] = "catalog mode loop slot is not a loop button: $loop";
+    }
+    if ('<p>Ask us</p>' !== $qp->catalogReplacement('<p>Ask us</p>', $products[12], 'loop')) {
+        $failures[] = 'catalog mode replacement of a non-quote product was touched';
     }
 
     // QT-3: not purchasable, variations judged by their parent.
