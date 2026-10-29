@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.3.7
+Stable tag: 1.3.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -160,6 +160,9 @@ This plugin does not connect to, send data to, or load anything from any externa
 Quotlet is fully translatable and ships the `quotlet.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.3.8 =
+* Added: with Shelfora catalog mode hiding add to cart, quote products show the Add to quote button in its place, on product pages and in shop lists. Before, the two plugins could show two buttons or none, depending on which loaded first.
 
 = 1.3.7 =
 * Added: with Shortlist - Wishlist for WooCommerce active, the wishlist shows a Request a quote button that adds the saved quote products to the quote request and lands on the quote page. A note counts the saved items that are sold the usual way and are left out. The Shortlist line under Ecosystem integrations links to the plugin search on the Add Plugins screen when Shortlist is not installed.
