@@ -172,6 +172,7 @@ Quotlet is fully translatable and ships the `quotlet.pot` template. Translations
 
 = 1.3.8 =
 * Added: with Shelfora catalog mode hiding add to cart, quote products show the Add to quote button in its place, on product pages and in shop lists. Before, the two plugins could show two buttons or none, depending on which loaded first.
+* Fixed: a wishlist holding exactly one quote product now shows the Request a quote button. A saved variation of a quote product now counts as a quote item and is added to the quote, once, instead of being counted as sold the usual way. A variation with an "any" attribute still needs its choice on the product page.
 
 = 1.3.7 =
 * Added: with Shortlist - Wishlist for WooCommerce active, the wishlist shows a Request a quote button that adds the saved quote products to the quote request and lands on the quote page. A note counts the saved items that are sold the usual way and are left out. The Shortlist line under Ecosystem integrations links to the plugin search on the Add Plugins screen when Shortlist is not installed.
