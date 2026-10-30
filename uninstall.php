@@ -14,9 +14,27 @@ declare(strict_types=1);
 
 defined('WP_UNINSTALL_PLUGIN') || exit;
 
-delete_option('estimate_settings');
-delete_option('estimate_db_version');
-delete_option('estimate_quote_page_id');
+/**
+ * Remove this plugin's options from the current site.
+ */
+function estimate_uninstall_site(): void
+{
+    delete_option('estimate_settings');
+    delete_option('estimate_db_version');
+    delete_option('estimate_quote_page_id');
+}
+
+// Options are per site, so a network uninstall has to visit every site.
+if (is_multisite()) {
+    foreach (get_sites(['fields' => 'ids', 'number' => 0]) as $estimate_site_id) {
+        switch_to_blog((int) $estimate_site_id);
+        estimate_uninstall_site();
+        restore_current_blog();
+    }
+    unset($estimate_site_id);
+} else {
+    estimate_uninstall_site();
+}
 
 // The PRO banner's dismissal is stored per user, so it belongs to the
 // plugin rather than to the site content. User meta is global, not
