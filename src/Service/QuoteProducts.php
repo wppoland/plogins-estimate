@@ -188,7 +188,9 @@ final class QuoteProducts implements HasHooks
      */
     private function buttonHtml(\WC_Product $product, bool $single): string
     {
-        wp_enqueue_style('estimate');
+        if (function_exists('wp_enqueue_style')) {
+            wp_enqueue_style('estimate');
+        }
         $label = $this->buttonLabel();
         $added = $this->list->has($product->get_id());
 
@@ -310,7 +312,9 @@ final class QuoteProducts implements HasHooks
      */
     public function renderWishlistButton(mixed $products): void
     {
-        wp_enqueue_style('estimate');
+        if (function_exists('wp_enqueue_style')) {
+            wp_enqueue_style('estimate');
+        }
         $ids     = [];
         $skipped = 0;
 
