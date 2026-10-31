@@ -192,6 +192,9 @@ final class QuotePage implements HasHooks
             return '';
         }
 
+        wp_enqueue_style('estimate');
+        wp_enqueue_script('estimate');
+
         $sent = isset($_GET['estimate_sent']) && '1' === sanitize_text_field(wp_unslash($_GET['estimate_sent'])); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only view parameter, validated against the single allowed value '1'.
 
         ob_start();

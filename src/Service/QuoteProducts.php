@@ -188,6 +188,7 @@ final class QuoteProducts implements HasHooks
      */
     private function buttonHtml(\WC_Product $product, bool $single): string
     {
+        wp_enqueue_style('estimate');
         $label = $this->buttonLabel();
         $added = $this->list->has($product->get_id());
 
@@ -309,6 +310,7 @@ final class QuoteProducts implements HasHooks
      */
     public function renderWishlistButton(mixed $products): void
     {
+        wp_enqueue_style('estimate');
         $ids     = [];
         $skipped = 0;
 
@@ -452,20 +454,31 @@ final class QuoteProducts implements HasHooks
 
     public function enqueueAssets(): void
     {
-        wp_enqueue_style(
+        wp_register_style(
             'estimate',
             ESTIMATE_URL . 'assets/css/estimate.css',
             [],
             \Estimate\VERSION,
         );
 
-        wp_enqueue_script(
+        wp_register_script(
             'estimate',
             ESTIMATE_URL . 'assets/js/estimate.js',
             [],
             \Estimate\VERSION,
             true,
         );
+
+        // Load in the head only where buttons or the quote form are certain to
+        // render; anywhere else (a product block on a plain page) the renderer
+        // enqueues the stylesheet itself, so plain pages and posts stay clean.
+        $quotePage = is_singular() && has_shortcode((string) get_post_field('post_content'), 'estimate_quote');
+        if ($quotePage || (function_exists('is_woocommerce') && (is_woocommerce() || is_cart() || is_checkout()))) {
+            wp_enqueue_style('estimate');
+        }
+        if ($quotePage) {
+            wp_enqueue_script('estimate');
+        }
     }
 
     private function buttonLabel(): string
